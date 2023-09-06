@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Test : MonoBehaviour
@@ -14,5 +15,14 @@ public class Test : MonoBehaviour
     void Update()
     {
         
+    }
+}
+
+public class Bennet : MonoBehaviour
+{
+    //this class is for nothing
+    private class Wang : Bennet
+    {
+
     }
 }
