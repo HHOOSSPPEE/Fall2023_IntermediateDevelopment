@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class Test : MonoBehaviour
 {
+    public float rot_speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,15 +17,6 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-}
-
-public class Bennet : MonoBehaviour
-{
-    //this class is for nothing
-    private class Wang : Bennet
-    {
-
+        transform.Rotate(0, rot_speed * Time.deltaTime, 0);
     }
 }
