@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 4d1c21c19318d47cbb78fd31f375aaf7
+  productGUID: d623cf922932a44e68d7aad3404a2860
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: jocelyn_intermediateDev_1
+  productName: jocelyn_interDev_week1
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -581,7 +581,7 @@ PlayerSettings:
   webGLTemplate: APPLICATION:Default
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 0
+  webGLCompressionFormat: 2
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
@@ -625,14 +625,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: jocelyn_intermediateDev_1
+  metroPackageName: jocelyn_interDev_week1
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: jocelyn_intermediateDev_1
+  metroApplicationDescription: jocelyn_interDev_week1
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -700,10 +700,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: ca264262-b47e-46f4-a4a6-5c68104913f4
+  cloudProjectId: 61246e24-675e-44bb-a868-ea5153403e55
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: jocelyn_intermediateDev_1
+  projectName: jocelyn_interDev_week1
   organizationId: jlynli
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
