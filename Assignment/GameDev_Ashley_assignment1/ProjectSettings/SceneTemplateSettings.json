@@ -9,6 +9,7 @@
         {
             "userAdded": false,
             "type": "UnityEditor.Animations.AnimatorController",
+            "defaultInstantiationMode": 0
         },
         {
             "userAdded": false,
