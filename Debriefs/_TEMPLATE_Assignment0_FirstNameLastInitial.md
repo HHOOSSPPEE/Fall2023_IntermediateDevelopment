@@ -32,16 +32,16 @@ In addition to the debrief, the Self Evaluation is an opportunity for you to tal
 
 **Execution** (Did your project meet the theme you gave it?) - 5
 
-*Write your elaboration within the asterixis*
+*5 : Yes, my project met my theme. I feel as though it is very apparent with the rubiks cube in frame. However since that held very little substance , I decided to indirectly commmunicate a second toy; The paper lantern. While I use it for lighting my little cat finds it very useful in play. *
 
 
 **Scope** (How well do you feel you scoped your game?) - 5
 
 
-*Write your elaboration within the asterixis*
+*5: I think I scoped this project very well relative to it's due date. I truly believed it could be accomplished within the time given and it was*
 
 
 **Overall** - Pass/Fail
 
 
-*Write your elaboration within the asterixis*
+*5: All guidelines for the project was met. If all guidelines for the project was met then the assignment passes. *
