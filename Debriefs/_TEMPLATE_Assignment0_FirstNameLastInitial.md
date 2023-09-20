@@ -13,6 +13,19 @@ In at least 400 words, write a debrief. You must write a reflection on your assi
 
 Please do not answer these questions individually, but include it in a paragraph format.
 
+When the unity sprite project was assigned, I did not know what to photograph. My first thought was to browse through my 
+phones photo gallery, where I was sure at least one of my many photos would match one of my themes. I scrolled and scrolled until I came 
+across a recent picture of my cat laying on my bed. For a person who was struggling to form ideas, I was especially pleased 
+to discover a toy laying besides my cat; a glaringly present theme that I would later take up. While the picture's intricate details of my cats body and bed sheets  
+proved somewhat challenging to replicate with 2D sprites, it was also simultaneously fun. I enjoyed coming up with solutions to my inconveniences.
+For instance, manipulating 23 circles to bring about one stroke and outline for an object. It was tedious work but the results were pleasing. 
+I was not the only one who had these thoughts. My peers, who observed and critiqued my work in a similar manner was an indication. Among the class, 
+one critique mentioned "shadows and layering". I found the discussion on these topics very useful. Similar to how you would paint on a canvas, unity required you to 
+layer multiple objects to form one subject in picture. This is something I am sure will be repeated in multitudes on my game design journey. 
+	
+
+
+
 ## **Self Evaluation**
 In addition to the debrief, the Self Evaluation is an opportunity for you to talk about your work. You must rate each aspect of your project as a 1 - 5 or Pass/Fail (where appropriate), as well as write a short 1-2 sentence elaboration to justify your score, in the following areas:
 
