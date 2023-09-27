@@ -35,11 +35,15 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool("isMoving", true);
             if (_movement.x < 0)
-                _animator.SetInteger("direction", 9);
-            if(_movement.y < 0)
-                _animator.SetInteger("direction", 6);
+                _animator.SetInteger("Direction", 9);
+            if (_movement.x > 0)
+                _animator.SetInteger("Direction", 3);
+            if (_movement.y < 0)
+                _animator.SetInteger("Direction", 6);
+            if (_movement.y > 0)
+                _animator.SetInteger("Direction", 12);
 
-            
+
         }
 
     }
