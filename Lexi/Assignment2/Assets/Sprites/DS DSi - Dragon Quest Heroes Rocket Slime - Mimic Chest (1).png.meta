@@ -1,0 +1,1262 @@
+fileFormatVersion: 2
+guid: 02560a2af0e37bf45b4082379752785e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 596
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f09a51325fb5af4d8a5b7084a0294fe
+      internalID: 1432188339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 639
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e060243579ae74cb3b25961baa1ca8
+      internalID: 1506944204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 587
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7329cf2856297e044bd5d543aa896ee5
+      internalID: 1132486608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_3
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 579
+        width: 24
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898d023e2165f4846886e1deb3ad7714
+      internalID: -1647698449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 533
+        width: 47
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768ccd9889f644348bc73dc4d5d0d71a
+      internalID: -165255122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_5
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 537
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407bf16f8fd62d9498219e0f39d20105
+      internalID: -116887102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 541
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e256b3a375a456849970a34d26671069
+      internalID: 226319718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_7
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 475
+        width: 24
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523aa4c8e5711c84a8402df25804d0bb
+      internalID: 2122940640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_8
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 482
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23ad0e08f0d53b41893a70a4eac7216
+      internalID: 1341380642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_9
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 484
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd11f521e56d184abe7b6c0e95474ab
+      internalID: -1582833210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_10
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 433
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db29c6848fe832c4c90a17a809334b05
+      internalID: -2137991251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_11
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 434
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10beced444825c34a9f6792248e36130
+      internalID: -1573046681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_12
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 435
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001a3f9e6efb35040ac9e2141f222021
+      internalID: -140141241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_13
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 385
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7b299fd1635e04aa264d025f448e21
+      internalID: -1907847900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 383
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c60cd1decc4134438c22a986e66734b
+      internalID: -1422792526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_15
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 379
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16137310bed277644b09e4b70acdb503
+      internalID: 943915666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_16
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 383
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2764dca7e55784e9cce8538f7e14ee
+      internalID: 1369515929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 385
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d858a7b673d44a479fb7c53cd4a59de
+      internalID: -541769910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 342
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05284ed29325b9d4e989aab66d28c816
+      internalID: 1712210649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_19
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 342
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed6d791741797343a04367300f18f68
+      internalID: -623871246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_20
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 342
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15725d0b273eb5b4e8723bed634f182d
+      internalID: -559368193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_21
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 342
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 439e24a605aa08d4aa7d72d15f4f96c6
+      internalID: -235645565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 342
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce15b3775fa6354b87596ff206525b8
+      internalID: -23806280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_23
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 303
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ca63811edc61643a15de44a3197ff0
+      internalID: 2128753100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_24
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 303
+        width: 43
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076f4a93cd64ce940a2028a9680aeb4d
+      internalID: -608108630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_25
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 303
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4009f05de42a1c748a82a0acedec4fff
+      internalID: 1409428748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_26
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 303
+        width: 45
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6802dd1cee6c7d041a511be0833c26dc
+      internalID: 556104629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 303
+        width: 43
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b17a0ed50b50be4da2357041d290197
+      internalID: 1334729301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_28
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 243
+        width: 24
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da81434a4d291d47b059a603e730cb3
+      internalID: 96818414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_29
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 252
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed21a4cf56fba446a173e6fa28be58f
+      internalID: -8448079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_30
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 256
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d417316177ec64197354a61e40598a
+      internalID: -977432795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_31
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 203
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f83efed9603719468c636550be0deb5
+      internalID: -1287904515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_32
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 203
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3fdbe08e3b9a84bb0be28c988be843
+      internalID: 638005804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_33
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 203
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a5fd58ac139904ba8acfacb963f3a8
+      internalID: -348099223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_34
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 198
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bf471612f10c5243b363cf431d02c7c
+      internalID: -851201786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_35
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 202
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b854226a99bebe44aa9ef4537aee36e
+      internalID: 1270671125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_36
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 159
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d8afb4015432b419b441fb06b529a8
+      internalID: 1702344188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 140
+        width: 30
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa27282b70d0204d85a32d6a76eae18
+      internalID: -1839556190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_38
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 143
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893b707112577e9439f0f332d911afd5
+      internalID: -264222909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_39
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 140
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5f0ad61a08b3ca4b9ce3fab6e2e8c24
+      internalID: -1414258332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_40
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 74
+        width: 24
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545634d4fdf86694080861511337faf1
+      internalID: -2009868993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_41
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 88
+        width: 54
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d265dfdf0b843489d329c7a412bded
+      internalID: 1865807204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_42
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 74
+        width: 24
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f21165490d1af438d69cbbbecb3256
+      internalID: 2089078067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_43
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 39
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10cfd27cada1604aad9bab9fe8cafb4
+      internalID: -1177652822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_44
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 39
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e019294676a766f4fa2b045115f82774
+      internalID: 578065755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_45
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 39
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3619b8d21240b464a972c7418786e908
+      internalID: 517283356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_46
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 39
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b803bb7cd799048861854f752301ec
+      internalID: 1129152861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_47
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 39
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3805251fd6623f143a7310a892ff508f
+      internalID: -1241866940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_48
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 39
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0235f18ed0aa3f4faf7c0ac4fd7827a
+      internalID: -1640440322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_49
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 49
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415d8f8c173d6e44b8f278625ba2f4d6
+      internalID: 898568199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_50
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 576
+        width: 26
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36380dc5729462b42b3dd24cdbd6c3e8
+      internalID: -126687785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_0: 1432188339
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_1: 1506944204
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_10: -2137991251
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_11: -1573046681
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_12: -140141241
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_13: -1907847900
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_14: -1422792526
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_15: 943915666
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_16: 1369515929
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_17: -541769910
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_18: 1712210649
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_19: -623871246
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_2: 1132486608
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_20: -559368193
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_21: -235645565
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_22: -23806280
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_23: 2128753100
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_24: -608108630
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_25: 1409428748
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_26: 556104629
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_27: 1334729301
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_28: 96818414
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_29: -8448079
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_3: -1647698449
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_30: -977432795
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_31: -1287904515
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_32: 638005804
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_33: -348099223
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_34: -851201786
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_35: 1270671125
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_36: 1702344188
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_37: -1839556190
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_38: -264222909
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_39: -1414258332
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_4: -165255122
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_40: -2009868993
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_41: 1865807204
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_42: 2089078067
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_43: -1177652822
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_44: 578065755
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_45: 517283356
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_46: 1129152861
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_47: -1241866940
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_48: -1640440322
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_49: 898568199
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_5: -116887102
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_50: -126687785
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_6: 226319718
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_7: 2122940640
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_8: 1341380642
+      DS DSi - Dragon Quest Heroes Rocket Slime - Mimic Chest (1)_9: -1582833210
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

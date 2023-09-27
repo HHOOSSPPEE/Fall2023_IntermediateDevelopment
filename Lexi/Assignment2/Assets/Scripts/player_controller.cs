@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,25 +10,35 @@ public class player_controller : MonoBehaviour
     private Vector2 _previousPosition;
     private Vector2 _movement;
     private Animator _animator;
+    private Renderer _render;
+
+
+    public int t;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         _rigidBody = gameObject.GetComponent<Rigidbody2D>();
         _previousPosition = gameObject.transform.position;
         _animator = GetComponent<Animator>();
-
-}
+        _render = GetComponent<Renderer>();
+    }
 
 // Update is called once per frame
 void Update()
     {
+        Debug.Log(t);
+        t++;
+        
+
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKey(KeyCode.W))
         {
-            Debug.Log("Up");
+           
         }
         if (_rigidBody.position == _previousPosition)
         {
