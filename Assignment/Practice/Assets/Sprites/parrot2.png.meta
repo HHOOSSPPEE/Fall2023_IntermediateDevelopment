@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cec36b25a8f43cb49a88f69e12e96ddf
+guid: d14beebb7ff290b44b0719bf279985e7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boat_0
+      name: parrot2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 32
+        width: 23.5
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79a657ec9ddba684892ff9854d50810a
-      internalID: -1728555394
+      spriteID: 50336dcb5e724324dbda9b8a4f4de6fa
+      internalID: 885934881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boat_1
+      name: parrot2_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 23
         y: 0
-        width: 16
-        height: 32
+        width: 23.5
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d10e8da719f8bbb4e9fb76c6b1cdd353
-      internalID: -1944089915
+      spriteID: 29ad0e54d0c601347a65a5d79955fe04
+      internalID: 1940057589
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boat_0: -1728555394
-      boat_1: -1944089915
+      parrot2_0: 885934881
+      parrot2_1: 1940057589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
