@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8dfce98c76e6bde45b2e37ef56d984eb
+guid: 91546bc0b1f5e1247b03838044d20735
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_0
+      name: stars 230928-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 945d095360e314041aba157a7b16a438
-      internalID: 165112713
+      spriteID: 8cf7733a2b0d90e4d96ab2a7ac586bae
+      internalID: 836742729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_1
+      name: stars 230928-Sheet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abba44641a027ec40a40b0b1cd57935f
-      internalID: -236325385
+      spriteID: cf4e02b0ec634ce4085136259b506d0a
+      internalID: 488117611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_2
+      name: stars 230928-Sheet_2
       rect:
         serializedVersion: 2
         x: 32
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7089f05cc3970714385507a883e20066
-      internalID: -1953455264
+      spriteID: 8248203d1c3d00e4789db0f6c16db039
+      internalID: 1987162262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_3
+      name: stars 230928-Sheet_3
       rect:
         serializedVersion: 2
         x: 48
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 263c12aef612ed841b0a16c38a43c686
-      internalID: -256409976
+      spriteID: e51705bf089626945af600719ff7c52e
+      internalID: -2084252330
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ufo down 230927-Sheet_0: 165112713
-      ufo down 230927-Sheet_1: -236325385
-      ufo down 230927-Sheet_2: -1953455264
-      ufo down 230927-Sheet_3: -256409976
+      stars 230928-Sheet_0: 836742729
+      stars 230928-Sheet_1: 488117611
+      stars 230928-Sheet_2: 1987162262
+      stars 230928-Sheet_3: -2084252330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

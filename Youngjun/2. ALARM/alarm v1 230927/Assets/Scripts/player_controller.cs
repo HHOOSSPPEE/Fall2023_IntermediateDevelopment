@@ -58,7 +58,7 @@ public class player_controller : MonoBehaviour
 
             if (_movement.y > 0)
             {
-                _animator.SetInteger("direction", 0);
+                _animator.SetInteger("direction", 12);
             }
         }
     }

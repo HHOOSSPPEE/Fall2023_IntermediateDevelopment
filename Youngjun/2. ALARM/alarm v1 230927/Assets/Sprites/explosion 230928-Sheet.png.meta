@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8dfce98c76e6bde45b2e37ef56d984eb
+guid: 078d81150522fc5498da3c6a489cac54
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_0
+      name: explosion 230928-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 945d095360e314041aba157a7b16a438
-      internalID: 165112713
+      spriteID: 3627cf131ad6ef34aad6f246908a2c3d
+      internalID: -341292419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_1
+      name: explosion 230928-Sheet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abba44641a027ec40a40b0b1cd57935f
-      internalID: -236325385
+      spriteID: b8d05e47c3bcfc24c8092b682ed4226a
+      internalID: -2038677443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_2
+      name: explosion 230928-Sheet_2
       rect:
         serializedVersion: 2
         x: 32
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7089f05cc3970714385507a883e20066
-      internalID: -1953455264
+      spriteID: 07e6060cb88624541b474ce7a5eedb46
+      internalID: 1718438700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_3
+      name: explosion 230928-Sheet_3
       rect:
         serializedVersion: 2
         x: 48
@@ -200,8 +200,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 263c12aef612ed841b0a16c38a43c686
-      internalID: -256409976
+      spriteID: 0499a4b643e038a4ca725ce733567cd0
+      internalID: -1852843877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion 230928-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad47f69d7dfdb0e4a95033a634b17d3c
+      internalID: 1138903964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion 230928-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555dd603c5b310d42b88f127a9170ac8
+      internalID: 481717061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion 230928-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f159403ca766e484db85d5f97c6d4017
+      internalID: 2066117775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion 230928-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1051a33881d91841b0a22464dd229ee
+      internalID: 1062517960
       vertices: []
       indices: 
       edges: []
@@ -217,10 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ufo down 230927-Sheet_0: 165112713
-      ufo down 230927-Sheet_1: -236325385
-      ufo down 230927-Sheet_2: -1953455264
-      ufo down 230927-Sheet_3: -256409976
+      explosion 230928-Sheet_0: -341292419
+      explosion 230928-Sheet_1: -2038677443
+      explosion 230928-Sheet_2: 1718438700
+      explosion 230928-Sheet_3: -1852843877
+      explosion 230928-Sheet_4: 1138903964
+      explosion 230928-Sheet_5: 481717061
+      explosion 230928-Sheet_6: 2066117775
+      explosion 230928-Sheet_7: 1062517960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

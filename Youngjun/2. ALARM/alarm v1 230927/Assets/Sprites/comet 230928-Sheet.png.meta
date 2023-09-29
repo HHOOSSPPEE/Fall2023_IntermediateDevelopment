@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8dfce98c76e6bde45b2e37ef56d984eb
+guid: bda22e38665ef8e408bf065053d1c2eb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -123,28 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 945d095360e314041aba157a7b16a438
-      internalID: 165112713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ufo down 230927-Sheet_1
+      name: comet 230928-Sheet_0
       rect:
         serializedVersion: 2
         x: 16
@@ -158,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abba44641a027ec40a40b0b1cd57935f
-      internalID: -236325385
+      spriteID: bdefba3bea916a94893f4571d4162344
+      internalID: -1880574484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_2
+      name: comet 230928-Sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -179,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7089f05cc3970714385507a883e20066
-      internalID: -1953455264
+      spriteID: 3e6f53a75fdc09a44908d1e417e527cf
+      internalID: -1552568265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo down 230927-Sheet_3
+      name: comet 230928-Sheet_2
       rect:
         serializedVersion: 2
         x: 48
@@ -200,8 +179,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 263c12aef612ed841b0a16c38a43c686
-      internalID: -256409976
+      spriteID: 97ef9e6b6437ade439317e3c31f116c6
+      internalID: 984331671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comet 230928-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905d09c0a0828554a920d48dfb8c0424
+      internalID: 1592471786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comet 230928-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420075168a0a57441a1bd49a3d87c4d2
+      internalID: -672499366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comet 230928-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d99285723d6964598eacff1bb5cf7a
+      internalID: -339740677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comet 230928-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 165c02187aaa411489dd5164a08f9906
+      internalID: 9825560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comet 230928-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09ac3a51bc57444b82102edde08b589
+      internalID: 1848171680
       vertices: []
       indices: 
       edges: []
@@ -217,10 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ufo down 230927-Sheet_0: 165112713
-      ufo down 230927-Sheet_1: -236325385
-      ufo down 230927-Sheet_2: -1953455264
-      ufo down 230927-Sheet_3: -256409976
+      comet 230928-Sheet_0: -1880574484
+      comet 230928-Sheet_1: -1552568265
+      comet 230928-Sheet_2: 984331671
+      comet 230928-Sheet_3: 1592471786
+      comet 230928-Sheet_4: -672499366
+      comet 230928-Sheet_5: -339740677
+      comet 230928-Sheet_6: 9825560
+      comet 230928-Sheet_7: 1848171680
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
