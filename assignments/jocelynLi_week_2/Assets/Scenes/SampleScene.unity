@@ -365,7 +365,7 @@ MonoBehaviour:
   offset: {x: 0, y: 1, z: -10}
   leftLimit: -4.57
   rightLimit: 12.4
-  topLimit: 0.001
+  topLimit: 0.0001
   bottomLimit: -0.2
 --- !u!1001 &673558923
 PrefabInstance:
@@ -378,6 +378,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: bcfd57579677e47a1b17c0677256fbf6, type: 3}
       propertyPath: m_Name
       value: Sprite-0004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: bcfd57579677e47a1b17c0677256fbf6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: bcfd57579677e47a1b17c0677256fbf6, type: 3}
       propertyPath: m_LocalScale.x
@@ -664,9 +668,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 0.15
   jumpKey: 0
-  leftLimit: -12
-  rightLimit: 20
-  topLimit: 0.001
+  leftLimit: -11.5
+  rightLimit: 19.5
+  topLimit: 0.03
   bottomLimit: -4
 --- !u!50 &1042446774
 Rigidbody2D:
@@ -739,6 +743,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 0150894dbaefd44ff8fc04d85d2b44e5, type: 3}
       propertyPath: m_Name
       value: npc 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 0150894dbaefd44ff8fc04d85d2b44e5, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 0150894dbaefd44ff8fc04d85d2b44e5, type: 3}
       propertyPath: m_LocalScale.x
@@ -922,6 +930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: npc 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 578d3acdd5772475791a167f6893a614, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 578d3acdd5772475791a167f6893a614, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8508
@@ -1078,6 +1090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: yeah
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: f53d5a53648b34fd09a79e4d83ae8db0, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: f53d5a53648b34fd09a79e4d83ae8db0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1084
@@ -1149,6 +1165,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 16d3dc77af6b34d8f8608af40174db13, type: 3}
       propertyPath: m_Name
       value: ourple
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 16d3dc77af6b34d8f8608af40174db13, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 16d3dc77af6b34d8f8608af40174db13, type: 3}
       propertyPath: m_LocalScale.x
