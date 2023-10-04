@@ -1,0 +1,30 @@
+### **2023 Spring** - Maryam L
+### *Assignment 02* - ‘Excess’
+Link to game: https://mrymlt.itch.io/nautical
+
+
+## **Debrief**
+In at least 400 words, write a debrief. You must write a reflection on your assignment. In addition to specific requirements stated for the assignment, you must answer the following:
+
+I ended up making an exploratory game, wherein a fish explores the deep sea. As the game was flat and we were unable to create any form of interaction, I instead wanted to be able to create a visual experience for the player, which could keep them immersed in the world. The player could move in eight directions and the world encouraged the player to move downwards, further into the deep sea. I enjoyed the use of music, which allowed for a stronger sense of atmosphere, especially as the visuals aligned with the music (where it was light, the music resembled bells and was lighter, whilst the deep sea used more abstract noises to mimic the lack of vision and sense of confusion). Furthermore, the animator (once I figured it out) was simple to manipulate and control, and I could easily catch any possible bugs when playing through the game.
+ I enjoyed the limitations of this project, as I could focus on creating a sense of depth and atmosphere that mainly relied on visual cues and representations, and allowed me to focus on the aesthetic more than technical aspects. This included being able to use a more realistic medium, with brushstrokes appearing like paint, and the animations being slow and child-like. The audio source was greatly beneficial, especially when placed in a 3d space, which allowed me to have a spatial auditory experience. The layers and depth were also helpful, especially as using numbers allowed for a layered amount of objects, allowing the player to be behind and in front of different objects (adding to the paper-esque aesthetic of the game, as if some papers could overlap others). The high amount of replicated objects which brought the sense of ‘excess’ also inspired me as it allowed for visual stimulation for the player, where it was entrancing as all the objects were moving simultaneously. 
+Looking back, I believe having a more structured and organized system of layering would be highly beneficial, as I spent unnecessary time just attempting to realign the layers, and having to build and run the game as the playtest window was not reliable. I would try to have an outside organization resource to make sure that all the layers are where they are expected to be. Also, when organizing the objects within the world, I did run into issues of quality of images, especially around the rocks and coral, as some things were scaled too high, and I believe creating a few smaller objects would be better than a single, large (low-quality) object. As there were many animations within this project, I had started out creating the animation sprite sheets manually, however, quickly found it taxing. Here, I searched for outside resources to aid in streamlining the process, and found ‘TexturePacker’, which creates automatic sprite sheets from animation files, which quickly organized my work and made my process faster, allowing for more objects within the game. Overall, I did quite enjoy the process (especially as it leaned more towards art) and the final product, and am happy with the level of polish, as I wanted a ‘completed’ game which could stand on its own. 
+
+## **Self Evaluation**
+In addition to the debrief, the Self Evaluation is an opportunity for you to talk about your work. You must rate each aspect of your project as a 1 - 5 or Pass/Fail (where appropriate), as well as write a short 1-2 sentence elaboration to justify your score, in the following areas:
+
+
+**Execution** (Did your project meet the theme you gave it?) - 5/5
+*As my theme was ‘excess’ I aimed to have a focus on the visual sense of excess, with repeating and entrancing animations. This was best seen at the center of the game world, where the high amount of seaweed (above) and the coral (below) added to this sense of movement and excess. I also allowed the player (fish) to move in front of some objects, while also being behind some other ones which added to the depth, as if the fish was being swallowed by the excess of objects.*
+
+
+**Scope** (How well do you feel you scoped your game?) - 5/5
+*This project felt a lot more appropriately scoped, and I felt more comfortable when creating all the animations, as I moved away from animating complex shapes and objects (such as people) and instead animated fish which could be abstracted into simple shapes. Also, through the simple painterly style, the animation could be less strict and more clunky as the movement of the paint only added to the aesthetic. The amount of objects was flexible, as I could gauge as I worked if I had more time to add objects, and this flexibility is something I hope to also give myself in future projects so that I can still have a completed product without having to overwork myself.*
+
+
+**Overall** - Pass
+
+*Overall, I am quite satisfied with the final product, as it feels polished (included music, animation and interaction) and did enjoy the process as well, as the limitations allowed for an exploration of style and visual storytelling.*
+
+
+
