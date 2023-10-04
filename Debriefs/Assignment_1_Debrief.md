@@ -1,6 +1,6 @@
 ### **2023 Spring** - FirstName LastInitial
-### *Assignment 0* - Assignment Name
-Link to game: (itch link)
+### *Assignment 1* - Assignment Name
+Link to game: (https://beboq.itch.io/intermediate)
 
 
 ## **Debrief**
