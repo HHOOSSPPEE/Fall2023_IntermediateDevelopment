@@ -5,8 +5,10 @@ using UnityEngine;
 public class soundMaker : MonoBehaviour
 {
     public AudioSource source;
-   // public AudioClip clip;
 
+    // public AudioClip clip;
+    
+    
     public void makeNoise(AudioClip clip)
     {
         source.clip = clip;
