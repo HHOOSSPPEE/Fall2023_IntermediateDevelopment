@@ -27,4 +27,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(newScene);
     }
+
 }
