@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
+    //public void Awake()
+    //{
+        //DontDestroyOnLoad(gameObject);
 
-    }
+   // }
     public void SwitchScene(string newScene)
     {
         StartCoroutine(SceneWait(0.3f, newScene));
