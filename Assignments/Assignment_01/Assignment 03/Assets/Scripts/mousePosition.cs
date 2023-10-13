@@ -32,7 +32,7 @@ public class mousePosition : MonoBehaviour
             float randomNumber31 = Random.Range(100, 10000);
             float randomNumber4 = Random.Range(50000, 1000000);
             float randomNumber41 = Random.Range(50000, 1000000);
-            mousePos.text = Input.mousePosition.x + "." + randomNumber + randomNumber + "\n" + Input.mousePosition.y + "." + randomNumber2 + randomNumber2 + "\n" + randomNumber3 + "." + randomNumber4 + randomNumber4 + "\n" + randomNumber31 + "." + randomNumber41 + randomNumber41;
+            mousePos.text = Input.mousePosition.x + "." + randomNumber + randomNumber + "\n" + Input.mousePosition.y + "." + randomNumber2 + randomNumber2 + "\n" + randomNumber3 + "." + randomNumber4 + randomNumber4 + "\n" + 42 + "." + randomNumber41 + randomNumber41;
         }
 
     }

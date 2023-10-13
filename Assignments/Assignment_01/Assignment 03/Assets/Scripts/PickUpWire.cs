@@ -8,6 +8,10 @@ public class PickUpWire : MonoBehaviour
     private bool pickedUp;
     private Rigidbody2D rb2d;
     public float grav = 4f;
+    public int fall = -15;
+
+    private Vector3 screenPoint;
+    private Vector3 offset;
 
     public void OnMouseDown()
     {
@@ -15,6 +19,10 @@ public class PickUpWire : MonoBehaviour
         Debug.Log("H");
         pickedUp = true;
         rb2d = GetComponent<Rigidbody2D>();
+        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+
+
         //why won't it detect my mouse????? help???? lol
         //fixed it, it was bc it was an image LOL - made it a sprite instead 
     }
@@ -31,8 +39,10 @@ public class PickUpWire : MonoBehaviour
     {
         if (isDragging)
         {
-            Vector2 mousePosition = Input.mousePosition - transform.position;
-            transform.Translate(mousePosition);
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+
+            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+            transform.position = curPosition;
         }
 
         if (pickedUp)
@@ -40,8 +50,9 @@ public class PickUpWire : MonoBehaviour
             spriteRenderer.sprite = newSprite;
             if (!isDragging)
             {
-
-                rb2d.gravityScale += grav;
+                //Physics.IgnoreCollision(GetComponent<Collider>(), GetComponent<Collider>());
+                //rb2d.gravityScale += grav;
+                transform.position += new Vector3(0, fall, 0);
             }
             
             

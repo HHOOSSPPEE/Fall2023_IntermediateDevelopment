@@ -42,12 +42,21 @@ public class WaveScript : MonoBehaviour
     {
         //Debug.Log("h");
         //make it go back after
-        targetHeight = 2f;
-        //Vector2 mousePosition = Input.mousePosition;
+        //targetHeight = 2f;
+        
 
         ////mousePosition += ((Vector2)transform.position - mousePosition).normalized * minDistance;
         //transform.position = Vector2.SmoothDamp(transform.position, mousePosition, ref currentVelocity, smoothTime, maxMoveSpeed);
 
+    }
+
+    private void OnMouseUp()
+    {
+        //Vector2 mousePosition = Input.mousePosition;
+        //height = mousePosition.y;
+        targetHeight = 2f;
+        Debug.Log("down");
+        
     }
 
 }

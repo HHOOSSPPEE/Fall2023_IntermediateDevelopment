@@ -10,7 +10,7 @@ public class gameManager : MonoBehaviour
     private float _waittime = 0;
     public void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     public void FloatSetter(float time)
     {

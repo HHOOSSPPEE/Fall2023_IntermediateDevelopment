@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
+//using UnityEngine.Rendering.VirtualTexturing;
 using static UnityEngine.ParticleSystem;
 
 public class ParticleScript : MonoBehaviour
@@ -43,7 +43,7 @@ public class ParticleScript : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Debug.Log(mousePos);
-            emission.rateOverTime = 10.0f;
+            emission.rateOverTime = 50.0f;
             var emitParams = new ParticleSystem.EmitParams();
             emitParams.position = mousePos;
 
