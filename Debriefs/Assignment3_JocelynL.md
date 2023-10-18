@@ -5,24 +5,23 @@ Link to game: https://lichirin.itch.io/non-stop-idol
 
 ## **Debrief**
 
-For this assignment, I used the theme ‘marketing’ to make a flat game set in a night market. I really liked that I got to draw a lot for this project and that, because there weren’t any interactions in the game, I could focus more on how I wanted things to look. Also, I did all my game art in Aseprite and it helped me get used to the program's shortcuts and tools. It’s pretty different from what I usually use since there are no clipping layers and also a lot of the keyboard shortcuts are different but it’s a really good program for pixel art. I ended up coding in limits for my player and camera so they couldn’t go endlessly offscreen and I referenced some YouTube videos for those parts. I think that I have a good enough understanding of how the code works for the limits but the actual numbers to set the limits were pretty trial and error. It was really nice to get the tutorial for the animation web in class because there is no way I would’ve gotten how to do it otherwise. For the background of my game, I drew it on a really big canvas and then imported it as a PNG. Maryam’s comments in class were useful when she said it probably would’ve been better to draw the market stalls as separate sprites and then put them into the game. Thinking back on the project I was going to draw the market stalls separately and for some reason I just didn’t it ended up making things pretty difficult for me since I zoomed out to draw some parts and the lines ended up really sharp and not rounded like I would’ve wanted them to be.  So, the next time I draw a background like this I’ll make sure to do each part separately. It’ll also be easier to arrange the scene this way. She also commented that it would look good if I added a shadow for the player character and if I do another project similar to this one, I will definitely try to add a shadow on the player’s sprite so they can look more like they’re in the scene. If I had more time I would’ve also drawn an actual walking-up sprite instead of using the side-walking sprites. I would’ve also liked to draw making a turning animation but I wasn’t sure how to put it into the game. I think I sort of made things more difficult for myself by using a person as my player character instead of a simpler character design though, it’s not something I would change. 
+For this assignment, my theme was ‘influence’ so I made the title screen for a game where the idea of the game would be a visual novel and time management game where you play as a social media manager, personal assistant, etc. of a very famous (and a little problematic) pop star. My original idea for the theme was to either turn ‘influence’ into ‘influencer’ or to go with a cultish theme where the idea would be that the player would play as a cult leader with influence over followers but I decided I wanted to draw something more lighthearted and pop-y (not that you couldn’t do that with the cult leader concept though I guess). I really liked coming up with the concept and a little bit of narrative for this project and then coming up with something that could hypothetically be a part of that concept, especially the way I could control the art direction of it like the character designs and color scheme. I looked up how to use the Unity audio mixer online and I found a lot of useful resources to make the audio slider actually work on my project. I had a bit more trouble with the clicking sound effect’s slider but I ended up watching a few more videos on the audio mixer and sliders and I was able to fix it. The next time I do a project, I will definitely try to put more of my art on separate layers and also be more mindful of the size of my files. I have a bit of a bad habit of drawing all my components on the same canvas and also on the same layer because that’s how I’m already used to drawing digitally but unfortunately, it makes it really hard to add more animation and moving parts that can interact with the code. My background was also way too big for HTML, it looked correct in Unity but it probably would’ve been more useful to build the game and test it in itch.io instead hopefully this experience will make me remember to make my files smaller. I’ll also try to be more thoughtful about the font choices for long reading parts since I didn’t realize it was hard to read the About section since I wasn’t thinking too much about it while writing it. Something that I do want to do again though is the planning I did for the art side before I started the project since I ended up forming a color palette and making a reference board before starting and it helped me get into the mood of drawing.    
+
   
 
 ## **Self Evaluation**
 
 **Execution** (Did your project meet the theme you gave it?) - 5
 
-*The game is set in a market and, I mean, 'market' isn't necessarily the same as 'marketing' but I think it's fine.*
+*I think my theme fits pretty well, the idea of a celebrity influencing the public and their manager influencing them isn’t wrong.*
 
 
 **Scope** (How well do you feel you scoped your game?) - 5
 
 
-*I think some parts of the scene feel a bit empty and I wish I made more NPC sprites to put into the scene but my flat
-game fits into the requirements for the assignment so I think it was scoped well.*
+*I didn’t go too big with my scope and my project ended up being a pretty simple start screen while also fulfilling the requirements of the project so I think I scoped my game pretty well within what I think I was able to do for that week.*
 
 
 **Overall** - Pass
 
-
-*My submission fulfilled all the requirements and was turned in on time. Also I think I did pretty good.*
+*My game had the three interactable buttons, an options screen that was also interactable, another scene that could go back to the title screen, and fits the theme (sorta) so I think it’s a pass.*
