@@ -1,0 +1,30 @@
+### **2023 Spring** - Maryam L
+### *Assignment 3* - [Meta]Physics (‘Blind’)
+Link to game: https://mrymlt.itch.io/metaphysics
+
+
+## **Debrief**
+In at least 400 words, write a debrief. You must write a reflection on your assignment. In addition to specific requirements stated for the assignment, you must answer the following:
+
+The game was a combination of menus, wherein switching between the ‘levels’ of reality would switch the actual menu – making it more abstract or more physical. The first level was a scientific page on atoms (where the player could press the atoms to make them jump), the second was an old computer where the player could pull the wires out, the third was many screens that could be dragged and pushed around, and the final was a dark (‘blind’) screen where if the player clicked, they would create particles that would rotate around a gravitational field. Each of the levels additionally had matching music and interactive sounds, as well as a simple page if the player clicked ‘new game’. I was satisfied with the wire mechanic, as well as the visuals of the first and second screens, as I felt they were very coherent, especially the old computer with the corresponding wires. Here, I used music from the ‘Daisy Bell’ rendition by IBM 704 (the first computer-song), as this reflected the cheery yet slow aesthetic the page was attempting to achieve. Furthermore, the actual display of the first screen, wherein the text (fig. 39) helped emulate the expectation of a scientific diagram was effective and engaging. The ‘wire’ mechanic of the second screen was satisfying as I wanted to add weight to when the wire was pulled, but looking back, I would have preferred to have a deeper understanding of the Rigidbody and collision mechanics beforehand, as I had to personally adjust the code to negate the collisions from impacting the ‘wire dropping’ effect. However, these challenges were useful as it allowed me to interact and manipulate the code to properly fit my game, wherein I was able to have a deeper understanding of how these scripts worked and which sections would affect which events. The resource of the universal render pipeline was highly beneficial, as it came directly with the program and was quite intuitive to control – it was useful within the game as it allowed me to add a stronger sense of atmosphere to the latter half of the menu. These included the bloom effect and the chromatic aberration – which created the sense that the screen was glowing and old. This, coupled with the green screen of the third menu, further enhanced the old-computer effect. I am hoping to repeat and lean further into using more filters and effects to create a sense of cohesion with my games, as well as working again with particles, as I feel they helped add a sense of movement to the game easily. Furthermore, I am hoping to explore and understand more about the rigidbody and physics of unity to create more objects that feel more immersive and engaging to play with, similar to the wires. However, though the wires achieved the effect I was hoping for, I am looking to create more realistic physics effects, especially with gravity, where there is more force in the movement and feedback from the player effecting the objects. Overall, I am quite satisfied with the result and have enjoyed the process. 
+
+## **Self Evaluation**
+In addition to the debrief, the Self Evaluation is an opportunity for you to talk about your work. You must rate each aspect of your project as a 1 - 5 or Pass/Fail (where appropriate), as well as write a short 1-2 sentence elaboration to justify your score, in the following areas:
+
+
+**Execution** (Did your project meet the theme you gave it?) - 5/5
+
+*I felt that the game fit the theme ‘blind’ on both a physical sense – as the last menu was completely dark and would only illuminate with the player interacting with it – and on a more thematic sense – as the game took the player through stages of abstraction to where it would present concepts that would usually be blind to the human eye (particles). Overall, I attempted to balance the concept of total darkness within the game as I worried the UI would be unintuitive, and have combated that by adjusting the menu buttons to be quite large to catch the player’s attention as they explored the darkness of the screen. *
+
+
+**Scope** (How well do you feel you scoped your game?) - 5/5
+
+*I feel as if I scoped the game well, as looking back at my last project, having flexibility in the size of the game would allow me to adjust accordingly to my workload. As such, I allowed myself to have a varied possible number of menu ‘versions’, and had cut out a few so as to not overload the scope, and be able to achieve a more polished product. *
+
+
+**Overall** - Pass
+
+*Overall, I am quite satisfied with the product, as I wanted to add a level of interactivity to the menu, as when I am playing games I often enjoy those little freedoms for the player to explore the game fully. Furthermore, the different versions allow the game to appear more dimensional and interactive, even within the limits of being only a menu. The process itself was also enjoyable, as I was able to explore many possible features and concepts.*
+
+
+
