@@ -1,6 +1,6 @@
 ### **2023 Spring** - Youngjun Lee
 ### *Assignment 2* - Flat Game
-Link to game: (itch link)
+Link to game: https://yl9929.itch.io/alarm
 
 
 ## **Debrief**
