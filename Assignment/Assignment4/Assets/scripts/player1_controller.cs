@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_controller : MonoBehaviour
+
+public class player1_controller : MonoBehaviour
 {
     public float movementSpeed = 1.0f;
     //public Rigidbody2D rigidBody;
@@ -11,7 +12,7 @@ public class player_controller : MonoBehaviour
     private Vector2 _previousPosition;
     private Vector2 _movement;
 
-    private Animator _animator;
+    //private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +20,13 @@ public class player_controller : MonoBehaviour
         _rigidBody = gameObject.GetComponent<Rigidbody2D>();
         _previousPosition = gameObject.transform.position;
 
-        _animator = GetComponent<Animator>();
+        //_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _movement.x = Input.GetAxisRaw("Horizontal");
+        //_movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKey(KeyCode.Space))
@@ -33,19 +34,19 @@ public class player_controller : MonoBehaviour
             Debug.Log("Jump");
         }
 
-        if (_rigidBody.position == _previousPosition)
-        {
-            _animator.SetBool("isMoving", false);
-        }
-        else
-        {
-            _animator.SetBool("isMoving", true);
+        //if (_rigidBody.position == _previousPosition)
+        //{
+        //    _animator.SetBool("isMoving", false);
+        //}
+        //else
+        //{
+        //    _animator.SetBool("isMoving", true);
 
-            if (_movement.x < 0)
-                _animator.SetInteger("direction", 9);
-            if (_movement.y < 0)
-                _animator.SetInteger("direction", 6);
-        }
+        //    if (_movement.x < 0)
+        //        _animator.SetInteger("direction", 9);
+        //    if (_movement.y < 0)
+        //        _animator.SetInteger("direction", 6);
+        //}
     }
 
 
@@ -57,6 +58,4 @@ public class player_controller : MonoBehaviour
         _rigidBody.MovePosition(_rigidBody.position + _movement * movementSpeed);
         _previousPosition = _rigidBody.position;
     }
-
-
 }
