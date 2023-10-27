@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class starsCollide : MonoBehaviour
    
 {
+   
     public GameManager gameManager;
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,9 +16,19 @@ public class starsCollide : MonoBehaviour
 
             gameManager.Addscore();
 
-            
+
             Destroy(collision.gameObject);
             Debug.Log("Collide with star");
         }
+        if (collision.gameObject.CompareTag("5"))
+        {
+
+            gameManager.Addsecondscore();
+
+            Debug.Log("Collide with sun or earth.");
+        }
     }
+    
+
+   
 }

@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Paddle
-  friction: 0.8
-  bounciness: 4.5
+  m_Name: bouncer
+  friction: 0.4
+  bounciness: 4.7

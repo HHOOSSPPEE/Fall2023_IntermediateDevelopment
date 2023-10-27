@@ -53,4 +53,10 @@ public class GameManager : MonoBehaviour
         scoreText.text = "SCORE: " + score;
         Debug.Log(score);
     }
+    public void Addsecondscore()
+    {
+        score += 5;
+        scoreText.text = "SCORE: " + score;
+        Debug.Log(score);
+    }
 }

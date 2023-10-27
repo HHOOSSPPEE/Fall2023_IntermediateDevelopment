@@ -6,8 +6,9 @@ public class BouncerTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     public Animator bouncer;
+    public AudioSource soundEffect;
 
-   void Start()
+    void Start()
     {
         // 获取弹簧上的Animator组件
         bouncer = GetComponent<Animator>();
@@ -22,4 +23,15 @@ public class BouncerTrigger : MonoBehaviour
             bouncer.SetTrigger("BouncerTrigger");
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+          
+            
+                soundEffect.Play();
+            
+        }
+    }
+
 }
