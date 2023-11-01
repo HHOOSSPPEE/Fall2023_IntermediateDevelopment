@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
+using System.Net.Sockets;
 
 public class GameManager : MonoBehaviour
 
 {
     private float waitTime = 2f;
-    private int score = 0;
+    public int score = 0;
     public TMP_Text scoreText;
     public static GameManager instance;
 
@@ -59,4 +60,11 @@ public class GameManager : MonoBehaviour
         scoreText.text = "SCORE: " + score;
         Debug.Log(score);
     }
+    public void Emptyscore()
+    {
+        score = 0;
+        scoreText.text = "SCORE: " + score;
+    }
+
+
 }

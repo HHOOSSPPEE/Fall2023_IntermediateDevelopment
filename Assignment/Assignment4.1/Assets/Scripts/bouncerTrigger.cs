@@ -19,7 +19,7 @@ public class BouncerTrigger : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-
+            soundEffect.Play();
             bouncer.SetTrigger("BouncerTrigger");
         }
     }
