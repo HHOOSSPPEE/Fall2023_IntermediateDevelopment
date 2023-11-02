@@ -42,7 +42,7 @@ In addition to the debrief, the Self Evaluation is an opportunity for you to tal
 
 **Execution** (Did your project meet the theme you gave it?) - 5
 
-*4. Yes, my assignment conveyed the theme of perseverance. There are situations where you can kind of make out the theme but it was consistent *
+*4. Yes, my assignment conveyed the theme of perseverance. There are situations where you can kind of lose the theme but it was consistent for the most part*
 
 
 **Scope** (How well do you feel you scoped your game?) - 5
