@@ -1,0 +1,29 @@
+### **2023 Spring** - Maryam L
+### *Assignment 4* - Juggling Routine
+Link to game: https://mrymlt.itch.io/assignment04
+
+
+## **Debrief**
+In at least 400 words, write a debrief. You must write a reflection on your assignment. In addition to specific requirements stated for the assignment, you must answer the following:
+
+This game was referencing the ‘marble run’ game found usually in physical toys, however, I felt this routine of building and adjusting the game would be enjoyable to replicate digitally, which I did. This included marbles that would interact with the objects the player placed, and the player having the freedom to move the objects at will in order to collect ‘points’. The different objects included a slide, a swing, a trampoline, among others. I felt the sound design worked quite well with the visuals and theme of the game, which was more childlike (as I was replicating a ‘toy’ like game). This included shaky crayon-like visuals of the objects and paper background. The music was chosen from the original ‘Little Big Planet’ (Orb of Dreamers and Left Bank Two), and my only worry on this end is that the music is so good, I’m upset I won’t be able to reuse it! Of course, the music works the most cohesively here (child-like and friendly), when compared to the ideas I have for my final two themes (more dramatic and classical, probably). Within the mechanics end, I am satisfied with the ‘pen’ tool, in which I had to learn how to use the line renderer and collision that corresponded to it in order to add to the sense of the player being able to guide the marbles. I also limited the existence of the pen duration in order to not allow the player to over use it as it is one of the more powerful objects possible. I did face some challenges with the collision and manipulation of the objects, as they were originally all RigidBodies2D, which caused the player to accidentally make them mash into each other and make them spin or skew. In order to fix this and allow more control, I turned off this feature for most of the objects (though it was kept on the wheel mechanics), which allowed for more control by the player. Many features were adjusted according to playtests, such as re-adding the ability to personally add marbles to the game, which was originally removed as I worried it would make the game too easy (this was beneficial as I usually am not a strong judge on what would or not be difficult in game… as most things are difficult for me to play). From this playtest, I also strengthened my skill of gauging what would seem difficult, and that I should not try to prevent any possible tools that the player may use (or ignore if they deem it too easy). This freedom and agency from the player’s end often made the playtests more positive. System-wise, playing through the game retrospectively, I can see how the play style encourages more relaxed exploration, but the timer seems to juxtapose that unnecessarily (which was a requirement for the assignment, but I may change posthumously for coherence). Also, a small nitpick but I noticed that the sprite of the marble doesn’t spin, so I may also change that in the next update. Otherwise, I am quite happy with the final product and had fun creating this assignment, as always : ) . 
+
+## **Self Evaluation**
+In addition to the debrief, the Self Evaluation is an opportunity for you to talk about your work. You must rate each aspect of your project as a 1 - 5 or Pass/Fail (where appropriate), as well as write a short 1-2 sentence elaboration to justify your score, in the following areas:
+
+
+**Execution** (Did your project meet the theme you gave it?) - 5/5
+
+*I felt that the game fit the theme of ‘routine’, as the player had to remake the routine that the marble would follow through with every time the star positions would change. This focus on getting the ‘perfect’ routine for the marble to follow was more imbued into the action of the game rather than the visual theme, but I feel that it was more enjoyable to play through a routine than witness one.*
+
+
+**Scope** (How well do you feel you scoped your game?) - 5/5
+
+*The game was scoped well as it focused more on creating the mechanics rather than having a singular structured path for the gameplay, which allowed it to be replayable without having a long design time. I will say though, there were a few ideas that were scrapped (a lego-like mechanic for the tubes) in order to create a game within the allotted time.*
+
+
+**Overall** - Pass
+
+*Overall, I am very satisfied with the product, and have even spent some time accidentally playing it while writing this debrief as it is enjoyable to play through, which is always what I am hoping to achieve. First and foremost, my audience is me, so if I have fun, I think the game is good.*
+
+
