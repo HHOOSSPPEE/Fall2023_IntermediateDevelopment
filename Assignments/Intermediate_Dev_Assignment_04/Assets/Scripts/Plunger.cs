@@ -13,7 +13,7 @@ public class Plunger : MonoBehaviour
     public KeyCode controllKey;
     private float xPosistion;
     private Rigidbody2D _rb;
-    private Rigidbody2D _rbPinball;
+    public Rigidbody2D _rbPinball;
     private bool _launched = false;
     private Vector2 _force;
     private bool _accumulated;
@@ -27,7 +27,7 @@ public class Plunger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         slider.value = power; 
         if (Input.GetKey(controllKey))
@@ -35,17 +35,21 @@ public class Plunger : MonoBehaviour
             if (power < maxPower)
                 power += accumulationRate * Time.deltaTime;
             _accumulated = true;
+
+            Debug.Log("accumulated");
         }
         else
         {
-            power = Mathf.Lerp(power, 0, lerpSpeed * Time.deltaTime);
+            power = Mathf.Lerp(power, 0, lerpSpeed * Time.deltaTime); //16.67ms .8ms *150
         }
+
         if (Input.GetKeyUp(controllKey))
         {
             _launched = false;
             _force = new Vector2(0, power);
+            Debug.Log("wait for launch");
         }
-        slider.value = power;
+
         if (_accumulated && !_launched && power < 0.1f)
         {
             if (_rbPinball != null)
@@ -54,7 +58,9 @@ public class Plunger : MonoBehaviour
             }
             _launched = true;
             _accumulated = false;
+            power = 0f;
         }
+        Debug.Log("_launched = " + !_launched + " _accumulated = " + _accumulated);
         /*
         if (lerpingSlider)
         {

@@ -685,13 +685,14 @@ MonoBehaviour:
   - {fileID: 2005902986}
   - {fileID: 2082445724}
   - {fileID: 798837581}
-  _pinballPrefab: {fileID: 0}
+  _pinballPrefab: {fileID: 1689463787}
   _timePanelTMP: {fileID: 251087139}
   leftFlipperControllKey: 276
   rightFlipperControllKey: 275
   plungerControllKey: 32
   startGameButton: {fileID: 909708840}
-  testing: 1
+  testing: 0
+  timeScale: 8
 --- !u!4 &541876041
 Transform:
   m_ObjectHideFlags: 0
@@ -3576,8 +3577,9 @@ MonoBehaviour:
   maxPower: 150
   accumulationRate: 150
   slider: {fileID: 595184585}
-  lerpSpeed: 50
+  lerpSpeed: 20
   controllKey: 0
+  _rbPinball: {fileID: 0}
 --- !u!1 &1435990409
 GameObject:
   m_ObjectHideFlags: 0

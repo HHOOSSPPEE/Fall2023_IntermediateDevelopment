@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject startGameButton;
     public bool testing = true;
+    public float timeScale = 1.0f;
     void Start()
     {
         _currentScoreTMP = GameObject.Find("Score Panel").GetComponentInChildren<TextMeshProUGUI>();
@@ -30,20 +31,19 @@ public class GameManager : MonoBehaviour
         highScoreList[0] = 500;
         UpdateHighScore();
         _audioListener = GetComponent<AudioListener>();
+        _pinball = GameObject.Find("Pinball");
+        _pinball.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log((float)(score / 500f));
+        //Debug.Log((float)(score / 500f));
         _currentScoreTMP.text = "Score: " + score;
         _timePanelTMP.text = "Time Scale: " + Time.timeScale.ToString("0.00");
         Time.timeScale = 1f + (float)(score / (float)highScoreList[0]);
 
-
-
-        _audioListener.velocityUpdateMode = AudioVelocityUpdateMode.Fixed;
-        AudioListener.pause = false;
+        if (testing) Time.timeScale = timeScale;
     }
 
     public void AddScore(int amount)

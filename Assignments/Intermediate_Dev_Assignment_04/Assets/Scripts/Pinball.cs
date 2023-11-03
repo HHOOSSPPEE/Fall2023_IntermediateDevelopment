@@ -14,13 +14,12 @@ public class Pinball : MonoBehaviour
     public AudioClip sound;
     private AudioSource audioSource;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         spawnPosition = transform.position;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         _trailRenderer = GetComponent<TrailRenderer>();
         _rb = GetComponent<Rigidbody2D>();
-        gameObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
     }
 
