@@ -1,6 +1,6 @@
 ### **2023 Spring** - AshleyS
-### *Assignment 2* - Flat Game
-Link to game: https://huimingshi0111.itch.io/an-eggs-sacrifice
+### *Assignment 3* - Menu
+Link to game: https://huimingshi0111.itch.io/wandering
 
 
 ## **Debrief**
