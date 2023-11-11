@@ -10,6 +10,8 @@ public class Draggable : MonoBehaviour
     public delegate void DragEndedDelegate(Draggable draggableObject);
     public DragEndedDelegate dragEndedCallback;
 
+    public GameObject inbowl_chips;
+
     private bool dragging;
 
     public Vector2 offset, origionalPosition;
