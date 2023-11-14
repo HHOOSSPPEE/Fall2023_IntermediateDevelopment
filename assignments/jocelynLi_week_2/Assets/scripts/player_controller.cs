@@ -14,11 +14,6 @@ public class player_controller : MonoBehaviour
 
     private Animator _animator;
 
-    public float leftLimit;
-    public float rightLimit;
-    public float topLimit;
-    public float bottomLimit;
-
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +46,7 @@ public class player_controller : MonoBehaviour
             if(_movement.x > 0)
             {
                 _animator.SetInteger("direction", 9);
+                
             }
 
             if (_movement.x < 0)
@@ -80,11 +76,5 @@ public class player_controller : MonoBehaviour
 
     }
 
-    public void LateUpdate()
-    {
-        //from this https://www.youtube.com/watch?v=05VX2N9_2_4&ab_channel=LostRelicGames
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
-            (Mathf.Clamp(transform.position.y, bottomLimit, topLimit)),
-            transform.position.z);
-    }
+   
 }
