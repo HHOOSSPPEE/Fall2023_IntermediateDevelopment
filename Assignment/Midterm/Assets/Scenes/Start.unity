@@ -440,7 +440,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.7717159, g: 0.7907865, b: 0.8207547, a: 0}
+  m_BackGroundColor: {r: 0.58909035, g: 0.6981132, b: 0.4785807, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ec3bbe7b3f33449876fc34cfdc0fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gacha: {fileID: 0}
 --- !u!4 &1112741331
 Transform:
   m_ObjectHideFlags: 0
@@ -784,7 +785,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Main Menu
+          m_StringArgument: Gacha
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2041956958

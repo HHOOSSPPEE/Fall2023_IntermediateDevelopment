@@ -24,34 +24,6 @@ public class Characters : MonoBehaviour
        
     }
 
-    /*public void CharacterList()
-    {
-        Gacha gacha = FindObjectOfType<Gacha>();
-        Storage = gacha.Storage;
-        
-
-        foreach (var item in Database.CardData)
-        {
-            if (Database.CardData.Count != 0)
-            {
-                if (item.CardQuality == "SSR" && item.CardName == "Insider")
-                {
-                    
-                    //Destroy(Insider.GetComponent<SpriteRenderer>());
-                    
-                    Insider.transform.position = new Vector3(1000f, 1000f, 0f);
-                    Debug.Log(Insider.transform.position);
-                }
-                if (item.CardQuality == "SSR" && item.CardName == "Luna")
-                {
-                    
-                    //Destroy(Luna.GetComponent<SpriteRenderer>());
-                    Luna.transform.position = new Vector3(1000f, 1000f, 0f);
-                    Debug.Log(transform.position);
-                }
-            }
-        }
-    }*/
     // Start is called before the first frame update
     void Start()
     {

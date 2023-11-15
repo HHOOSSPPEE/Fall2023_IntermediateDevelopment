@@ -18,6 +18,7 @@ public class Gacha : MonoBehaviour
     public TMP_Text PlayerMoney;
     public GameObject Insider;
     public GameObject Luna;
+    public Sprite[] Sprites;
     public int Money = 6000;
 
     // Start is called before the first frame update
@@ -45,6 +46,19 @@ public class Gacha : MonoBehaviour
         Rbanner = Banner.Where(t => t.CardQuality == "R").ToList();
         SRbanner = Banner.Where(t => t.CardQuality == "SR").ToList();
         SSRbanner = Banner.Where(t => t.CardQuality == "SSR").ToList();
+
+        Sprite apple = Sprites[0];
+        Sprite twig = Sprites[1];
+        Sprite trash = Sprites[2];
+        Sprite Bones = Sprites[3];
+        Sprite Seeds = Sprites[4];
+
+        Banner[0].CardSprite = Sprites[0];
+        Banner[1].CardSprite = Sprites[1];
+        Banner[2].CardSprite = Sprites[2];
+        Banner[5].CardSprite = Sprites[3];
+        Banner[6].CardSprite = Sprites[4];
+
     }
      
     public void GatchaOnce ()
@@ -64,8 +78,9 @@ public class Gacha : MonoBehaviour
             go.transform.SetParent(cardsDisplay.transform);
             int Rcard = Random.Range(0, Rbanner.Count);
             go.transform.GetChild(0).GetComponent<TMP_Text>().text = Rbanner[Rcard].CardName;
-           
-           
+            Image cardImage = go.GetComponent<Image>(); 
+            cardImage.sprite = Rbanner[Rcard].CardSprite;
+
         }
             else if (numBanner <= 150 && numBanner > 50)
             {
@@ -105,7 +120,8 @@ public class Gacha : MonoBehaviour
                 go.transform.SetParent(cardsDisplay.transform);
                 int Rcard = Random.Range(0, Rbanner.Count);
                 go.transform.GetChild(0).GetComponent<TMP_Text>().text = Rbanner[Rcard].CardName;
-                
+                Image cardImage = go.GetComponent<Image>();
+                cardImage.sprite = Rbanner[Rcard].CardSprite;
 
             }
             else if (numBanner <= 150 && numBanner > 50)
@@ -130,6 +146,17 @@ public class Gacha : MonoBehaviour
         Money -= 3000;
         PlayerMoney.text = "Sacrifice: " + Money;
     }
+    public void DestoryCards()
+    {
+        if (cardsDisplay.transform.childCount >= 1)
+        {
+            for (int i = 0; i < cardsDisplay.transform.childCount; i++)
+            {
+                Destroy(cardsDisplay.transform.GetChild(i).gameObject);
+            }
+        }
+        Money += 6000;
+    }
     public void CharacterList()
     {
         Gacha gacha = FindObjectOfType<Gacha>();
@@ -143,19 +170,18 @@ public class Gacha : MonoBehaviour
                 Debug.Log("count");
                 if (item.CardQuality == "SSR" && item.CardName == "Insider")
                 {
+
+                    Insider.GetComponent<Image>().enabled = false;
                     Debug.Log("insider");
 
-                    //Destroy(Insider.GetComponent<SpriteRenderer>());
-                    Insider.GetComponent<Image>().enabled = false;
 
-                    //Debug.Log(Insider.transform.position);
                 }
                 if (item.CardQuality == "SSR" && item.CardName == "Luna")
                 {
-
-                    //Destroy(Luna.GetComponent<SpriteRenderer>());
+                   
                     Luna.GetComponent<Image>().enabled = false;
-                    //Luna.transform.position = new Vector3(1000f, 1000f, 0f);
+                    Debug.Log("Luna");
+
                     //Debug.Log(transform.position);
                 }
             }
@@ -173,4 +199,5 @@ public class CardData
     public string CardQuality;
     public string CardName;
     public int CardProbablity;
+    public Sprite CardSprite;
 }

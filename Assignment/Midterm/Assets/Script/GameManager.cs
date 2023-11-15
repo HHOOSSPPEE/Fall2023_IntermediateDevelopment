@@ -12,10 +12,6 @@ public class GameManager : MonoBehaviour
     public void SwitchScene(string newScene)
     {
         Debug.Log("switch scene called " + newScene);
-
-      
-     
-
         SceneManager.LoadScene(newScene);
         StartCoroutine(SceneWait(waitTime, newScene));
     }
