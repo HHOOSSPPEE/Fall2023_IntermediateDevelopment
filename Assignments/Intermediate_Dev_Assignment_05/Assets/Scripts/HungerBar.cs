@@ -7,11 +7,10 @@ public class HungerBar : MonoBehaviour
 {
     private Slider _slider;
     private RandomVibrator _vibrator;
-    [SerializeField] private float _maxHungerValue;
-    [SerializeField] private float _hungerValue;
-    private float _value;
-    [SerializeField] private Color _maxColor;
-    [SerializeField] private Color _minColor;
+    private float maxValue = 1;
+    private float value = 1;
+    public Color maxColor;
+    public Color minColor;
     private Image _fillImage;
     private Image _backgroundImage;
     void Start()
@@ -24,21 +23,23 @@ public class HungerBar : MonoBehaviour
 
     void Update()
     {
-        #region set how the bar should looks like
-        _value = _hungerValue / _maxHungerValue;
-        _slider.value = _value;
-        _fillImage.color = Color.Lerp(_maxColor, _minColor, _value);
-        #endregion
+        setValue(HungerSystem.instance.getHungerValue());
+        setMaxValue(HungerSystem.instance.getMaxHungerValue());
+        _slider.value = value;
 
-        #region Vibration animation of the hunger bar
-        _vibrator.vibrationSpeed = 1 - _value;
-        _vibrator.vibrationStrength = 1 - _value;
-        #endregion
+
+        _vibrator.vibrationSpeed = 1 - value / maxValue;
+        _vibrator.vibrationStrength = 1 - value / maxValue;
     }
 
-    private void setMaxHungerValue(float maxHungerValue)
+    public void setMaxValue(float maxValue)
     {
-        _maxHungerValue = maxHungerValue;
-        _slider.maxValue = maxHungerValue;
+        _slider.maxValue = maxValue;
+        this.maxValue = maxValue;
+    }
+    public void setValue(float value)
+    {
+        _slider.value = value;
+        this.value = value;
     }
 }
