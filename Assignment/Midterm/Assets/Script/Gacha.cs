@@ -19,7 +19,7 @@ public class Gacha : MonoBehaviour
     public GameObject Insider;
     public GameObject Luna;
     public Sprite[] Sprites;
-    public int Money = 6000;
+    public int Money = 0;
 
     // Start is called before the first frame update
     List<CardData> Banner = new List<CardData>();
@@ -37,12 +37,11 @@ public class Gacha : MonoBehaviour
         Banner.Add(new CardData() { CardName = "Bones", CardQuality = "R", CardProbablity = 800 });
         Banner.Add(new CardData() { CardName = "Seeds", CardQuality = "R", CardProbablity = 800 });
         Banner.Add(new CardData() { CardName = "Bug", CardQuality = "R", CardProbablity = 800 });
-        Banner.Add(new CardData() { CardName = "Crow", CardQuality = "SR", CardProbablity = 150 });
-        Banner.Add(new CardData() { CardName = "Deer", CardQuality = "SR", CardProbablity = 150 });
-        Banner.Add(new CardData() { CardName = "Foxxy", CardQuality = "SR", CardProbablity = 150 });
-        Banner.Add(new CardData() { CardName = "Ghost", CardQuality = "SR", CardProbablity = 150 });
-        Banner.Add(new CardData() { CardName = "Insider", CardQuality = "SSR", CardProbablity = 50 });
-        Banner.Add(new CardData() { CardName = "Luna", CardQuality = "SSR", CardProbablity = 50 });
+        Banner.Add(new CardData() { CardName = "Crow", CardQuality = "SR", CardProbablity = 175 });
+        Banner.Add(new CardData() { CardName = "Deer", CardQuality = "SR", CardProbablity = 175 });
+        Banner.Add(new CardData() { CardName = "Foxxy", CardQuality = "SR", CardProbablity = 175 });
+        //Banner.Add(new CardData() { CardName = "Insider", CardQuality = "SSR", CardProbablity = 50 });
+        Banner.Add(new CardData() { CardName = "Luna", CardQuality = "SSR", CardProbablity = 25 });
         Rbanner = Banner.Where(t => t.CardQuality == "R").ToList();
         SRbanner = Banner.Where(t => t.CardQuality == "SR").ToList();
         SSRbanner = Banner.Where(t => t.CardQuality == "SSR").ToList();
@@ -50,14 +49,28 @@ public class Gacha : MonoBehaviour
         Sprite apple = Sprites[0];
         Sprite twig = Sprites[1];
         Sprite trash = Sprites[2];
-        Sprite Bones = Sprites[3];
-        Sprite Seeds = Sprites[4];
+        Sprite Rock = Sprites[3];
+        Sprite Leaves = Sprites[4];
+        Sprite Bones = Sprites[5];
+        Sprite Seeds = Sprites[6];
+        Sprite Bug = Sprites[7];
+        Sprite Crow = Sprites[8];
+        Sprite Deer = Sprites[9];
+        Sprite Foxxy = Sprites[10];
+        Sprite Luna = Sprites[11];
 
         Banner[0].CardSprite = Sprites[0];
         Banner[1].CardSprite = Sprites[1];
         Banner[2].CardSprite = Sprites[2];
-        Banner[5].CardSprite = Sprites[3];
-        Banner[6].CardSprite = Sprites[4];
+        Banner[3].CardSprite = Sprites[3];
+        Banner[4].CardSprite = Sprites[4];
+        Banner[5].CardSprite = Sprites[5];
+        Banner[6].CardSprite = Sprites[6];
+        Banner[7].CardSprite = Sprites[7];
+        Banner[8].CardSprite = Sprites[8];
+        Banner[9].CardSprite = Sprites[9];
+        Banner[10].CardSprite = Sprites[10];
+        Banner[11].CardSprite = Sprites[11];
 
     }
      
@@ -89,6 +102,8 @@ public class Gacha : MonoBehaviour
 
             int SRcard = Random.Range(0, SRbanner.Count);
             go.transform.GetChild(0).GetComponent<TMP_Text>().text = SRbanner[SRcard].CardName;
+            Image cardImage = go.GetComponent<Image>();
+            cardImage.sprite = SRbanner[SRcard].CardSprite;
             //Characters.instance.Storage.Add(new CardData() { CardQuality = "SR", CardName = SRbanner[SRcard].CardName });
         }
             else if (numBanner <= 50)
@@ -97,10 +112,12 @@ public class Gacha : MonoBehaviour
             go.transform.SetParent(cardsDisplay.transform);
             int SSRcard = Random.Range(0, SSRbanner.Count);
             go.transform.GetChild(0).GetComponent<TMP_Text>().text = SSRbanner[SSRcard].CardName;
+            Image cardImage = go.GetComponent<Image>();
+            cardImage.sprite = SSRbanner[SSRcard].CardSprite;
             Database.CardData.Add(new CardData() { CardQuality = "SSR", CardName = SSRbanner[SSRcard].CardName });
         }
-        Money -= 600;
-        PlayerMoney.text = "Money: " + Money;
+        Money += 1;
+        PlayerMoney.text = "Sacrifice: " + Money;
     }
     public void GatchaFive()
     {
@@ -131,7 +148,9 @@ public class Gacha : MonoBehaviour
 
                 int SRcard = Random.Range(0, SRbanner.Count);
                 go.transform.GetChild(0).GetComponent<TMP_Text>().text = SRbanner[SRcard].CardName;
-                
+                Image cardImage = go.GetComponent<Image>();
+                cardImage.sprite = SRbanner[SRcard].CardSprite;
+
             }
             else if (numBanner <= 50)
             {
@@ -139,11 +158,13 @@ public class Gacha : MonoBehaviour
                 go.transform.SetParent(cardsDisplay.transform);
                 int SSRcard = Random.Range(0, SSRbanner.Count);
                 go.transform.GetChild(0).GetComponent<TMP_Text>().text = SSRbanner[SSRcard].CardName;
+                Image cardImage = go.GetComponent<Image>();
+                cardImage.sprite = SSRbanner[SSRcard].CardSprite;
                 Database.CardData.Add(new CardData() { CardQuality = "SSR", CardName = SSRbanner[SSRcard].CardName });
             }
             Debug.Log(i);
         }
-        Money -= 3000;
+        Money += 5;
         PlayerMoney.text = "Sacrifice: " + Money;
     }
     public void DestoryCards()
@@ -155,7 +176,7 @@ public class Gacha : MonoBehaviour
                 Destroy(cardsDisplay.transform.GetChild(i).gameObject);
             }
         }
-        Money += 6000;
+        Money = 0;
     }
     public void CharacterList()
     {
@@ -173,6 +194,7 @@ public class Gacha : MonoBehaviour
 
                     Insider.GetComponent<Image>().enabled = false;
                     Debug.Log("insider");
+                    Debug.Log(Insider.GetComponent<Image>().enabled);
 
 
                 }
@@ -181,7 +203,7 @@ public class Gacha : MonoBehaviour
                    
                     Luna.GetComponent<Image>().enabled = false;
                     Debug.Log("Luna");
-
+                    Debug.Log(Insider.GetComponent<Image>().enabled);
                     //Debug.Log(transform.position);
                 }
             }

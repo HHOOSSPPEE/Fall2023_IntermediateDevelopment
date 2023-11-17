@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Gacha gacha;
+    //public Gacha gacha;
     public static GameManager instance;
     private float waitTime = 2f;
     // Start is called before the first frame update
@@ -29,11 +29,11 @@ IEnumerator SceneWait(float waitTime, string newScene)
         //everything down here hap[ens after the wait
         SceneManager.LoadScene(newScene);
     }
-    void Update()
+    /*void Update()
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             gacha.CharacterList();
         }
-    }
+    }*/
 }
