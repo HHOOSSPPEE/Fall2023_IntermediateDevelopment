@@ -12,6 +12,7 @@ TagManager:
   - plus10
   - times100
   - minus10
+  - player
   layers:
   - Default
   - TransparentFX

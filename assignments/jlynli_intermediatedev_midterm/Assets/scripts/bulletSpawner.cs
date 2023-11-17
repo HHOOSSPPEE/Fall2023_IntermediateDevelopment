@@ -17,31 +17,39 @@ public class BulletSpawner : MonoBehaviour
 
     public GameObject player;
 
+    public enemyAI enemy;
 
-    //https://www.youtube.com/watch?v=UZWEkpWgs-4&ab_channel=SkyanSam-SkyriftStudios code from here
+
+
+
+    //https://www.youtube.com/watch?v=UZWEkpWgs-4&ab_channel=SkyanSam-SkyriftStudios
+    //code from here
 
     float[] rotations;
     void Start()
     {
         timer = cooldown;
-        rotations = new float[numberOfBullets];
+        rotations = new float[20];
         if (!isRandom)
         {
             DistributedRotations();
         }
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime;
-        if (timer <= 0)
+        if (timer <= 0 && numberOfBullets > 0)
         {
+            //calling to spawn bullets
             SpawnBullets();
             timer = cooldown;
         }
 
-        
     }
 
     // Select a random rotation from min to max for each bullet
@@ -75,6 +83,9 @@ public class BulletSpawner : MonoBehaviour
     //spawn bullets called in void update
     public GameObject[] SpawnBullets()
     {
+        Debug.Log("spawning bullets right now");
+        
+
         if (isRandom)
         {
             //random rotation for each bullet each time

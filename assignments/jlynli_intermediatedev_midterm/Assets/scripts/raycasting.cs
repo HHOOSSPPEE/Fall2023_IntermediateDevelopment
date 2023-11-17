@@ -9,6 +9,8 @@ public class raycasting : MonoBehaviour
     public PlayerMovement playerMove;
     private Vector2 rayDirection;
     public float rayHitbox;
+
+    public enemyAI enemy;
     
 
     //can edit mask in unity
@@ -60,7 +62,8 @@ public class raycasting : MonoBehaviour
         //if enemy in raycast, destroy enemy
         if (hit.collider != null && hit.collider.tag == "enemy")
         {
-            Debug.Log("working yay");
+            //Debug.Log("working yay");
+            //enemy.dead = true;
             Destroy(hit.collider.gameObject);
         }
         #endregion

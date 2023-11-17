@@ -8,16 +8,20 @@ public class playerHealthCollision : MonoBehaviour
     //starting hp
     public int startHp;
     //current hp
-    int hp;
+    public int hp;
     public float bulletCooldown;
     float bulletTimer;
 
     public PlayerMovement playerMove;
+
+    public Healthbar healthBar;
     
    
     void Start()
     {
         hp = startHp;
+
+        healthBar.SetMaxHealth(startHp); 
     }
 
     // Update is called once per frame
@@ -36,8 +40,13 @@ public class playerHealthCollision : MonoBehaviour
         {
             if(bulletTimer <= 0 && !playerMove.isDashing)
             {
+                //current health minus 1
                 hp -= 1;
+
+                healthBar.SetHealth(hp);
+
                 bulletTimer = bulletCooldown;
+
                 Debug.Log("yowza" + hp);
             }
         }
