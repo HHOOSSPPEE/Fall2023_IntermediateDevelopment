@@ -10,7 +10,8 @@ public class Draggable : MonoBehaviour
     public delegate void DragEndedDelegate(Draggable draggableObject);
     public DragEndedDelegate dragEndedCallback;
 
-    public GameObject inbowl_chips;
+    public GameObject inbowl_object;
+    public List<GameObject> DoNotActive_object;
 
     private bool dragging;
 
@@ -30,6 +31,7 @@ public class Draggable : MonoBehaviour
         transform.position = mousePosition;
     }
 
+    //snap to origional position
     private void OnMouseUp()
     {
         transform.position = origionalPosition;

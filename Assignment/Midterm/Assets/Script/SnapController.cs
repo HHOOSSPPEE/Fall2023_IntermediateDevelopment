@@ -8,7 +8,7 @@ public class SnapController : MonoBehaviour
     public List<Draggable> draggableObjects;
     public float snapRange = 0.5f;
 
-    public GameObject inbowl_chips;
+    //public GameObject DragOnObject;
 
     void Start()
     {
@@ -41,10 +41,10 @@ public class SnapController : MonoBehaviour
         if(closetSnapPoint != null && closestDistance <= snapRange)
         {
 
-            if (draggable.inbowl_chips != null)
+            if (draggable.inbowl_object != null)
             {
-                draggable.inbowl_chips.transform.position = closetSnapPoint.position;
-                draggable.inbowl_chips.SetActive(true);
+                draggable.inbowl_object.transform.position = closetSnapPoint.position;
+                draggable.inbowl_object.SetActive(true);
 
                 draggable.transform.position = draggable.origionalPosition;
             }
