@@ -33,5 +33,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(newScene);
     }
 
+    public void exit()
+    {
+        Application.Quit();
+    }
+
 
 }
