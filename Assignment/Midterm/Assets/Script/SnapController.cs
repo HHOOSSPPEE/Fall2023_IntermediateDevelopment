@@ -46,12 +46,12 @@ public class SnapController : MonoBehaviour
                 draggable.inbowl_object.transform.position = closetSnapPoint.position;
                 draggable.inbowl_object.SetActive(true);
 
-                draggable.transform.position = draggable.origionalPosition;
+                //draggable.transform.position = draggable.origionalPosition;
             }
             else
             {
                 draggable.transform.position = closetSnapPoint.position;
-                draggable.origionalPosition = closetSnapPoint.position;
+                //draggable.origionalPosition = closetSnapPoint.position;
             }
 
          

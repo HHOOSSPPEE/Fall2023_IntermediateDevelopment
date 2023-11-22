@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/cloth_changing.unity
     guid: f221715aa05874a8a9c99c8069d3f186
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: d2e27c992ccd241c8b93558b7190ea66
   m_configObjects: {}

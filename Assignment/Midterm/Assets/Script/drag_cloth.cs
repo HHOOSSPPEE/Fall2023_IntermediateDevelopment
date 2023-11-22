@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Draggable : MonoBehaviour
+public class drag_cloth : MonoBehaviour
 {
     [SerializeField] private AudioSource source;
-    [SerializeField] private AudioClip pickupClip,dropClip;
+    [SerializeField] private AudioClip pickupClip, dropClip;
 
     public delegate void DragEndedDelegate(Draggable draggableObject);
     public DragEndedDelegate dragEndedCallback;
@@ -14,14 +14,9 @@ public class Draggable : MonoBehaviour
     public GameObject inbowl_object;
     public List<GameObject> DoNotActive_object;
 
-    public spawn_objects spawnManager;
     private bool dragging;
 
-    private Vector2 offset, origionalPosition;
-
-    public GameObject desiredObject;
-
-
+    public Vector2 offset, origionalPosition;
 
     // Start is called before the first frame update
     private void Awake()
@@ -40,14 +35,9 @@ public class Draggable : MonoBehaviour
     //snap to origional position
     private void OnMouseUp()
     {
-        transform.position = origionalPosition;
+        //transform.position = origionalPosition;
         dragging = false;
         //dragEndedCallback(this);
-
-        if (spawnManager != null)
-        {
-            spawnManager.OnObjectDropped(this, desiredObject);
-        }
 
     }
 
@@ -58,17 +48,6 @@ public class Draggable : MonoBehaviour
 
         offset = GetMousePos() - (Vector2)transform.position;
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Dog"))
-        {
-            if (spawnManager != null)
-            {
-                spawnManager.OnObjectDropped(this, desiredObject);
-            }
-        }
     }
 
     Vector2 GetMousePos()

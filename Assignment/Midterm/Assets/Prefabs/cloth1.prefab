@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8881410638347225862}
   - component: {fileID: 2937794201662920976}
   - component: {fileID: 1639266363688969784}
-  - component: {fileID: 1336345553665304299}
   m_Layer: 0
   m_Name: cloth1
   m_TagString: Untagged
@@ -122,7 +121,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.603092, y: 16.4}
+    oldSize: {x: 5.27, y: 13.25}
     newSize: {x: 23.603092, y: 16.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -131,21 +130,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 23.603092, y: 16.4}
   m_EdgeRadius: 0
---- !u!114 &1336345553665304299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7770708115612185272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5ceffaac2f44eb6abf52cd75e1b93e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  pickupClip: {fileID: 0}
-  dropClip: {fileID: 0}
-  inbowl_chips: {fileID: 0}
-  offset: {x: 0, y: 0}
-  origionalPosition: {x: 0, y: 0}
