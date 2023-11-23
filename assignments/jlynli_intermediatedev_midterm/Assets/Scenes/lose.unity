@@ -350,7 +350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press 'A' to return to title                          press 'D' to restart
+  m_text: press 'E' to return to title                          press 'R' to restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 807a2ceea07244208b956309a5dff77a, type: 2}
   m_sharedMaterial: {fileID: 4229254519971674929, guid: 807a2ceea07244208b956309a5dff77a, type: 2}
