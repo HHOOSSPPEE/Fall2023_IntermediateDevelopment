@@ -1,12 +1,15 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class TypingText : MonoBehaviour
 {
 
 
     public TextMeshProUGUI textUI;
+    public Image hint;
+    public Image star;
     public GameObject[] displayObjects;
     private GameObject[] o_displayObjects;
     private string currentText = "";
@@ -14,15 +17,52 @@ public class TypingText : MonoBehaviour
 
     public Draw drawScript;
 
-    private void Start()
+    public void Start()
     {
         o_displayObjects = displayObjects;
+        StartCoroutine(WaitAndHideText(10f));
+
+
+    }
+
+    IEnumerator WaitAndHideText(float waitTime)
+    {
+        // 等待指定时间
+        yield return new WaitForSeconds(waitTime);
+
+        // 在等待时间后执行操作
+        HideText();
+    }
+
+    void HideText()
+    {
+        // 将文本设置为空或者禁用 TextMeshProUGUI 组件，具体操作取决于你的需求
+        // yourText.text = ""; // 设置文本为空
+        star.enabled = false; // 禁用 TextMeshProUGUI 组件
+    }
+
+
+    void CheckPlayerInput()
+    {
+        // 检查玩家是否有输入
+        if (Input.GetMouseButton(0) )
+        {
+            // 玩家有输入，不禁用 Image 组件
+            hint.enabled = true;
+        }
+        else
+        {
+            // 玩家没有输入，禁用 Image 组件
+            hint.enabled = false;
+        }
     }
 
     void Update()
     {
         drawScript = FindObjectOfType<Draw>();
         // 在这里获取正在打字的文字（你可以根据你的需求获取输入的文字）
+        CheckPlayerInput();
+
 
 
         string userInput = Input.inputString;
@@ -31,6 +71,7 @@ public class TypingText : MonoBehaviour
         {
             drawScript.Pen_Width = 4; 
         }
+
         if (userInput.Contains("4"))
         {
             drawScript.Pen_Width = 4; 
@@ -58,6 +99,10 @@ public class TypingText : MonoBehaviour
         if (userInput.Contains("8"))
         {
             drawScript.Pen_Width = 8;
+        }
+        if (userInput.Contains("9"))
+        {
+            drawScript.Pen_Width = 9;
         }
         if (userInput.Contains("RED"))
         {
@@ -97,6 +142,7 @@ public class TypingText : MonoBehaviour
             if (currentText.ToLower() == "red")
             {
                 drawScript.Pen_Colour = drawScript.Red_Pen_Colour;
+                
             }
             else if (currentText.ToLower() == "blue")
             {
@@ -106,12 +152,19 @@ public class TypingText : MonoBehaviour
             {
                 drawScript.Pen_Colour = drawScript.Yellow_Pen_Colour;
             }
+            else if (currentText.ToLower() == "white")
+            {
+                drawScript.Pen_Colour = drawScript.White_Pen_Colour;
+            }
             foreach (GameObject obj in displayObjects)
             {
                 if (currentText.ToLower().Contains(obj.name.ToLower()))
                 {
 
-
+                    if (currentText.ToLower().Contains("orange".ToLower()) && obj.name == null)
+                    {
+                        Debug.Log("OOps");
+                    }
                     if (obj.CompareTag("ORANGE"))
                     {
                         drawScript.Pen_Colour = drawScript.Orange_Pen_Colour;

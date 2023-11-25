@@ -19,7 +19,7 @@ public class Draw : MonoBehaviour
     public Color Cerise_Pen_Colour;
     public Color Grass_Pen_Colour;
     public Color Amethyst_Pen_Colour;
-
+    public Color White_Pen_Colour;
     public int Pen_Width = 2;
 
     public LayerMask Drawing_Layers;

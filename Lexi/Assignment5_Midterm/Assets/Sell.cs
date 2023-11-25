@@ -9,5 +9,6 @@ public class Sell : MonoBehaviour
         GameManager gameManager = FindObjectOfType<GameManager>();
         gameManager.money += Mathf.FloorToInt(gameManager.price);
         gameManager.isPainting = false;
+        gameManager.chosenColorList.Clear();
     }
 }

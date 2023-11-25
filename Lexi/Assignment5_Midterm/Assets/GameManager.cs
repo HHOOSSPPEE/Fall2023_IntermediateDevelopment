@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
     public float price = 0;
     public bool isPainting = false;
     private float moneyPerSec = 1f;
-    public List<string> chosenColorList = new List<string>();
+    public List<Color> chosenColorList = new List<Color>();
     private float timer = 0f;
 
     public TextMeshProUGUI coin;
+
+    Draw drawScript;
 
     // Update is called once per frame
     void Update()
@@ -31,5 +33,14 @@ public class GameManager : MonoBehaviour
             
         }
         else price = 0;
+
+        drawScript = FindObjectOfType<Draw>();
+        if (!chosenColorList.Contains(drawScript.Pen_Colour))
+        {
+            price += 8;
+            chosenColorList.Add(drawScript.Pen_Colour);
+        }
+
+
     }
 }
