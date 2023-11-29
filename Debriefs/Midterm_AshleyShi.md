@@ -1,6 +1,6 @@
 ### **2023 Spring** - AshleyShi
-### *Assignment 4* - Pinball
-Link to game: https://huimingshi0111.itch.io/an-eggs-sacrifice
+### *Midterm Assignment* - My Home
+Link to game: https://huimingshi0111.itch.io/midterm
 
 
 ## **Debrief**
