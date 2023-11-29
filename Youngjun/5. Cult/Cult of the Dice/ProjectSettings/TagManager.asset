@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - DiceJoint
+  - DiceSprite
+  - Dice
+  - CultistFlag
+  - CultistPaladin
+  - CultistNormal
+  - Multiple
   layers:
   - Default
   - TransparentFX
@@ -12,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - MouseOnly
   - 
   - 
   - 

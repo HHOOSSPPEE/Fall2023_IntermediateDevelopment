@@ -1,15 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Profiling;
 
 public class Dice : MonoBehaviour
 {
     private bool isDragging = false;
     private Vector2 offset;
-    private string targetTag = "DiceJoint";
     Vector3 closestJointPosition;
+    Vector3 lastPosition;
 
     private PolygonCollider2D[] polygonColliders;
 
@@ -18,12 +15,54 @@ public class Dice : MonoBehaviour
     SpriteRenderer childSpriteRenderer;
     public Sprite[] sprites;
 
+    public string myTopFace;
+    public string myLeftFace;
+    public string myRightFace;
+
+    bool isMyTopFaceTouched;
+    bool isMyLeftFaceTouched;
+    bool isMyRightFaceTouched;
+
+    List<GameObject> collidedGameObjects = new List<GameObject>();
+
+    float life;
+    public bool permanent = false; 
+
+    private string[] topFaces = 
+        new string[] { "water", "water", "water", "water", 
+                       "thunder", "thunder", "thunder", "thunder",
+                       "earth", "earth", "earth", "earth",
+                       "flame", "flame", "flame", "flame", 
+                       "single", "single", "single", "single", 
+                       "multiple", "multiple", "multiple", "multiple"};
+
+    private string[] leftFaces =
+        new string[] { "multiple", "single", "earth", "flame",
+                       "multiple", "earth", "flame", "single",
+                       "water", "multiple", "thunder", "single",
+                       "multiple", "thunder", "single", "water",
+                       "thunder", "earth", "water", "flame",
+                       "flame", "earth", "water", "thunder"};
+
+    private string[] rightFaces =
+        new string[] { "earth", "flame", "single", "multiple",
+                       "flame", "multiple", "single", "earth",
+                       "multiple", "thunder", "single", "water",
+                       "water", "multiple", "thunder", "single",
+                       "flame", "thunder", "earth", "water",
+                       "water", "thunder", "earth", "flame"};
 
 
     void Start()
     {
-        randomSpriteNumber = Random.Range(1, 25);
-        selectedSprite = sprites[randomSpriteNumber - 1];
+        if (!permanent)
+        {
+            life = 30f;
+            Destroy(gameObject, life);
+        }
+
+        randomSpriteNumber = Random.Range(0, 24);
+        selectedSprite = sprites[randomSpriteNumber];
 
         childSpriteRenderer = GetChildSpriteRendererByName("DiceSprite");
 
@@ -38,10 +77,10 @@ public class Dice : MonoBehaviour
         {
             Vector2[] points = new Vector2[]
             {
-                new Vector2(-1.3f, 0.85f), //left
+                new Vector2(-1.3f, 0.8f), //left
                 new Vector2(0, 1.4f), //top
-                new Vector2(1.3f, 0.8f), //right
-                new Vector2(0, 0.2f) //bottom
+                new Vector2(1.3f, 0.75f), //right
+                //new Vector2(0, 0.2f) //bottom
             };
             polygonColliders[0].points = points;
         }
@@ -50,27 +89,29 @@ public class Dice : MonoBehaviour
         {
             Vector2[] points = new Vector2[]
             {
-                    new Vector2(-1.4f, 0.8f), //tleft
-                    new Vector2(-0.05f, 0.1f), //tright
-                    new Vector2(-0.1f, -1.3f), //bright
-                    new Vector2(-1.4f, -0.7f) //bleft
+                new Vector2(-1.4f, 0.8f), //tleft
+                new Vector2(-0.1f, 0.1f), //tright
+                //new Vector2(-0.1f, -1.3f), //bright
+                new Vector2(-1.4f, -0.5f) //bleft
             };
             polygonColliders[1].points = points;
         }
 
-        if (polygonColliders[2] != null) //left
+        if (polygonColliders[2] != null) //right
         {
             Vector2[] points = new Vector2[]
             {
-                    new Vector2(0.05f, 0.1f), //tleft
-                    new Vector2(1.4f, 0.65f), //tright
-                    new Vector2(1.3f, -0.6f), //bright
-                    new Vector2(0.05f, -1.2f) //bleft
+                new Vector2(0.1f, 0.1f), //tleft
+                new Vector2(1.4f, 0.65f), //tright
+                new Vector2(1.3f, -0.4f), //bright
+                //new Vector2(0.05f, -1.2f) //bleft
             };
             polygonColliders[2].points = points;
         }
 
-        
+        myTopFace = topFaces[randomSpriteNumber];
+        myLeftFace = leftFaces[randomSpriteNumber];
+        myRightFace = rightFaces[randomSpriteNumber];
 
     }
 
@@ -98,41 +139,98 @@ public class Dice : MonoBehaviour
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector2(mousePosition.x + offset.x, mousePosition.y + offset.y);
-
-            GameObject closestJoint = FindClosest(targetTag);
-
-            if (closestJoint != null)
-            {
-                closestJointPosition = closestJoint.transform.position;
-            }
+        }
+        else
+        {
+            lastPosition = transform.position;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
+            GameObject closestJoint = FindClosestObject<DiceJoint>();
+            GameObject closestDice = FindClosestObject<Dice>();
+
+            if (closestDice != null && Vector2.Distance(transform.position, closestDice.transform.position) < 5f)
+            {
+                transform.position = lastPosition;
+            }
+            else if (closestJoint != null)
+            {
+                closestJointPosition = closestJoint.transform.position;
+                transform.position = closestJointPosition;
+            }
+            else transform.position = lastPosition;
+
             isDragging = false;
-            transform.position = closestJointPosition;
         }
     }
 
-    GameObject FindClosest(string tag)
+    private void FixedUpdate()
     {
-        GameObject[] DiceJoints = GameObject.FindGameObjectsWithTag(tag);
-        GameObject closestJoint = null;
+        for (int i = 0; i < polygonColliders.Length; i++)
+        {
+            if (!polygonColliders[i].IsTouchingLayers())
+            {
+                if (i == 0)
+                {
+                    isMyTopFaceTouched = false;
+                }
+                if (i == 1)
+                {
+                    isMyLeftFaceTouched = false;
+                }
+                if (i == 2)
+                {
+                    isMyRightFaceTouched = false;
+                }
+            }
+        }
+
+        if (isMyTopFaceTouched)
+        {
+            myTopFace = null;
+        }
+        else myTopFace = topFaces[randomSpriteNumber];
+
+        if (isMyLeftFaceTouched)
+        {
+            myLeftFace = null;
+        }
+        else myLeftFace = leftFaces[randomSpriteNumber];
+
+        if (isMyRightFaceTouched)
+        {
+            myRightFace = null;
+        }
+        else myRightFace = rightFaces[randomSpriteNumber];
+    }
+
+    GameObject FindClosestObject<T>() where T : Component
+    {
+        T[] objects = FindObjectsOfType<T>();
+        GameObject closestObject = null;
         float closestDistance = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
 
-        foreach (GameObject obj in DiceJoints)
+        foreach (T obj in objects)
         {
-            float distance = Vector3.Distance(obj.transform.position, currentPosition);
-
-            if (distance < closestDistance)
+            if (obj.gameObject != gameObject)
             {
-                closestJoint = obj;
-                closestDistance = distance;
+                float distance = Vector3.Distance(obj.transform.position, currentPosition);
+
+                if (distance < closestDistance)
+                {
+                    closestObject = obj.gameObject;
+                    closestDistance = distance;
+                }
             }
         }
-        
-        return closestJoint;
+
+        if (closestDistance <= 1)
+        {
+            return closestObject;
+        }
+        return null;
     }
 
     SpriteRenderer GetChildSpriteRendererByName(string childObjectName)
@@ -147,5 +245,29 @@ public class Dice : MonoBehaviour
 
         return null;
     }
+
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        PolygonCollider2D polyCollider = collision.GetComponent<PolygonCollider2D>();
+
+        if (polyCollider != null)
+            //&& !collidedGameObjects.Contains(collision.gameObject))
+        {
+            //collidedGameObjects.Add(collision.gameObject);
+
+            Dice diceComponent = collision.gameObject.GetComponent<Dice>();
+            if (childSpriteRenderer.sortingOrder < diceComponent.childSpriteRenderer.sortingOrder)
+            {
+                isMyTopFaceTouched = polygonColliders[0].IsTouching(collision);
+                isMyLeftFaceTouched = polygonColliders[1].IsTouching(collision);
+                isMyRightFaceTouched = polygonColliders[2].IsTouching(collision);
+
+            }
+        }   
+    }
+
 }
+
+
 
