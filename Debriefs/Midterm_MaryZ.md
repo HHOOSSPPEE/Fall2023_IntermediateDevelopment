@@ -12,6 +12,7 @@ In at least 400 words, write a debrief. You must write a reflection on your assi
 - What will you repeat or do differently next time?
 
 Please do not answer these questions individually, but include it in a paragraph format.
+
 Based on the gacha and relationship mechanic, plus the theme of responsibility, I created this dating simulation game for the midterm project. The background of this game
 happened in a forest. Our protagonist is a college student who enjoys wandering in the forest and exploring nature. The sudden appearance of the gacha machine breaks the silence there.
 The player will be played as the protagonist to gacha and build relationships with the creatures that are trapped in the gacha toy. It's a story-heavy game so I spent half of the time on
