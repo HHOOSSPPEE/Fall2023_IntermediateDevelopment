@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StarterScreen01.unity
     guid: d247c3954d34b4f3e81255868e981afe
   - enabled: 1
@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GreenhouseScene03.unity
     guid: 12d4d24725f2f4283bf56d2e579f49c0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GardenScene04.unity
     guid: 8f19d5515480d44e895d9c6dbadf25ab
   - enabled: 1
     path: Assets/Scenes/CanvasScene05.unity
     guid: 1b3ddae198be44ccfbc9ed3e30f5d49e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BridgeScene06.unity
     guid: 34e83e975d9c747c6bb802b9ffe96d63
   - enabled: 1

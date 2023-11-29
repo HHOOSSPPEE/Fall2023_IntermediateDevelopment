@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Fungus;
 using UnityEngine.SceneManagement;
-using static UnityEditor.PlayerSettings;
+//using static UnityEditor.PlayerSettings;
 
 public class GameManager : MonoBehaviour
 {
