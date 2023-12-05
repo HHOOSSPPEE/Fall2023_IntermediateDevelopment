@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 _previousPosition;
     private Vector2 _movement;
 
+    public AnimationClip abiReadyAnim;
+    public AnimationClip abiCastFishingRodAnim;
+    public AnimationClip abiFishingAnim;
+    public AnimationClip abiFishingRodBackAnim;
+    public AnimationClip abiIdleAnim;
+
     private Animator _animator;
 
     // Start is called before the first frame update
@@ -42,6 +48,28 @@ public class PlayerController : MonoBehaviour
             if (_movement.y > 0)
                 _animator.SetInteger("Direction", 12);
 
+
+        }
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            _animator.SetTrigger("leftMouseClick");
+            _animator.Play(abiReadyAnim.name);
+            _animator.ResetTrigger("leftMouseClick");
+        }
+        else if (Input.GetMouseButtonUp(0)) 
+        {
+            
+            _animator.SetTrigger("leftMouseOff");
+            _animator.Play(abiCastFishingRodAnim.name);
+            _animator.ResetTrigger("leftMouseOff");
+        }
+
+        if (Input.GetMouseButtonDown(1)) 
+        {   
+           
+            _animator.SetTrigger("rightMouseClick");
+            _animator.Play(abiFishingRodBackAnim.name);
+            _animator.ResetTrigger("rightMouseClick");
 
         }
 
