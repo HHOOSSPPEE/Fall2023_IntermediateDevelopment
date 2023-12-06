@@ -8,7 +8,7 @@ public class Collectable : MonoBehaviour
 
     private void Start()
     {
-        RandomizePosition();
+       // RandomizePosition();
     }
 
     private void RandomizePosition()

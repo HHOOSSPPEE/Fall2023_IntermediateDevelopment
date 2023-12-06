@@ -26,9 +26,18 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-
+        ResetState();
     }
 
+    public void ResetState()
+    {
+        speedMultiplier = 1f;
+        direction = initialDirection;
+        nextDirection = Vector2.zero;
+        transform.position = startingPosition;
+        rb.isKinematic = false;
+        enabled = true;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -38,6 +47,8 @@ public class Movement : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, direction, Color.yellow);
+
+        
     }
 
     private void FixedUpdate()
@@ -49,12 +60,12 @@ public class Movement : MonoBehaviour
     }
 
 
-    public void SetDirection(Vector2 direction, bool forced = false)
+    public void SetDirection(Vector2 direction)
     {
-        if (forced || !cannotMove(direction))
+        if (!cannotMove(direction))
         {
             this.direction = direction;
-            this.nextDirection = Vector2.zero;
+            nextDirection = Vector2.zero;
         }
         else
         {
@@ -72,9 +83,9 @@ public class Movement : MonoBehaviour
             1.5f,
             WallLayer
         );
-        return hit.collider != null;
-        
+        return hit.collider != null; 
     }
 
-
 }
+
+
