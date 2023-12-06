@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player;
 
-    private int score;
+    private int timer;
 
     private void Start()
     {
@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private void NewGame()
     {
-        SetScore(0);
+        SetTimer(10);
         Newlevel();
     }
 
@@ -22,9 +22,9 @@ public class GameManager : MonoBehaviour
         this.player.gameObject.SetActive(true);
     }
 
-    private void SetScore(int score)
+    private void SetTimer(int timer)
     {
-        this.score = score;
+        this.timer = timer;
     }
 
 }
