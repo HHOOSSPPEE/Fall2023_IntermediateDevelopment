@@ -2,15 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum FishingState
-{
-    Start,
-    CastingRod,
-    Fishing,
-    Win,
-    Lose,
-    Exit
-}
+
 
 public class Fishing: MonoBehaviour
 {
@@ -43,17 +35,9 @@ public class Fishing: MonoBehaviour
 
     [SerializeField] Transform progressBarContainer;
 
-    public FishingState currentState = FishingState.Start;
+    public GameObject FishingGame;
 
     private Animator _animator;
-
-    public AnimationClip abiReadyAnim;
-    public AnimationClip abiCastFishingRodAnim;
-    public AnimationClip abiFishingAnim;
-    public AnimationClip abiFishingRodBackAnim;
-    public AnimationClip abiIdleAnim;
-
-    public GameObject FishingGame;
 
   
     private void Start()
@@ -62,87 +46,59 @@ public class Fishing: MonoBehaviour
     }
     void Update()
     {
-        switch (currentState)
+        switch (StateController.currentState)
         {
             case FishingState.Start:
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    _animator.SetTrigger("leftMouseClick");
-                    _animator.Play(abiReadyAnim.name);
-
-                    _animator.ResetTrigger("leftMouseClick");
-                    currentState = FishingState.CastingRod;
-                }
+                
+                    //Debug.Log("Cast line");
+                    //StateController.currentState = FishingState.CastingRod;
+                
                 break;
 
             case FishingState.CastingRod:
-                
-                if (Input.GetMouseButtonUp(0))
-                {
-                  
-                    _animator.SetTrigger("leftMouseOff");
-                    _animator.Play(abiCastFishingRodAnim.name);
-                    _animator.ResetTrigger("leftMouseOff");
-                    currentState = FishingState.Fishing;
-                    break;
-                }
-                if (Input.GetMouseButtonDown(1))
-                {
-                  
-                    _animator.SetTrigger("rightMouseClick");
-                    _animator.Play(abiFishingRodBackAnim.name);
-                    _animator.ResetTrigger("rightMouseClick");
-                    currentState = FishingState.Exit;
-                    break;
-                }
+                //Debug.Log("Casting");
+               
+
                 break;
 
             case FishingState.Fishing:
-               FishingGame.SetActive(true);
+               // Debug.Log("Fishing");
                 Fish();
                 Hook();
                 ProgressCheck();
                 if (Input.GetMouseButtonDown(1))
                 {
-                    _animator.SetTrigger("rightMouseClick");
-                    _animator.Play(abiFishingRodBackAnim.name);
-                    _animator.ResetTrigger("rightMouseClick");
-                    currentState = FishingState.Exit;
+                    StateController.currentState = FishingState.Exit;
                 }
-                if(pause == true)
+               /* if(pause == true)
                 {
-                    currentState = FishingState.Win;
+                    StateController.currentState = FishingState.Win;
                     break;
                 }
                 if(pause == false)
                 {
-                    currentState = FishingState.Lose;
+                    StateController.currentState = FishingState.Lose;
                     break;
-                }
+                }*/
                 break;
 
             case FishingState.Win:
-                             
-                _animator.Play(abiFishingRodBackAnim.name);
-               
-                currentState = FishingState.Exit;
+
+                StateController.currentState = FishingState.Exit;
                 break;
 
             case FishingState.Lose:
-                
-               
-                _animator.Play(abiFishingRodBackAnim.name);
-                
-                currentState = FishingState.Exit;
+
+                StateController.currentState = FishingState.Exit;
                 break;
 
             case FishingState.Exit:
 
-                FishingGame.SetActive(false);
+                Debug.Log("HERE");
+                StateController.currentState = FishingState.Start;
                
-                 _animator.Play(abiFishingRodBackAnim.name);               
-                currentState = FishingState.Start;
+               
                 break;
         }
     }
@@ -180,6 +136,9 @@ public class Fishing: MonoBehaviour
     {
         pause = true;
         Debug.Log("WIN");
+        
+        
+
     }
 
     private void Lose()
@@ -187,6 +146,7 @@ public class Fishing: MonoBehaviour
         pause = true;
         Debug.Log("Lose");
        
+
     }
 
      void Hook()
