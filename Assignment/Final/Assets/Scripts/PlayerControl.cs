@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 _previousPosition;
     private Vector2 _movement;
 
-    public AnimationClip abiReadyAnim;
+    /*public AnimationClip abiReadyAnim;
     public AnimationClip abiCastFishingRodAnim;
     public AnimationClip abiFishingAnim;
     public AnimationClip abiFishingRodBackAnim;
     public AnimationClip abiIdleAnim;
+
+    public GameObject Fishing;*/
 
     private Animator _animator;
 
@@ -26,8 +28,10 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+   
+
+// Update is called once per frame
+void Update()
     {
         _movement.x = Input.GetAxisRaw("Horizontal"); //move in press A and D /arrow keys
         _movement.y = Input.GetAxisRaw("Vertical");
@@ -50,10 +54,11 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        if (Input.GetMouseButtonDown(0)) 
+        /*if (Input.GetMouseButtonDown(0)) 
         {
             _animator.SetTrigger("leftMouseClick");
             _animator.Play(abiReadyAnim.name);
+            
             _animator.ResetTrigger("leftMouseClick");
         }
         else if (Input.GetMouseButtonUp(0)) 
@@ -63,7 +68,7 @@ public class PlayerController : MonoBehaviour
             _animator.Play(abiCastFishingRodAnim.name);
             _animator.ResetTrigger("leftMouseOff");
         }
-
+        
         if (Input.GetMouseButtonDown(1)) 
         {   
            
@@ -71,7 +76,7 @@ public class PlayerController : MonoBehaviour
             _animator.Play(abiFishingRodBackAnim.name);
             _animator.ResetTrigger("rightMouseClick");
 
-        }
+        }*/
 
     }
 

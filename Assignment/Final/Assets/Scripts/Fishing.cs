@@ -2,7 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fishing : MonoBehaviour
+public enum FishingState
+{
+    Start,
+    CastingRod,
+    Fishing,
+    Win,
+    Lose,
+    Exit
+}
+
+public class Fishing: MonoBehaviour
 {
     [SerializeField] Transform topPivot;
     [SerializeField] Transform bottomPivot;
@@ -33,20 +43,111 @@ public class Fishing : MonoBehaviour
 
     [SerializeField] Transform progressBarContainer;
 
-  
+    public FishingState currentState = FishingState.Start;
 
-    private void Update()
+    private Animator _animator;
+
+    public AnimationClip abiReadyAnim;
+    public AnimationClip abiCastFishingRodAnim;
+    public AnimationClip abiFishingAnim;
+    public AnimationClip abiFishingRodBackAnim;
+    public AnimationClip abiIdleAnim;
+
+    public GameObject FishingGame;
+
+  
+    private void Start()
     {
-        if (pause)
+        _animator = GetComponent<Animator>();
+    }
+    void Update()
+    {
+        switch (currentState)
         {
-            return;
+            case FishingState.Start:
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    _animator.SetTrigger("leftMouseClick");
+                    _animator.Play(abiReadyAnim.name);
+
+                    _animator.ResetTrigger("leftMouseClick");
+                    currentState = FishingState.CastingRod;
+                }
+                break;
+
+            case FishingState.CastingRod:
+                
+                if (Input.GetMouseButtonUp(0))
+                {
+                  
+                    _animator.SetTrigger("leftMouseOff");
+                    _animator.Play(abiCastFishingRodAnim.name);
+                    _animator.ResetTrigger("leftMouseOff");
+                    currentState = FishingState.Fishing;
+                    break;
+                }
+                if (Input.GetMouseButtonDown(1))
+                {
+                  
+                    _animator.SetTrigger("rightMouseClick");
+                    _animator.Play(abiFishingRodBackAnim.name);
+                    _animator.ResetTrigger("rightMouseClick");
+                    currentState = FishingState.Exit;
+                    break;
+                }
+                break;
+
+            case FishingState.Fishing:
+               FishingGame.SetActive(true);
+                Fish();
+                Hook();
+                ProgressCheck();
+                if (Input.GetMouseButtonDown(1))
+                {
+                    _animator.SetTrigger("rightMouseClick");
+                    _animator.Play(abiFishingRodBackAnim.name);
+                    _animator.ResetTrigger("rightMouseClick");
+                    currentState = FishingState.Exit;
+                }
+                if(pause == true)
+                {
+                    currentState = FishingState.Win;
+                    break;
+                }
+                if(pause == false)
+                {
+                    currentState = FishingState.Lose;
+                    break;
+                }
+                break;
+
+            case FishingState.Win:
+                             
+                _animator.Play(abiFishingRodBackAnim.name);
+               
+                currentState = FishingState.Exit;
+                break;
+
+            case FishingState.Lose:
+                
+               
+                _animator.Play(abiFishingRodBackAnim.name);
+                
+                currentState = FishingState.Exit;
+                break;
+
+            case FishingState.Exit:
+
+                FishingGame.SetActive(false);
+               
+                 _animator.Play(abiFishingRodBackAnim.name);               
+                currentState = FishingState.Start;
+                break;
         }
-        Fish();
-        Hook();
-        ProgressCheck();
     }
 
-    private void ProgressCheck()
+        private void ProgressCheck()
     {
         Vector3 ls = progressBarContainer.localScale;
         ls.y = hookProgress;
@@ -63,7 +164,7 @@ public class Fishing : MonoBehaviour
         {
             hookProgress -= hookProgressDegradationPower * Time.deltaTime;
             failTimer -= Time.deltaTime;
-            if(failTimer < 0)
+            if(failTimer < 0 || hookProgress == 0.0f)
             {
                 Lose();
             }
@@ -88,7 +189,7 @@ public class Fishing : MonoBehaviour
        
     }
 
-    void Hook()
+     void Hook()
     {
         if (Input.GetMouseButton(0))
         {
