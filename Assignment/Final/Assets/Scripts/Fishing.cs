@@ -72,9 +72,13 @@ public class Fishing: MonoBehaviour
                 {
                     StateController.currentState = FishingState.QuickExit;
                 }
-                StateController.currentState = FishingState.Exit;
-                
+                else
+                {
+                    StateController.currentState = FishingState.Exit;
+                }
                 break;
+
+                
 
             case FishingState.Lose:
                 Debug.Log("Lose State");
@@ -83,9 +87,13 @@ public class Fishing: MonoBehaviour
                 {
                     StateController.currentState = FishingState.QuickExit;
                 }
-                StateController.currentState = FishingState.Exit;
-                
+                else
+                {
+                    StateController.currentState = FishingState.Exit;
+                }
                 break;
+
+                
 
             case FishingState.Exit:
 
