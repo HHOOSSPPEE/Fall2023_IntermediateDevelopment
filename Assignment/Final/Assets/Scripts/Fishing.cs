@@ -38,8 +38,9 @@ public class Fishing: MonoBehaviour
     public GameObject FishingGame;
 
     private Animator _animator;
+    public AnimationClip abiFishingRodBackAnim;
 
-  
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -48,57 +49,54 @@ public class Fishing: MonoBehaviour
     {
         switch (StateController.currentState)
         {
-            case FishingState.Start:
-
-                
-                    //Debug.Log("Cast line");
-                    //StateController.currentState = FishingState.CastingRod;
-                
-                break;
-
-            case FishingState.CastingRod:
-                //Debug.Log("Casting");
-               
-
-                break;
-
+           
             case FishingState.Fishing:
-               // Debug.Log("Fishing");
-                Fish();
-                Hook();
-                ProgressCheck();
-                if (Input.GetMouseButtonDown(1))
+               Debug.Log("Fishing");
+                if (StateController.currentState == FishingState.Fishing)
                 {
-                    StateController.currentState = FishingState.Exit;
+                    Fish();
+                    Hook();
+                    ProgressCheck();
+
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        StateController.currentState = FishingState.QuickExit;
+                    }
                 }
-               /* if(pause == true)
-                {
-                    StateController.currentState = FishingState.Win;
-                    break;
-                }
-                if(pause == false)
-                {
-                    StateController.currentState = FishingState.Lose;
-                    break;
-                }*/
                 break;
 
             case FishingState.Win:
+                Debug.Log("Win State");
 
+                if (Input.GetMouseButtonDown(1))
+                {
+                    StateController.currentState = FishingState.QuickExit;
+                }
                 StateController.currentState = FishingState.Exit;
+                
                 break;
 
             case FishingState.Lose:
+                Debug.Log("Lose State");
 
+                if (Input.GetMouseButtonDown(1))
+                {
+                    StateController.currentState = FishingState.QuickExit;
+                }
                 StateController.currentState = FishingState.Exit;
+                
                 break;
 
             case FishingState.Exit:
 
-                Debug.Log("HERE");
+                if (pause)
+                {
+                    return;
+                }
+                
+                
                 StateController.currentState = FishingState.Start;
-               
-               
+                Debug.Log("Exit");
                 break;
         }
     }
@@ -136,17 +134,14 @@ public class Fishing: MonoBehaviour
     {
         pause = true;
         Debug.Log("WIN");
-        
-        
-
+        StateController.currentState = FishingState.Win;
     }
 
     private void Lose()
     {
         pause = true;
         Debug.Log("Lose");
-       
-
+        StateController.currentState = FishingState.Lose;
     }
 
      void Hook()

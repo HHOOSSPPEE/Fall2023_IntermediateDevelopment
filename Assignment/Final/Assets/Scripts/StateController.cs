@@ -9,11 +9,12 @@ public enum FishingState
     Fishing,
     Win,
     Lose,
+    QuickExit,
     Exit
 }
 public static class StateController
 {
     public static FishingState currentState = FishingState.Start;
 
-
+    
 }

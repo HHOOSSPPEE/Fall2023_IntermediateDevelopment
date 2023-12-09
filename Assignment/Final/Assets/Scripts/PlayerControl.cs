@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     AnimatorStateInfo stateinfo;
 
-    public GameObject Fishing;
+    public GameObject FishingGame;
 
     private Animator _animator;
 
@@ -32,11 +32,10 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-   
-
 // Update is called once per frame
 void Update()
     {
+
         stateinfo = _animator.GetCurrentAnimatorStateInfo(0);
 
         _movement.x = Input.GetAxisRaw("Horizontal"); //move in press A and D /arrow keys
@@ -60,44 +59,61 @@ void Update()
 
 
         }
-        if (Input.GetMouseButtonDown(0) && StateController.currentState == FishingState.Start) 
+        switch (StateController.currentState)
         {
-            
-            _animator.SetTrigger("leftMouseClick");
-            _animator.Play(abiReadyAnim.name);
-            StateController.currentState = FishingState.CastingRod;
-        
-            _animator.ResetTrigger("leftMouseClick");
-        }
-        else if (Input.GetMouseButtonUp(0)) 
-        {
-            
-            _animator.SetTrigger("leftMouseOff");
-            _animator.Play(abiCastFishingRodAnim.name);
-            StateController.currentState = FishingState.Fishing;
-            _animator.ResetTrigger("leftMouseOff");
-        }
-        if (stateinfo.IsName("abi_fishing")) 
-        {
-            Fishing.SetActive(true);
-        }
+            case FishingState.Start:
+                if (Input.GetMouseButtonDown(0) && !FishingGame.activeSelf)
+                {
+                    StateController.currentState = FishingState.Start;
+                    _animator.SetTrigger("leftMouseClick");
+                    _animator.Play(abiReadyAnim.name);
 
+                    _animator.ResetTrigger("leftMouseClick");
+                    StateController.currentState = FishingState.CastingRod;
+                    Debug.Log("Start");
+                }
+               
+                
+                break;
 
-        if (Input.GetMouseButtonDown(1)) 
-        {   
-           
-            _animator.SetTrigger("rightMouseClick");
-            _animator.Play(abiFishingRodBackAnim.name);
-            StateController.currentState = FishingState.Exit;
-            _animator.ResetTrigger("rightMouseClick");
-            if(stateinfo.IsName("abi_fishingrod_back"))
-            {
-                _animator.SetTrigger("gameEnd");
-                _animator.ResetTrigger("gameEnd");
-            }
-            Fishing.SetActive(false);
+            case FishingState.CastingRod:
+                if (Input.GetMouseButtonUp(0) && !FishingGame.activeSelf)
+                {
+                    //Debug.Log("CastingFishRod");
+                    _animator.SetTrigger("leftMouseOff");
+                    _animator.Play(abiCastFishingRodAnim.name);
 
+                    _animator.ResetTrigger("leftMouseOff");
+                    StateController.currentState = FishingState.Fishing;
+                    Debug.Log("CastingRod");
+                }
+                
+       
+                break;
 
+            case FishingState.Fishing:  
+                if (stateinfo.IsName("abi_fishing"))
+                {
+                    FishingGame.SetActive(true);
+                    Debug.Log("Fishing");
+                }
+                
+
+                break;
+            case FishingState.QuickExit:
+
+                    _animator.SetTrigger("rightMouseClick");
+                    _animator.Play(abiFishingRodBackAnim.name);
+                    StateController.currentState = FishingState.Exit;
+                    _animator.ResetTrigger("rightMouseClick");
+
+                    Debug.Log("Exit the game.");
+                    _animator.SetTrigger("gameEnd");
+                    _animator.ResetTrigger("gameEnd");
+
+                    FishingGame.SetActive(false);
+                StateController.currentState = FishingState.Start;
+                break;
         }
 
     }
