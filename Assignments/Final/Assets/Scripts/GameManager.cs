@@ -27,4 +27,10 @@ public class GameManager : MonoBehaviour
         this.timer = timer;
     }
 
+    public void ItemPickedUp(Item item)
+    {
+        item.gameObject.SetActive(false);
+        SetTimer(this.timer);
+    }
+
 }
