@@ -48,7 +48,6 @@ public class Movement : MonoBehaviour
 
         Debug.DrawRay(transform.position, direction, Color.yellow);
 
-        
     }
 
     private void FixedUpdate()
@@ -60,9 +59,9 @@ public class Movement : MonoBehaviour
     }
 
 
-    public void SetDirection(Vector2 direction)
+    public void SetDirection(Vector2 direction, bool forced = false)
     {
-        if (!cannotMove(direction))
+        if (forced || !cannotMove(direction))
         {
             this.direction = direction;
             nextDirection = Vector2.zero;
@@ -70,22 +69,26 @@ public class Movement : MonoBehaviour
         else
         {
             nextDirection = direction;
+            //nextDirection = Vector2.zero;
+
         }
+        Debug.Log(direction);
+       
     }
 
     public bool cannotMove(Vector2 direction)
     {
-        RaycastHit2D hit = Physics2D.BoxCast(
+            RaycastHit2D hit = Physics2D.BoxCast(
             transform.position,
-            Vector2.one * 0.75f,
-            0.0f,
+            Vector2.one * 0.05f,
+            0.0f, 
             direction,
-            1.5f,
+            0.0f,
             WallLayer
         );
+        Debug.Log(direction + " " + hit.collider != null);
         return hit.collider != null; 
     }
-
 }
 
 

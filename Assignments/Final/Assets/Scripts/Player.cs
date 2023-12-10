@@ -14,8 +14,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         movement = GetComponent<Movement>();    
-     
-
     }
     private void Update()
     {
@@ -28,14 +26,15 @@ public class Player : MonoBehaviour
             {
                movement.SetDirection(Vector2.down);             
             }
-            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                movement.SetDirection(Vector2.right);      
-            }
             else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-               movement.SetDirection(Vector2.left);
+                movement.SetDirection(Vector2.left);      
             }
+            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+               movement.SetDirection(Vector2.right);
+            }
+
      }
 
    
