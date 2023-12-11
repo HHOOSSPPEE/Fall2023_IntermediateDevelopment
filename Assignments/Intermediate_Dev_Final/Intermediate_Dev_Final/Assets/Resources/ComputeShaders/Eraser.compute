@@ -1,0 +1,13 @@
+#pragma kernel CSMain
+RWTexture2D<float4> Result;
+float radius;
+float positionX;
+float positionY;
+
+[numthreads(32,32,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float dist = length(float2(positionX, positionY) - id.xy);
+    int mask = step(radius, dist);
+    Result[id.xy] = Result[id.xy] * mask;
+}

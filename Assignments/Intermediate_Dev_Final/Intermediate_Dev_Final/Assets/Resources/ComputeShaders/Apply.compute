@@ -1,0 +1,21 @@
+#pragma kernel CSMain
+int2 textureSize;
+Texture2D<float4> a;
+Texture2D<float4> b;
+SamplerState linearClampSampler;
+
+RWTexture2D<float4> Result;
+
+[numthreads(32, 32, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy / float2(textureSize.x, textureSize.y);
+    float4 colorA = a.SampleLevel(linearClampSampler, uv, 0);
+    float4 colorB = b.SampleLevel(linearClampSampler, uv, 0);
+    
+    float t = colorB.a;
+    
+    float4 interpolatedColor = lerp(colorA, colorB, t);
+    Result[id.xy] = colorB; //float4(uv.x, uv.y, 0, 1);
+
+}

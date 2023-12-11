@@ -1,0 +1,21 @@
+#pragma kernel CSMain
+RWTexture2D<float4> Result;
+float radius;
+float4 brushColor;
+float positionX;
+float positionY;
+
+
+
+[numthreads(32,32,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float dist = distance(id.xy, float2(positionX,positionY));
+    int mask = step(dist, radius);
+    
+    Result[id.xy] = lerp(Result[id.xy], brushColor, mask);
+    Result[id.xy] = Result[id.xy] * (1 - mask) + brushColor * mask;
+
+}
+
+//delete everything under \ComponentModelCache then you can use IntelliSense
