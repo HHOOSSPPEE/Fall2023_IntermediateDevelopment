@@ -159,9 +159,10 @@ public class Fishing : MonoBehaviour
     private void Lose()
     {
         pause = true;
-        Debug.Log("Lose");
-        hookProgress = 0.0f;
+        hookProgress = 0.75f;
+        
         StateController.currentState = FishingState.Lose;
+        Debug.Log("Lose");
     }
 
     void Hook()

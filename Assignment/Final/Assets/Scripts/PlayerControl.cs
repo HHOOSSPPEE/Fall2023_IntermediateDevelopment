@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -18,10 +19,11 @@ public class PlayerController : MonoBehaviour
     AnimatorStateInfo stateinfo;
 
     public GameObject FishingGame;
-
     private Animator _animator;
 
-   // public FishingState fishingState;
+    
+
+    // public FishingState fishingState;
 
     // Start is called before the first frame update
     void Start()
