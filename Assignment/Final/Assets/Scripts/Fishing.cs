@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 
-public class Fishing: MonoBehaviour
+public class Fishing : MonoBehaviour
 {
+    public int score = 0;
+    public TMP_Text scoreText;
+
     [SerializeField] Transform topPivot;
     [SerializeField] Transform bottomPivot;
     [SerializeField] Transform fish;
@@ -49,9 +53,9 @@ public class Fishing: MonoBehaviour
     {
         switch (StateController.currentState)
         {
-           
+
             case FishingState.Fishing:
-               Debug.Log("Fishing");
+                Debug.Log("Fishing");
                 if (StateController.currentState == FishingState.Fishing)
                 {
                     Fish();
@@ -78,7 +82,7 @@ public class Fishing: MonoBehaviour
                 }
                 break;
 
-                
+
 
             case FishingState.Lose:
                 Debug.Log("Lose State");
@@ -93,24 +97,27 @@ public class Fishing: MonoBehaviour
                 }
                 break;
 
-                
+
 
             case FishingState.Exit:
 
                 if (pause)
                 {
-                    return;
+                   
+                   
+                    StateController.currentState = FishingState.Start;
+                    Debug.Log("Exit State");
                 }
-                
-                
-                StateController.currentState = FishingState.Start;
-                Debug.Log("Exit");
+                pause = false;
+
+
                 break;
         }
     }
 
-        private void ProgressCheck()
+    private void ProgressCheck()
     {
+
         Vector3 ls = progressBarContainer.localScale;
         ls.y = hookProgress;
         progressBarContainer.localScale = ls;
@@ -118,7 +125,7 @@ public class Fishing: MonoBehaviour
         float min = hookPosition - hookSize / 2;
         float max = hookPosition + hookSize / 2;
 
-        if(min<fishPosition && fishPosition < max)
+        if (min < fishPosition && fishPosition < max)
         {
             hookProgress += hookPower * Time.deltaTime;
         }
@@ -126,12 +133,12 @@ public class Fishing: MonoBehaviour
         {
             hookProgress -= hookProgressDegradationPower * Time.deltaTime;
             failTimer -= Time.deltaTime;
-            if(failTimer < 0 || hookProgress == 0.0f)
+            if (failTimer < 0 || hookProgress == 0.0f)
             {
                 Lose();
             }
         }
-        if(hookProgress >= 0.75f)
+        if (hookProgress >= 0.75f)
         {
             Win();
         }
@@ -141,18 +148,23 @@ public class Fishing: MonoBehaviour
     private void Win()
     {
         pause = true;
-        Debug.Log("WIN");
+       
+        hookProgress = 0.0f;
+        score += 1;
+        scoreText.text = " " + score;
         StateController.currentState = FishingState.Win;
+        Debug.Log("WIN");
     }
 
     private void Lose()
     {
         pause = true;
         Debug.Log("Lose");
+        hookProgress = 0.0f;
         StateController.currentState = FishingState.Lose;
     }
 
-     void Hook()
+    void Hook()
     {
         if (Input.GetMouseButton(0))
         {
@@ -162,15 +174,15 @@ public class Fishing: MonoBehaviour
 
         hookPosition += hookPullVelocity;
 
-        if(hookPosition - hookSize / 2 <= 0f && hookPullVelocity <0f)
+        if (hookPosition - hookSize / 2 <= 0f && hookPullVelocity < 0f)
         {
             hookPullVelocity = 0f;
         }
-        if(hookPosition - hookSize / 2 >= 0.75f && hookPullVelocity >0f)
+        if (hookPosition - hookSize / 2 >= 0.75f && hookPullVelocity > 0f)
         {
             hookPullVelocity = 0f;
         }
-        hookPosition = Mathf.Clamp(hookPosition, hookSize/2, 1-hookSize/2);
+        hookPosition = Mathf.Clamp(hookPosition, hookSize / 2, 1 - hookSize / 2);
         hook.position = Vector3.Lerp(bottomPivot.position, topPivot.position, hookPosition);
     }
 

@@ -114,6 +114,14 @@ void Update()
                     FishingGame.SetActive(false);
                 StateController.currentState = FishingState.Start;
                 break;
+
+            case FishingState.Exit:
+                _animator.Play(abiFishingRodBackAnim.name);
+                FishingGame.SetActive(false);
+                StateController.currentState = FishingState.Start;
+
+                    Debug.Log("Exit");
+                break;
         }
 
     }
