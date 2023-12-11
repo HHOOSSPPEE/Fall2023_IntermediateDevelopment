@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NightmareController : MonoBehaviour
 {
-    int hp = 10;
+    [HideInInspector] public float i_hp;
+    [HideInInspector] public float hp;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        i_hp = 100f;
+        hp = i_hp;
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class NightmareController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
     }
