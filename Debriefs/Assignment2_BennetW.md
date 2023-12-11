@@ -1,6 +1,6 @@
 ### **2023 Spring** - Bennet W
 ### *Assignment 0* - Assignment Name
-Link to game: https://bennetwang.itch.io/interm-gd-assg-1
+Link to game: https://bennetwang.itch.io/intermediate-game-dev-assg-02
 
 
 ## **Debrief**

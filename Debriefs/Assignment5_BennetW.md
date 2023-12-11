@@ -1,6 +1,6 @@
 ### **2023 Spring** - Bennet W
 ### *Assignment 0* - Assignment Name
-Link to game: https://bennetwang.itch.io/interm-gd-assg-1
+Link to game: https://bennetwang.itch.io/intermediate-game-dev-assg-05
 
 
 ## **Debrief**
@@ -11,33 +11,29 @@ In at least 400 words, write a debrief. You must write a reflection on your assi
 - What resources and/or comments were most helpful to you?
 - What will you repeat or do differently next time?
 
-- I made a pinball game that I don't even know how to play myself. Because it's so fast, how can I have such a fast reaction time, especially when the challenge is for the highest score, the reaction time is almost half of the normal speed.
-- My theme is "too fast". What's too fast? Is it that the reaction time is short enough that the player can barely react, or that the ball will travel a long distance in a short time, or something else? Thinking about this theme is the second longest part I've spent on this project (the first is debug but I don't like it this time, why on earth would there be code that jumps to the next line without being executed in special cases huh).
-- I thought of all sorts of things to implement the theme of "too fast". At first I thought of space. I almost made an astrophysics simulator (buggy), but that didn't really perform well on the theme of "too fast". Afterall I was just going for "fast" through the concept of "celestial bodies", but there was nothing in the gameplay. It doesn't really reflect the theme in the gameplay.
-- I then tried increasing the mass or gravity attribute in the rigid body to see if it would provide a "too fast" feeling. Unfortunately, no amount of mass would do that, and too much gravity would make the pinball completely unplayable: the ball would fall almost vertically and not bounce around at all.
-- So I thought, time. After all, time and speed are closely related (or maybe it's because I'm thinking of Made in Heaven from JoJo's Bizarre Adventure: Stone Ocean). But only time is definitely not enough, how to decide time scale to make the game more playable? I made a high score system, where as the player gets closer to the highest score, the time scale gets higher, and eventually goes beyond twice the speed and continues to rise: at that point there is practically no control over the ball at all.
-- By the way, I added a trail renderer to help player be able to tracc the ball better.
-- The most helpful, aside from Jack's code instructions, are the various anime I've read before. I have to say that the imagery in anime is very imaginative and expressive. Because of this, I need to think when I take inspiration from it: can this stuff really be realized through physical simulation?
-- Or actually, the resource I get the most information is unity manual. I don't quite like some tutorials on youtube since they not often explain details of how codes work essentially, but user manual is always the most reliable and accurate resource.
-- I'd probably consider asking Jack more questions, or consider seeking help from the code help desk next time. While there isn't much I can't do, they could save me a lot of time, and I don't seem to be very good at getting help from others.
-- I shouldn't spend too much time on MANUAL next time. There were a few things that had really low relevance to the functions I was trying to implement.
+- What I ended up making was basically a testing ground for the code. I seemed to put too much emphasis on implementing the mechanics at the expense of the theme. While I think I got it right on the code level, there are undoubtedly major flaws in the game design.
+- I like the two mechanics that caused me pain and struggle: "Memory" and "Hunger". Memory reminds me of a mage and hunger reminds me of a vampire. Hey, how about being a vampire mage? So I went so far as to make the vampire's ability to turn into bats, rats, and other animals into a spell. In the game, you can release a spell to change into a bat and gain the ability to fly, and use it to overcome some things you can't do in human form. Meanwhile, vampires have to suck blood, of course, but the act of sucking blood requires the cooperation of both the player and the enemy to accomplish. This was kind of a challenge. I couldn't have the enemy hanging in mid-air after the player had finished sucking blood (what's not to do if the player is a mage anyway), so I introduced an event system and a bunch of cotroutines, and added a SetTrigger method in the script to call the animator's trigger to synchronize the player's and the enemy's actions.
+- The fact that this project forces the implementation of the mechanism is kind of good and kind of bad. I really, really regret not picking two mechanisms that could have been combined better, and it's actually the combination of them and the theme that really gives me a headache. the theme always needs some narrative or visual design. Going back to the mechanics, I just noticed that it seems like my classmates always prefer to work on the visuals and go for simpler code implementations, and this project actually requires a higher level of code implementation than the previous four assignments.
+- I feel that my code could have been simpler and that the system was not unnecessarily complex. Because it seems that I always overscope and cause serious progress management problems. At the same time, I was working on a solo project anyway, and a lot of the effort for readability didn't feel necessary to me. After all, this is only a two-week project, and I work on it almost every day, and I have a naming scheme that I think I'm still pretty good at. This line of thinking might help me with my final project, after all, I only have two weeks of events on my final project as well (though the good news is that the tool class I got can actually stay with me all the time).
+- Jack once made the point that I don't have to spend too much effort on visuals. "It looks like shit but it works." This point was helpful, but I suspect I was overly influenced by it on this project. My visuals really are like shit . All the various things I had prepared for the visual realization didn't actually work, which made me feel like I didn't actually have much ability to manage progress. Maybe I should really plan everything out next time before I actually start working on it next time, and seriously consider the necessity of any behavior that adds workload midway through the process.
+- MOST IMPORTANTLY, I really should learn progress management.
 
 ## **Self Evaluation**
 In addition to the debrief, the Self Evaluation is an opportunity for you to talk about your work. You must rate each aspect of your project as a 1 - 5 or Pass/Fail (where appropriate), as well as write a short 1-2 sentence elaboration to justify your score, in the following areas:
 
 
-**Execution** (Did your project meet the theme you gave it?) - 5/5
+**Execution** (Did your project meet the theme you gave it?) - 2/5
 
-*Too-fast. so fast I can't control myself, so fast that my code doesn't even execute properly!*
+*I seems more emphasize on the mechanic.*
 
 
 **Scope** (How well do you feel you scoped your game?) - 5/5
 
 
-*I've basically gone through all the rigidbody2d docs and chose the solution that works best for me: the pinball is really better suited for AddForce with FroceMode2d.Impulse than a physical material.*
+*Really scoped, over-scoped I believe.*
 
 
 **Overall** - Pass
 
 
-*Despite having issues I can't understand at all, presumably because I used time scale and I didn't design it visually, this game still fits the theme.*
+*Mechanics are implemented. Looks like shit but it works.*
