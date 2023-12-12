@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     int activeMessage = 0;
 
     public static bool isActive = false;
+    public bool CanFish= false;
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -28,8 +29,8 @@ public class DialogueManager : MonoBehaviour
         DisplayMessage();
         backgoundBox.color = new Color(1f, 1f, 1f, 1f);
         Avatar.color = new Color(1f, 1f, 1f, 1f);
-        actorName.color = new Color(86f, 22f, 13f, 235f);
-        messageText.color = new Color(86f, 22f, 13f, 235f);
+        actorName.color = new Color(0.337f, 0.086f, 0.051f);
+        messageText.color = new Color(0.337f, 0.086f, 0.051f);
     }
 
     void DisplayMessage()
@@ -53,6 +54,8 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Debug.Log("Conversation end");
+            CanFish = true;
+            StateController.currentState = FishingState.Start;
             backgoundBox.color = new Color(1f, 1f, 1f, 0f);
             Avatar.color = new Color(1f, 1f, 1f, 0f);
             actorName.color = new Color(1f, 1f, 1f, 0f);

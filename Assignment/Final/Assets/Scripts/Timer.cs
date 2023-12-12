@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEditor.VersionControl;
 
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public float remainingTime;
-    public int score;
-    public TextMeshProUGUI scoreText;
+
+
+    public DialogueManager DM;
+    private void Start()
+    {
+        DM = FindObjectOfType<DialogueManager>();
+    }
 
     // Start is called before the first frame update
 
@@ -17,21 +23,28 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(remainingTime >0)
+        if (DM != null && DM.CanFish)
         {
-            remainingTime -= Time.deltaTime;
-        }
-        else if(remainingTime < 0)
-        {
-            remainingTime = 0;
+            if (remainingTime > 0)
+            {
+                remainingTime -= Time.deltaTime;
+            }
+            else if (remainingTime < 0)
+            {
+                remainingTime = 0;
 
-            score = 0;
-            scoreText.text = " " + score;
-            StateController.currentState = FishingState.Exit;
+                
+                
+                StateController.currentState = FishingState.Exit;
+                DM.CanFish = false;
+
+
+            }
+
+            int minutes = Mathf.FloorToInt(remainingTime / 60);
+            int seconds = Mathf.FloorToInt(remainingTime % 60);
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
         }
-        
-        int minutes = Mathf.FloorToInt(remainingTime / 60);
-        int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes,seconds);
     }
 }

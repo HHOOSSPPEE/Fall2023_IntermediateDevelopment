@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int score = 0;
+    public TMP_Text scoreText;
+
     public float movementSpeed = 1.0f;
     private Rigidbody2D _rigidBody;
     private Vector2 _previousPosition;
@@ -20,8 +24,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject FishingGame;
     private Animator _animator;
+    private DialogueManager DM;
 
-    
+
 
     // public FishingState fishingState;
 
@@ -32,6 +37,7 @@ public class PlayerController : MonoBehaviour
         _previousPosition = gameObject.transform.position;
 
         _animator = GetComponent<Animator>();
+        DM = FindObjectOfType<DialogueManager>();
     }
 
 // Update is called once per frame
@@ -64,7 +70,7 @@ void Update()
         switch (StateController.currentState)
         {
             case FishingState.Start:
-                if (Input.GetMouseButtonDown(0) && !FishingGame.activeSelf)
+                if (Input.GetMouseButtonDown(0) && !FishingGame.activeSelf && DM.CanFish)
                 {
                     StateController.currentState = FishingState.Start;
                     _animator.SetTrigger("leftMouseClick");
@@ -124,6 +130,7 @@ void Update()
 
                     Debug.Log("Exit");
                 break;
+
         }
 
     }

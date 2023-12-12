@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 
 
 public class Fishing : MonoBehaviour
 {
-    public int score = 0;
-    public TMP_Text scoreText;
+   
 
     [SerializeField] Transform topPivot;
     [SerializeField] Transform bottomPivot;
@@ -43,11 +40,12 @@ public class Fishing : MonoBehaviour
 
     private Animator _animator;
     public AnimationClip abiFishingRodBackAnim;
-
+    private PlayerController PC;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        PC = FindObjectOfType<PlayerController>();
     }
     void Update()
     {
@@ -103,8 +101,8 @@ public class Fishing : MonoBehaviour
 
                 if (pause)
                 {
-                   
-                   
+
+
                     StateController.currentState = FishingState.Start;
                     Debug.Log("Exit State");
                 }
@@ -112,6 +110,7 @@ public class Fishing : MonoBehaviour
 
 
                 break;
+
         }
     }
 
@@ -133,7 +132,7 @@ public class Fishing : MonoBehaviour
         {
             hookProgress -= hookProgressDegradationPower * Time.deltaTime;
             failTimer -= Time.deltaTime;
-            if (failTimer < 0 || hookProgress == 0.0f)
+            if (failTimer < 0 || hookProgress< 0.0f)
             {
                 Lose();
             }
@@ -143,15 +142,15 @@ public class Fishing : MonoBehaviour
             Win();
         }
 
-        hookProgress = Mathf.Clamp(hookProgress, 0.0f, 0.75f);
+        hookProgress = Mathf.Clamp(hookProgress, 0.0f, 0.80f);
     }
     private void Win()
     {
         pause = true;
-       
+
         hookProgress = 0.0f;
-        score += 1;
-        scoreText.text = " " + score;
+        PC.score += 1;
+        PC.scoreText.text = " " + PC.score;
         StateController.currentState = FishingState.Win;
         Debug.Log("WIN");
     }
@@ -159,8 +158,9 @@ public class Fishing : MonoBehaviour
     private void Lose()
     {
         pause = true;
-        hookProgress = 0.75f;
-        
+        hookProgress = 0.2f;
+        failTimer = 7f;
+
         StateController.currentState = FishingState.Lose;
         Debug.Log("Lose");
     }
