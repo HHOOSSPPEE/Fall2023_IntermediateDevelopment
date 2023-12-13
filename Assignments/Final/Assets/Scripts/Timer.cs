@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
     public static Timer instance;
     public Slider slider1;
     public Slider slider2;
-    public float gameTime = 12;
+    public float gameTime = 12f;
     private float time;
 
     private bool stopTimer;
@@ -22,6 +22,7 @@ public class Timer : MonoBehaviour
     public void Start()
     {
         instance = this;
+
         stopTimer = false;
         slider1.maxValue = gameTime;
         slider1.value = gameTime;
@@ -35,6 +36,16 @@ public class Timer : MonoBehaviour
         background_2.enabled = true;
         fill_2.enabled = true;
 
+    }
+
+    public void ResetTime()
+    {
+        gameTime = 12f;
+        stopTimer = false;
+        slider1.maxValue = gameTime;
+        slider1.value = gameTime;
+        slider2.maxValue = gameTime;
+        slider2.value = gameTime;
     }
     public void Update()
     {

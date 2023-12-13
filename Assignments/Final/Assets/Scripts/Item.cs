@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
     private void Pickup()
     {
         Destroy(gameObject);
+        Timer.instance.ResetTime();
         SceneManager.LoadScene(SceneNumber);
 
     }
