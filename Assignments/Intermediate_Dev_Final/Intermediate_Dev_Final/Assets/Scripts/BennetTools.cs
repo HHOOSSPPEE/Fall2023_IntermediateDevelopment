@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Runtime.ConstrainedExecution;
+using Unity.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 namespace Bennet
 {
@@ -48,78 +51,171 @@ namespace Bennet
 
             return texturePos;
         }
-    }
-    public static class ExtensionMethods
-    {
-        #region Texture2D
-        /// <summary>Beaware, this don't apply on original texture</summary>
-        public static Texture2D CropTransparentPixels(this Texture2D texture)
+        /// <summary>Not useable since it won't change the reference</summary>
+        public static void AsyncTextureCropCropTexture(RenderTexture source, Texture2D target)
         {
-            Color32[] pixels = texture.GetPixels32();
-            int width = texture.width;
-            int height = texture.height;
-            int minX = width;
-            int minY = height;
-            int maxX = 0;
-            int maxY = 0;
+            AsyncGPUReadback.Request(source, 0, TextureFormat.RGBA32, (request) => OnReadbackComplete(request, source, target));
+        }
+        /// <summary>Not useable since it won't change the reference</summary>
+        private static void OnReadbackComplete(AsyncGPUReadbackRequest request, RenderTexture source, Texture2D croppedTexture)
+        {
+            if (request.hasError)
+                throw new Exception("GPU readback error detected.");
 
-            // Get Min and Max Values
-            for (int y = 0; y < texture.height; y++)
+            NativeArray<Color32> dataArray = request.GetData<Color32>();
+            croppedTexture = CropTransparentPixels(dataArray, source);
+
+            dataArray.Dispose();
+        }
+        /// <summary>Not useable since it won't change the reference</summary>
+        public static Texture2D CropTransparentPixels(NativeArray<Color32> dataArray, Texture originalTexture)
+        {
+            int2 size = new int2(originalTexture.width, originalTexture.height);
+            int2 min = new int2(size.x, size.y);
+            int2 max = new int2(0, 0);
+            for (int y = 0; y < originalTexture.height; y++)
             {
-                for (int x = 0; x < texture.width; x++)
+                for (int x = 0; x < originalTexture.width; x++)
                 {
-                    Color32 pixel = pixels[y * texture.width + x];
-                    if (pixel.a != 0)
+                    if (dataArray[y * originalTexture.width + x].a != 0)
                     {
-                        minX = Mathf.Min(minX, x);
-                        minY = Mathf.Min(minY, y);
-                        maxX = Mathf.Max(maxX, x);
-                        maxY = Mathf.Max(maxY, y);
+                        min.x = Mathf.Min(min.x, x);
+                        min.y = Mathf.Min(min.y, y);
+                        max.x = Mathf.Max(max.x, x);
+                        max.y = Mathf.Max(max.y, y);
                     }
                 }
             }
+            if (min.x > max.x || min.y > max.y)
+                throw new Exception("There's no non-transparent pixel in the renderTexture");
 
-            // Does any non-transparent pixel exist
-            if (minX > maxX || minY > maxY)
+            int2 newSize = new int2(max.x - min.x + 1, max.y - min.y + 1);
+            var croppedTexture = new Texture2D(newSize.x, newSize.y, TextureFormat.ARGB32, false);
+            for (int y = min.y; y <= max.y; y++)
             {
-                Debug.LogWarning("No non-transparent pixels found.");
-                return null;
-            }
-
-            // Crop and Set properties
-            int newWidth = maxX - minX + 1;
-            int newHeight = maxY - minY + 1;
-            Texture2D croppedTexture = new Texture2D(newWidth, newHeight);
-            for (int y = minY; y <= maxY; y++)
-            {
-                for (int x = minX; x <= maxX; x++)
+                for (int x = min.x; x <= max.x; x++)
                 {
-                    Color32 pixel = pixels[y * width + x];
-                    croppedTexture.SetPixel(x - minX, y - minY, pixel);
+                    var pixel = dataArray[y * originalTexture.width + x];
+                    croppedTexture.SetPixel(x - min.x, y - min.y, pixel);
                 }
             }
-            croppedTexture.alphaIsTransparency = texture.alphaIsTransparency;
-            croppedTexture.filterMode = texture.filterMode;
-            croppedTexture.wrapMode = texture.wrapMode;
+            croppedTexture.name = "Cropped Texture";
+            croppedTexture.Apply();
+            croppedTexture.filterMode = originalTexture.filterMode;
+            croppedTexture.wrapMode = originalTexture.wrapMode;
             //and more but not necessary
             croppedTexture.Apply(); //may costy I don't care
 
             return croppedTexture;
         }
-        public static Texture2D Clone(this Texture2D texture)
-        {
-            byte[] rawTextureData = texture.GetRawTextureData();
-            Texture2D clonedTexture = new Texture2D(texture.width, texture.height, texture.format, texture.mipmapCount > 1);
-            clonedTexture.LoadRawTextureData(rawTextureData);
-            clonedTexture.Apply();
+    }
+    public static class ExtensionMethods
+    {
+        #region Texture2D
 
-            return clonedTexture;
-        }
-        /// <summary>Generate a new Sprite based on texture information</summary>
-        public static Sprite CreateSprite(this Texture2D texture2D)
+        /// <summary>erhaps will cause a little precision lost?</summary>
+        public static Texture2D CropTransparentPixels32(this Texture2D texture)
         {
-            return Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.one / 2);
+            Color32[] pixels = texture.GetPixels32();
+            return pixels.CropTransparentPixels32(texture);
         }
+
+        /// <summary>Four times the memory usage of the CropTransparentPixels32 method, is it worth it for a little precision?</summary>
+        public static Texture2D CropTransparentPixels(this Texture2D texture)
+        {
+            UnityEngine.Color[] pixels = texture.GetPixels();
+            return pixels.CropTransparentPixels(texture);
+        }
+
+        /// <summary>erhaps will cause a little precision lost?</summary>
+        public static Texture2D CropTransparentPixels32(this Color32[] pixels, Texture2D origin)
+        {
+            int2 size = new int2(origin.width, origin.height);
+            int2 min = new int2(size.x, size.y);
+            int2 max = new int2(0, 0);
+            for (int y = 0; y < origin.height; y++)
+            {
+                for (int x = 0; x < origin.width; x++)
+                {
+                    if (pixels[y * origin.width + x].a != 0)
+                    {
+                        min.x = Mathf.Min(min.x, x);
+                        min.y = Mathf.Min(min.y, y);
+                        max.x = Mathf.Max(max.x, x);
+                        max.y = Mathf.Max(max.y, y);
+                    }
+                }
+            }
+            if (min.x > max.x || min.y > max.y)
+                throw new Exception("There's no non-transparent pixel in the renderTexture");
+
+            int2 newSize = new int2(max.x - min.x + 1, max.y - min.y + 1);
+            var croppedTexture = new Texture2D(newSize.x, newSize.y, TextureFormat.ARGB32, false);
+            for (int y = min.y; y <= max.y; y++)
+            {
+                for (int x = min.x; x <= max.x; x++)
+                {
+                    var pixel = pixels[y * origin.width + x];
+                    croppedTexture.SetPixel(x - min.x, y - min.y, pixel);
+                }
+            }
+            croppedTexture.name = "Cropped Texture";
+            croppedTexture.Apply();
+            croppedTexture.filterMode = origin.filterMode;
+            croppedTexture.wrapMode = origin.wrapMode;
+            //and more but not necessary
+            croppedTexture.Apply(); //may costy I don't care
+
+            return croppedTexture;
+        }
+
+        /// <summary>Four times the memory usage of the CropTransparentPixels32 method, is it worth it for a little precision?</summary>
+        public static Texture2D CropTransparentPixels(this UnityEngine.Color[] pixels, Texture2D originalTexture)
+        {
+            int2 size = new int2(originalTexture.width, originalTexture.height);
+            int2 min = new int2(size.x, size.y);
+            int2 max = new int2(0, 0);
+            for (int y = 0; y < originalTexture.height; y++)
+            {
+                for (int x = 0; x < originalTexture.width; x++)
+                {
+                    if (pixels[y * originalTexture.width + x].a != 0)
+                    {
+                        min.x = Mathf.Min(min.x, x);
+                        min.y = Mathf.Min(min.y, y);
+                        max.x = Mathf.Max(max.x, x);
+                        max.y = Mathf.Max(max.y, y);
+                    }
+                }
+            }
+            if (min.x > max.x || min.y > max.y)
+                throw new Exception("There's no non-transparent pixel in the renderTexture");
+
+            int2 newSize = new int2(max.x - min.x + 1, max.y - min.y + 1);
+            var croppedTexture = new Texture2D(newSize.x, newSize.y, TextureFormat.ARGB32, false);
+            for (int y = min.y; y <= max.y; y++)
+            {
+                for (int x = min.x; x <= max.x; x++)
+                {
+                    var pixel = pixels[y * originalTexture.width + x];
+                    croppedTexture.SetPixel(x - min.x, y - min.y, pixel);
+                }
+            }
+            croppedTexture.name = "Cropped Texture";
+            croppedTexture.Apply();
+            croppedTexture.filterMode = originalTexture.filterMode;
+            croppedTexture.wrapMode = originalTexture.wrapMode;
+            //and more but not necessary
+            croppedTexture.Apply(); //may costy I don't care
+
+            return croppedTexture;
+        }
+
+
+        /// <summary>Generate a new Sprite based on texture information</summary>
+        public static Sprite CreateSprite(this Texture2D texture2D) => Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.one / 2);
+
+        /// <summary>By default the RenderTextureFormat is ARGB32</summary>
         public static RenderTexture CreateRenderTexture(this Texture2D texture2d)
         {
             var renderTextrue = new RenderTexture(texture2d.width, texture2d.height, 0,RenderTextureFormat.ARGB32);
@@ -129,21 +225,14 @@ namespace Bennet
             return renderTextrue;
         }
         #endregion
+        
 
         #region UI related
-        public static void CopyPropertiesFrom(this RectTransform self, RectTransform sourceRectTransform)
+        public static void SetTextureAndResizeRect(this RawImage self, Texture texture)
         {
-            self.sizeDelta = sourceRectTransform.sizeDelta;
-            self.pivot = sourceRectTransform.pivot;
-            self.anchorMin = sourceRectTransform.anchorMin;
-            self.anchorMax = sourceRectTransform.anchorMax;
-            self.anchoredPosition3D = sourceRectTransform.anchoredPosition3D;
-            self.offsetMin = sourceRectTransform.offsetMin;
-            self.offsetMax = sourceRectTransform.offsetMax;
-            self.rotation = sourceRectTransform.rotation;
-            self.localScale = sourceRectTransform.localScale;
+            self.texture = texture;
+            self.gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(texture.width, texture.height);
         }
-
         #endregion
 
         #region Conversion
@@ -153,14 +242,17 @@ namespace Bennet
 
         #region Compute Shader
 
-        public static void SimpleDispatch(this ComputeShader self, RenderTexture itsRenderTexture)
+        public static void SimpleDispatch(this ComputeShader self, RenderTexture Result)
         {
             int kernelIndex = self.FindKernel("CSMain");
             self.GetKernelThreadGroupSizes(kernelIndex, out uint x, out uint y, out uint z);
-            int width = Mathf.CeilToInt((float)itsRenderTexture.width / x);
-            int height = Mathf.CeilToInt((float)itsRenderTexture.height / y);
+            int width = Mathf.CeilToInt((float)Result.width / x);
+            int height = Mathf.CeilToInt((float)Result.height / y);
             int depth = (int)z;
-            self.Dispatch(kernelIndex,width, height, 1);
+            RenderTexture previousActive = RenderTexture.active;
+            RenderTexture.active = Result;
+            self.Dispatch(kernelIndex, width, height, depth);
+            RenderTexture.active = previousActive;
         }
 
         #endregion

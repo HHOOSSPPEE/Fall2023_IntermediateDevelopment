@@ -4,6 +4,5 @@ RWTexture2D<float4> Result;
 [numthreads(32,32,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
-    //Why the hell it has to be .0f? The use of 0f will set it to RGBA(0.157, 0.157, 0.157, 1.000)
-    Result[id.xy] = .0f;
+    Result[id.xy] = 0;
 }

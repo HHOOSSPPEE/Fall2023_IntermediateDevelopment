@@ -1,100 +1,76 @@
 using Bennet;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Test : MonoBehaviour
 {
-    public ComputeShader eraser;
-    public ComputeShader brush;
-    private Image image;
+    public ComputeShader apply;
+    public RawImage rawImage;
+    public Texture2D texture2D;
+    public Texture2D tempTexture;
     public RenderTexture renderTexture;
-    public Texture2D texture2d;
-    public int eraserSize = 5;
-    private void Awake()
+
+
+    private void Start()
     {
-        image = GetComponent<Image>();
-        var rect = image.rectTransform.rect;
-        texture2d = new Texture2D((int)rect.width, (int)rect.height, TextureFormat.ARGB32, false);
-        renderTexture = new RenderTexture((int)rect.width, (int)rect.height, 0, RenderTextureFormat.ARGB32);
+        /*
+        renderTexture = new RenderTexture(texture2D.width, texture2D.height, 0, RenderTextureFormat.ARGB32, 0);
         renderTexture.enableRandomWrite = true;
-        ComputeShader clear = Resources.Load<ComputeShader>("ComputeShaders/Clear");
-        clear.SetTexture(0, "Result", renderTexture);
-        clear.Dispatch(0, Mathf.CeilToInt((float)renderTexture.width / 32), Mathf.CeilToInt((float)renderTexture.height / 32), 1);
-        Graphics.CopyTexture(renderTexture, texture2d);
-        image.material.mainTexture = texture2d;
-        image.color = Color.white;
+        renderTexture.filterMode = FilterMode.Point;
+
+        tempTexture = new Texture2D(texture2D.width, texture2D.height, TextureFormat.ARGB32, false);
+        tempTexture.SetPixels(texture2D.GetPixels());
+
+        var pixels = tempTexture.GetPixels();
+        for (int i = 0; i < pixels.Length; i++)
+            pixels[i] = new Color(Random.value, Random.value, Random.value, Random.value);
+        tempTexture.SetPixels(pixels);
+        tempTexture.filterMode = FilterMode.Point;
+
+        tempTexture.Apply();
+        Graphics.Blit(texture2D, renderTexture);
+
+        apply.SetInt("sizeX", texture2D.width);
+        apply.SetInt("sizeY", texture2D.height);
+        RenderTexture.active = renderTexture;
+        apply.SetTexture(0, "Result", renderTexture);
+        apply.SetTexture(0, "tex", tempTexture);
+        apply.SimpleDispatch(renderTexture);
+
+        RenderTexture.active = null;
+        rawImage = GetComponent<RawImage>();
+
+        rawImage.texture = renderTexture;
+        */
 
         /*
-        texture2d = new Texture2D(sourceTexture.width, sourceTexture.height, TextureFormat.ARGB32, false);
-        texture2d.name = "texture2d";
-
-        renderTexture = new RenderTexture(sourceTexture.width, sourceTexture.height, 0, RenderTextureFormat.ARGB32);
+        renderTexture = new RenderTexture(texture2D.width, texture2D.height, 0, RenderTextureFormat.ARGB32, 0);
         renderTexture.enableRandomWrite = true;
-        renderTexture.Create();
-        RenderTexture.active = renderTexture;
-        Graphics.Blit(sourceTexture, renderTexture);
-        image.sprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), new Vector2(.5f, .5f));
+        Graphics.Blit(texture2D, renderTexture);
 
-        image.material.mainTexture = texture2d;
+        tempTexture = new Texture2D(texture2D.width, texture2D.height, TextureFormat.ARGB32, false);
+        RenderTexture.active = renderTexture;
+        Debug.Log($"read pixels start time: {Time.realtimeSinceStartup}");
+        tempTexture.ReadPixels(new Rect(0,0,texture2D.width, texture2D.height),0,0);
+        tempTexture.Apply();
+        Debug.Log($"read pixels end time: {Time.realtimeSinceStartup}");
+
+
+        Debug.Log($"Async start time: {Time.realtimeSinceStartup}");
+        Tools.AsyncTextureCropCropTexture(renderTexture, tempTexture,null);
+        rawImage.SetTextureAndResizeRect(tempTexture);
+        RenderTexture.active = null;
         */
-    }
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-            SetupEraser();
-        if (Input.GetMouseButtonDown(0))
-            SetUpBrush();
-        if (Input.GetMouseButton(1))
-            ApplyEraser();
-        if (Input.GetMouseButton(0))
-            ApplyBrush();
+
     }
 
-    private void ApplyBrush()
-    {
-        var mouseTexPos = Tools.ScreenToTexturePointInImage(Camera.main, image, Input.mousePosition);
-        brush.SetFloat("positionX", mouseTexPos.x);
-        brush.SetFloat("positionY", mouseTexPos.y);
-
-        brush.Dispatch(0, Mathf.CeilToInt((float)renderTexture.width / 32), Mathf.CeilToInt((float)renderTexture.height / 32), 1);
-
-        Graphics.CopyTexture(renderTexture, texture2d);
-        image.material.mainTexture = texture2d;
-    }
-
-    private void ApplyEraser()
-    {
-        var mouseTexPos = Tools.ScreenToTexturePointInImage(Camera.main, image, Input.mousePosition);
-        eraser.SetFloat("positionX", mouseTexPos.x);
-        eraser.SetFloat("positionY", mouseTexPos.y);
-
-        eraser.Dispatch(0, Mathf.CeilToInt((float)renderTexture.width / 32), Mathf.CeilToInt((float)renderTexture.height / 32), 1);
-
-        Graphics.CopyTexture(renderTexture, texture2d);
-        image.material.mainTexture = texture2d;
-    }
-
-    private void SetupEraser()
-    {
-        eraser.SetTexture(0, "Result", renderTexture);
-        eraser.SetFloat("radius", eraserSize / 2);
-    }
-
-    private void SetUpBrush()
-    {
-        brush.SetFloat("radius", eraserSize / 2);
-        brush.SetVector("brushColor", new Vector4(1, .5f, 1, .5f));
-        brush.SetTexture(0, "Result", renderTexture);
-    }
-
-    public Texture2D GetRenderedImage()
-    {
-        Texture2D texture = new Texture2D(renderTexture.width,renderTexture.height);
-        RenderTexture.active = renderTexture;
-        texture2d.ReadPixels(new Rect(0,0,renderTexture.width,renderTexture.height),0,0);
-        texture2d.Apply();
-        return texture2d;
-    }
+    /// <summary>It is async anyway, so I combined requesting data from gpu and cropping data together</summary>
+    
+    
 }

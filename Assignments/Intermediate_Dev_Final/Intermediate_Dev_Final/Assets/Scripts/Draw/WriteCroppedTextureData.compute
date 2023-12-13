@@ -1,0 +1,17 @@
+#pragma kernel CSMain
+int2 offset;
+int sizeX;
+int sizeY;
+RWTexture2D<float4> Result;
+Texture2D<float4> tex;
+SamplerState linearClampSampler;
+
+[numthreads(32,32,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = id.xy / float2(sizeX, sizeY);
+    float4 color = tex.Sample(linearClampSampler, uv);
+    //float4 color = tex.Load(id.xyz);
+    
+    Result[id.xy] = color;
+}

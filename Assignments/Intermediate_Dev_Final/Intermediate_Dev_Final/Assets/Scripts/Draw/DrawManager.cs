@@ -31,11 +31,12 @@ public class DrawManager : MonoBehaviour
         SetCanvasBackground(backgroundType);
         var backgroundLayer = CreateNewDrawLayer("Background");
         currentDrawingLayer = backgroundLayer;
+        /*
         stroke = CreateNewStroke();
+        */
     }
     private void Update()
     {
-        strokeColor = colorPicler.color;
         //mouse whell zoom feature
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
             ZoomInCanvas(MOUSE_WHELL_ZOOM_FACTOR);
@@ -43,7 +44,7 @@ public class DrawManager : MonoBehaviour
             ZoomOutCanvas(MOUSE_WHELL_ZOOM_FACTOR);
         //if clicked on the canvas, then draw
 
-
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, Input.mousePosition, Camera.main, out Vector2 localPoint);
@@ -56,7 +57,6 @@ public class DrawManager : MonoBehaviour
             }
 
         }
-
         if (drawing && Input.GetMouseButtonUp(0))
         {
             stroke.EndStroke();
@@ -65,6 +65,7 @@ public class DrawManager : MonoBehaviour
             historyManager.UndoStep();
         if (!drawing && Input.GetKeyDown(KeyCode.Y))
             historyManager.RedoStep();
+        */
     }
     #region canvas related
     [SerializeField] private Vector2Int _canvasSize;
@@ -217,29 +218,23 @@ public class DrawManager : MonoBehaviour
     #endregion
 
     #region strokes related
-    public int strokeWidth = 5;
-    public Color strokeColor = Color.red;
-    public Stroke CreateNewStroke()
-    {
-        var newStroke = Instantiate(Resources.Load<GameObject>("Prefabs/New Stroke"));
-        newStroke.transform.SetParent(transform);//Set parent as Drawing Canvas
-        var stroke = newStroke.AddComponent<Stroke>();
-        return stroke;
-    }
     /// <summary>When you click the canvas, create a new stroke</summary>
-    public void AssignStrokeToLayer(GameObject strokeObject) //TODO
+    public void AssignNewStepToCurrentLayer(GameObject newStep) //TODO
     {
-        strokeObject.transform.SetParent(currentDrawingLayer.transform);
-        currentDrawingLayer.AddNewStep(strokeObject);
-        drawing = false;
-        historyManager.AddNewRecord(new HistoryRecord(currentDrawingLayer, "Drew a new stroke."));
-        stroke = CreateNewStroke();
+        newStep.transform.SetParent(currentDrawingLayer.transform);
+        currentDrawingLayer.AddNewStep(newStep);
     }
     #endregion
 
-    #region Histroy Record
-
-   
+   #region Histroy Record
+   public void CreateNewHistoryRecord(ActionType actionType)
+    {
+        historyManager.AddNewRecord(new HistoryRecord(currentDrawingLayer, actionType,$"New {actionType.ToString()}"));
+    }
+    public enum ActionType
+    {
+        Stroke,
+    }
 
     #endregion
 }
@@ -303,10 +298,12 @@ struct HistoryRecord
 {
     public DrawLayer layer;
     public string note;
+    public DrawManager.ActionType actionType;
 
-    public HistoryRecord(DrawLayer layer, string note)
+    public HistoryRecord(DrawLayer layer, DrawManager.ActionType actionType, string note)
     {
         this.layer = layer;
+        this.actionType = actionType;
         this.note = note;
     }
 }

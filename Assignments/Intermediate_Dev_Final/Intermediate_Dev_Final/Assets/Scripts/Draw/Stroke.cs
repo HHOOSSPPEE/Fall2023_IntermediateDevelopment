@@ -28,8 +28,6 @@ public class Stroke : MonoBehaviour
         image = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
         drawManager = DrawManager.Instance;
-        color = drawManager.strokeColor;
-        width = drawManager.strokeWidth;
         pMousePosition = Input.mousePosition;
         brushDotsInterval = (float)brushIntervalPercentage / 100 * width;
 
@@ -77,8 +75,6 @@ public class Stroke : MonoBehaviour
     public void EndStroke()
     {
         CropTransparentPixelsAndSet();
-        drawManager.AssignStrokeToLayer(gameObject);
-        Destroy(this);
     }
 
     private void ApplyBrush(Vector2 screenPosition)
@@ -172,7 +168,6 @@ public class Stroke : MonoBehaviour
         }
 
         //Set properties
-        croppedTexture.alphaIsTransparency = texture.alphaIsTransparency;
         croppedTexture.filterMode = texture.filterMode;
         croppedTexture.wrapMode = texture.wrapMode;
         croppedTexture.Apply();
