@@ -56,6 +56,8 @@ public class Movement : MonoBehaviour
         Vector2 translation = direction * speed * speedMultiplier * Time.fixedDeltaTime;
 
         rb.MovePosition(position + translation);
+        Debug.Log("Rb Position " + position);
+       
     }
 
 
@@ -75,7 +77,6 @@ public class Movement : MonoBehaviour
         Debug.Log(direction);
        
     }
-
     public bool cannotMove(Vector2 direction)
     {
             RaycastHit2D hit = Physics2D.BoxCast(
@@ -90,5 +91,7 @@ public class Movement : MonoBehaviour
         return hit.collider != null; 
     }
 }
+
+
 
 
