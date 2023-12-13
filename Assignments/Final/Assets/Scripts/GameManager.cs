@@ -3,7 +3,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
-
+    private Timer timerr;
+                    
     public float timer;
 
     private void Start()
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void SetTimer(float timer)
     {
-        this.timer = timer;
+        this.timer = timerr.gameTime;
     }
 
     public void ItemPickedUp(Item item)

@@ -36,11 +36,6 @@ public class Timer : MonoBehaviour
         fill_2.enabled = true;
 
     }
-
-    public void TimerReset()
-    {
-        gameTime = 12;
-    }
     public void Update()
     {
         time = gameTime - Time.time;
