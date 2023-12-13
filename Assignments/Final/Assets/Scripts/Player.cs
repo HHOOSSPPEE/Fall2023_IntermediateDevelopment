@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
 
     private Movement movement;
+    private Timer timer;
     public ParticleSystem verticalTrail;
     public ParticleSystem horizontalTrail;
 
@@ -36,12 +37,14 @@ public class Player : MonoBehaviour
             movement.SetDirection(Vector2.left);
             horizontalTrail.Play();
             transform.localRotation = Quaternion.Euler(0, 180, 0);
+
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             movement.SetDirection(Vector2.right);
             horizontalTrail.Play();
             transform.localRotation = Quaternion.Euler(0, 0, 0);
+            
         }
     }
 

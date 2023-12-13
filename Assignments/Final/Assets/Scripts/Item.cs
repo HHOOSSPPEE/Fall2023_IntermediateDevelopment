@@ -7,13 +7,13 @@ public class Item : MonoBehaviour
     private void Pickup()
     {
         Destroy(gameObject);
-        Timer.instance.ResetTime();
         SceneManager.LoadScene(SceneNumber);
 
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Player")) {
+            //Timer.instance.ResetTime();
             Pickup();
         }
     }

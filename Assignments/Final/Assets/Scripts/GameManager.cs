@@ -14,18 +14,18 @@ public class GameManager : MonoBehaviour
 
     private void NewGame()
     {
-        SetTimer(12);
+        SetTimer(12f);
         Newlevel();
     }
 
     private void Newlevel()
     {
-        this.player.gameObject.SetActive(true);
+        //this.player.gameObject.SetActive(true);
     }
 
     private void SetTimer(float timer)
     {
-        this.timer = timerr.gameTime;
+        this.timer = timer;
     }
 
     public void ItemPickedUp(Item item)

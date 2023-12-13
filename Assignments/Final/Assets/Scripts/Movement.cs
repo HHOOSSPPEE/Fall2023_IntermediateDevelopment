@@ -44,6 +44,7 @@ public class Movement : MonoBehaviour
         if (nextDirection != Vector2.zero)
         {
             SetDirection(nextDirection);
+            
         }
 
         Debug.DrawRay(transform.position, direction, Color.yellow);
@@ -67,6 +68,7 @@ public class Movement : MonoBehaviour
         {
             this.direction = direction;
             nextDirection = Vector2.zero;
+            Timer.instance.isRunning = true;
         }
         else
         {
