@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
         Vector2 translation = direction * speed * speedMultiplier * Time.fixedDeltaTime;
 
         rb.MovePosition(position + translation);
-        Debug.Log("Rb Position " + position);
+        //Debug.Log("Rb Position " + position);
        
     }
 

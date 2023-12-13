@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DustT : MonoBehaviour
 {
-    [SerializeField] ParticleSystem movementtrails;
+    [SerializeField] ParticleSystem horizontalTrails;
+    [SerializeField] ParticleSystem verticalTrails;
 
     [Range(0, 10)]
     [SerializeField] private int occurAfterVelocity;
@@ -21,7 +22,7 @@ public class DustT : MonoBehaviour
         //Timer
         counter += Time.deltaTime;
         //Debug.Log(counter);
-        Debug.Log("Velocity " + player.velocity.x);
+        Debug.Log("Velocity " + player.velocity.y);
 
         //When the player moves,
         if (player.velocity.x < occurAfterVelocity)
@@ -31,7 +32,18 @@ public class DustT : MonoBehaviour
             if (counter > dustlifetime)
             {
                 //if it has, play the dust particle and reset the timer
-                movementtrails.Play();
+                horizontalTrails.Play();
+                counter = 0;
+            }
+        }
+
+        if (player.velocity.y < occurAfterVelocity)
+        {
+            //Check to see if the time has past the dustlifetime
+            if (counter > dustlifetime)
+            {
+                //if it has, play the dust particle and reset the timer
+                verticalTrails.Play();
                 counter = 0;
             }
         }
