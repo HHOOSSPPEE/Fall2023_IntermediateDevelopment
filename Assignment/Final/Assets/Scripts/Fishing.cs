@@ -101,7 +101,7 @@ public class Fishing : MonoBehaviour
                 }
                 else
                 {
-                    FishEscape.Stop();
+                    
                     StateController.currentState = FishingState.Exit;
                 }
                 break;
@@ -112,7 +112,7 @@ public class Fishing : MonoBehaviour
 
                 if (pause)
                 {
-
+                    FishEscape.Stop();
                     FishReel.Stop();
                     StateController.currentState = FishingState.Start;
                     Debug.Log("Exit State");

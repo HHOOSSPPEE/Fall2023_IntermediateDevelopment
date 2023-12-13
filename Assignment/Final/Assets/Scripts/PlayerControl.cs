@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource FishReel;
     public AudioSource PullitfromWater;
+    public AudioSource Cast;
 
 
     // public FishingState fishingState;
@@ -50,33 +51,33 @@ public class PlayerController : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        if(DialogueManager.isActive == true && ET.exittabOpened == true)
+        if (DialogueManager.isActive == true || ET.exittabOpened == true)
         {
-            return;
-        }
-
-        stateinfo = _animator.GetCurrentAnimatorStateInfo(0);
-
-        _movement.x = Input.GetAxisRaw("Horizontal"); //move in press A and D /arrow keys
-        _movement.y = Input.GetAxisRaw("Vertical");
-
-        if (_rigidBody.position == _previousPosition)
-        {
-            _animator.SetBool("isMoving", false);
+            _movement = Vector2.zero; // 如果对话或退出标签打开，停止玩家移动
         }
         else
         {
-            _animator.SetBool("isMoving", true);
-            if (_movement.x < 0)
-                _animator.SetInteger("Direction", 9);
-            if (_movement.x > 0)
-                _animator.SetInteger("Direction", 3);
-            if (_movement.y < 0)
-                _animator.SetInteger("Direction", 6);
-            if (_movement.y > 0)
-                _animator.SetInteger("Direction", 12);
+            stateinfo = _animator.GetCurrentAnimatorStateInfo(0);
 
+            _movement.x = Input.GetAxisRaw("Horizontal"); //move in press A and D /arrow keys
+            _movement.y = Input.GetAxisRaw("Vertical");
 
+            if (_rigidBody.position == _previousPosition)
+            {
+                _animator.SetBool("isMoving", false);
+            }
+            else
+            {
+                _animator.SetBool("isMoving", true);
+                if (_movement.x < 0)
+                    _animator.SetInteger("Direction", 9);
+                if (_movement.x > 0)
+                    _animator.SetInteger("Direction", 3);
+                if (_movement.y < 0)
+                    _animator.SetInteger("Direction", 6);
+                if (_movement.y > 0)
+                    _animator.SetInteger("Direction", 12);
+            }
         }
         switch (StateController.currentState)
         {
@@ -99,7 +100,7 @@ void Update()
             case FishingState.CastingRod:
                 if (Input.GetMouseButtonUp(0) && !FishingGame.activeSelf)
                 {
-                    //Debug.Log("CastingFishRod");
+                    Cast.Play();
                     _animator.SetTrigger("leftMouseOff");
                     _animator.Play(abiCastFishingRodAnim.name);
 
@@ -114,6 +115,7 @@ void Update()
             case FishingState.Fishing:  
                 if (stateinfo.IsName("abi_fishing"))
                 {
+                    Cast.Stop();
                     FishingGame.SetActive(true);
                    
                     Debug.Log("Fishing");
@@ -138,15 +140,20 @@ void Update()
                 break;
 
             case FishingState.Exit:
-                PullitfromWater.Play();
-                _animator.Play(abiFishingRodBackAnim.name);
-                FishingGame.SetActive(false);
-               
-                StateController.currentState = FishingState.Start;
+                if (DM.CanFish == true)
+                {
+                    PullitfromWater.Play();
+                    _animator.Play(abiFishingRodBackAnim.name);
+                    FishingGame.SetActive(false);
+
+                    StateController.currentState = FishingState.Start;
 
                     Debug.Log("Exit");
+                }
                 
                 break;
+
+           
 
         }
 

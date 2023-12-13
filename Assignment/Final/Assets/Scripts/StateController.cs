@@ -11,6 +11,7 @@ public enum FishingState
     Lose,
     QuickExit,
     Exit
+   
 }
 public static class StateController
 {
