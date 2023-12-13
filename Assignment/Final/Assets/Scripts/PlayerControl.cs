@@ -25,7 +25,11 @@ public class PlayerController : MonoBehaviour
     public GameObject FishingGame;
     private Animator _animator;
     private DialogueManager DM;
+    private Timer timer;
+    private ExitTab ET;
 
+    public AudioSource FishReel;
+    public AudioSource PullitfromWater;
 
 
     // public FishingState fishingState;
@@ -38,11 +42,18 @@ public class PlayerController : MonoBehaviour
 
         _animator = GetComponent<Animator>();
         DM = FindObjectOfType<DialogueManager>();
+        timer = FindObjectOfType<Timer>();
+        ET = FindObjectOfType<ExitTab>();
+        
     }
 
 // Update is called once per frame
 void Update()
     {
+        if(DialogueManager.isActive == true && ET.exittabOpened == true)
+        {
+            return;
+        }
 
         stateinfo = _animator.GetCurrentAnimatorStateInfo(0);
 
@@ -70,8 +81,9 @@ void Update()
         switch (StateController.currentState)
         {
             case FishingState.Start:
-                if (Input.GetMouseButtonDown(0) && !FishingGame.activeSelf && DM.CanFish)
+                if (Input.GetMouseButtonDown(0) && !FishingGame.activeSelf && DM.CanFish && timer.remainingTime>0)
                 {
+                    PullitfromWater.Stop();
                     StateController.currentState = FishingState.Start;
                     _animator.SetTrigger("leftMouseClick");
                     _animator.Play(abiReadyAnim.name);
@@ -103,15 +115,17 @@ void Update()
                 if (stateinfo.IsName("abi_fishing"))
                 {
                     FishingGame.SetActive(true);
+                   
                     Debug.Log("Fishing");
                 }
                 
 
                 break;
             case FishingState.QuickExit:
-
+                    FishReel.Stop();
                     _animator.SetTrigger("rightMouseClick");
-                    _animator.Play(abiFishingRodBackAnim.name);
+                PullitfromWater.Play();
+                _animator.Play(abiFishingRodBackAnim.name);
                     StateController.currentState = FishingState.Exit;
                     _animator.ResetTrigger("rightMouseClick");
 
@@ -124,11 +138,14 @@ void Update()
                 break;
 
             case FishingState.Exit:
+                PullitfromWater.Play();
                 _animator.Play(abiFishingRodBackAnim.name);
                 FishingGame.SetActive(false);
+               
                 StateController.currentState = FishingState.Start;
 
                     Debug.Log("Exit");
+                
                 break;
 
         }

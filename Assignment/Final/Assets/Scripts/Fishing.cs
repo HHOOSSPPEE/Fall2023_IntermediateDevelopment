@@ -42,6 +42,10 @@ public class Fishing : MonoBehaviour
     public AnimationClip abiFishingRodBackAnim;
     private PlayerController PC;
 
+    public AudioSource FishReel;
+    public AudioSource FishHit;
+    public AudioSource FishEscape;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -56,6 +60,9 @@ public class Fishing : MonoBehaviour
                 Debug.Log("Fishing");
                 if (StateController.currentState == FishingState.Fishing)
                 {
+                    FishHit.Play();
+                    FishReel.Play();
+                    FishHit.Stop();
                     Fish();
                     Hook();
                     ProgressCheck();
@@ -69,7 +76,7 @@ public class Fishing : MonoBehaviour
 
             case FishingState.Win:
                 Debug.Log("Win State");
-
+                FishReel.Stop();
                 if (Input.GetMouseButtonDown(1))
                 {
                     StateController.currentState = FishingState.QuickExit;
@@ -83,14 +90,18 @@ public class Fishing : MonoBehaviour
 
 
             case FishingState.Lose:
+                FishReel.Stop();
+                FishEscape.Play();
                 Debug.Log("Lose State");
 
                 if (Input.GetMouseButtonDown(1))
                 {
+                    FishEscape.Stop();
                     StateController.currentState = FishingState.QuickExit;
                 }
                 else
                 {
+                    FishEscape.Stop();
                     StateController.currentState = FishingState.Exit;
                 }
                 break;
@@ -102,7 +113,7 @@ public class Fishing : MonoBehaviour
                 if (pause)
                 {
 
-
+                    FishReel.Stop();
                     StateController.currentState = FishingState.Start;
                     Debug.Log("Exit State");
                 }
