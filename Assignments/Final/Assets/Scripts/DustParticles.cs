@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DustT : MonoBehaviour
@@ -37,16 +35,7 @@ public class DustT : MonoBehaviour
             }
         }
 
-        if (player.velocity.y < occurAfterVelocity)
-        {
-            //Check to see if the time has past the dustlifetime
-            if (counter > dustlifetime)
-            {
-                //if it has, play the dust particle and reset the timer
-                verticalTrails.Play();
-                counter = 0;
-            }
-        }
+        
     }
 
 }

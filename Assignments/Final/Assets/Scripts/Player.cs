@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Wall")
         {
             ScreenShake.instance.TriggerShake(0.2f, 0.5f);
+            //Timer.instance.TimerReset();
             Debug.Log("WallTouched");
         }
     }
