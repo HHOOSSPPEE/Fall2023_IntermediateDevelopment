@@ -1,6 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 
 public class Timer : MonoBehaviour
 {
@@ -20,9 +20,9 @@ public class Timer : MonoBehaviour
     public Image background_2;
     public Image fill_2;
 
-    public GameObject screencover;
+    public GameObject gameOverScreen;
 
-   
+
     public void Start()
     {
         instance = this;
@@ -37,6 +37,8 @@ public class Timer : MonoBehaviour
 
         background_2.enabled = true;
         fill_2.enabled = true;
+
+        gameOverScreen.SetActive(false);
     }
 
     public void ResetTime()
@@ -69,12 +71,21 @@ public class Timer : MonoBehaviour
     }
    public void GameOver()
     {
-        
-        background_1.enabled = false;
-        fill_1.enabled = false;
+        //freeze game
+        Time.timeScale = 0;
 
-        background_2.enabled = false;
+        gameOverScreen.SetActive(true);
+        
+        fill_1.enabled = false;
         fill_2.enabled = false;
+
+        ScreenShake.instance.TriggerShake(0, 0);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(0);
+            Time.timeScale = 1;
+        }
     }
 
 }

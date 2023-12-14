@@ -6559,7 +6559,7 @@ RectTransform:
   m_Father: {fileID: 1714947528}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6655,7 +6655,7 @@ MonoBehaviour:
   fill_1: {fileID: 538372262}
   background_2: {fileID: 896526985}
   fill_2: {fileID: 1373454610}
-  screencover: {fileID: 0}
+  gameOverScreen: {fileID: 0}
 --- !u!1 &896526983
 GameObject:
   m_ObjectHideFlags: 0
@@ -6748,7 +6748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &1038732112
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -6836,9 +6836,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -7452,15 +7452,15 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 5
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 67.78, y: 1, z: 0}
-    m_Scale: {x: 1.73, y: 0, z: 1}
+    m_Rotation: {x: 69.86, y: 23.7, z: 0}
+    m_Scale: {x: 0.9, y: 0, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -7596,7 +7596,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 180
+      value: 181.5
       mode: 3
       spread: 0
       speed:
@@ -7774,8 +7774,8 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.12580109
-          value: 0.02702713
+          time: 0
+          value: 0.6621613
           inSlope: -2
           outSlope: -2
           tangentMode: 0
@@ -8283,7 +8283,7 @@ ParticleSystem:
     x:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -1.38
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8336,7 +8336,7 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.23
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -11552,13 +11552,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038732111}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.51055354, y: 0.4827125, z: -0.4979176, w: 0.5083325}
-  m_LocalPosition: {x: -0.01, y: 0.069, z: 0.103}
+  m_LocalRotation: {x: -0.70922965, y: 0.68759084, z: 0.11599529, w: 0.10371724}
+  m_LocalPosition: {x: 0.025, y: -0.076, z: 0.056}
   m_LocalScale: {x: 1.0638185, y: 1.0000283, z: 1.0638092}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2102878541}
-  m_LocalEulerAnglesHint: {x: -2.198, y: -270.725, z: 269.015}
+  m_LocalEulerAnglesHint: {x: 197.856, y: 1.3190002, z: 448.018}
 --- !u!1 &1112516526
 GameObject:
   m_ObjectHideFlags: 0
@@ -17096,7 +17096,7 @@ RectTransform:
   m_Father: {fileID: 98305414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -17156,7 +17156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1516474737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18162,9 +18162,9 @@ GameObject:
   - component: {fileID: 2102878541}
   - component: {fileID: 2102878540}
   - component: {fileID: 2102878544}
-  - component: {fileID: 2102878542}
   - component: {fileID: 2102878543}
   - component: {fileID: 2102878545}
+  - component: {fileID: 2102878546}
   m_Layer: 7
   m_Name: Collectable
   m_TagString: Untagged
@@ -18240,18 +18240,6 @@ Transform:
   - {fileID: 1038732114}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
---- !u!114 &2102878542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102878539}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c4f8934af010f7478292a0f37b4da00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2102878543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18331,6 +18319,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2102878546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102878539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaab441d37cd2234491e59147a955d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stompDust: {fileID: 1038732113}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

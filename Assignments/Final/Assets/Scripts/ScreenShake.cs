@@ -38,7 +38,7 @@ public class ScreenShake : MonoBehaviour
         }
 
         transform.rotation = Quaternion.Euler(0f, 0f, shakeRotation * Random.Range(-1f, 1f));
-        transform.position = OriginalPos;
+        //transform.position = OriginalPos;
     }
     public void TriggerShake (float length, float power)
     {
