@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 
     public float gameTime;
     public float timeDuration = 12f;
-    private float time;
+    public float time;
 
     public bool isRunning;
 

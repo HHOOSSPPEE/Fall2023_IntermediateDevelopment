@@ -14,12 +14,16 @@ public class Player : MonoBehaviour
     [Range(0.1f, 0.3f)]
     public float slowMotionRate = 0.2f;
 
+    //Player Color Change
+    public Color newColor;
+    public SpriteRenderer rend;
+
     private void Awake()
     {
         movement = GetComponent<Movement>();
-      
-      
+        rend = GetComponent<SpriteRenderer>();   
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
@@ -91,9 +95,18 @@ public class Player : MonoBehaviour
 
     public IEnumerator SlowMotionnSequence()
     {
+        //Gamestate turns slow
         Time.timeScale = slowMotionRate;
+        //Player goes invisible
+        rend.color = newColor;
+        //Waits for a second
         yield return new WaitForSecondsRealtime(1);
+        //Gamestate returns back to normal speed
         Time.timeScale = 1f;
+        //Player returns to normal color;
+        rend.color = Color.white;
+        //Timer is deduced
+        Timer.instance.time -= Time.deltaTime * 10;
     }
 
 }

@@ -5907,6 +5907,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalTrail: {fileID: 394553971}
   horizontalTrail: {fileID: 179308873}
+  slowMotionRate: 0.2
+  newColor: {r: 1, g: 1, b: 1, a: 0}
+  rend: {fileID: 220588334}
 --- !u!4 &220588337
 Transform:
   m_ObjectHideFlags: 0

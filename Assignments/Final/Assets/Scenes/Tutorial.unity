@@ -17118,6 +17118,8 @@ MonoBehaviour:
   verticalTrail: {fileID: 476999774}
   horizontalTrail: {fileID: 1210612382}
   slowMotionRate: 0
+  newColor: {r: 1, g: 1, b: 1, a: 0}
+  rend: {fileID: 1321382552}
 --- !u!4 &1321382555
 Transform:
   m_ObjectHideFlags: 0
