@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public ParticleSystem verticalTrail;
     public ParticleSystem horizontalTrail;
 
+    [Range(0.1f, 0.3f)]
+    public float slowMotionRate = 0.2f;
+
     private void Awake()
     {
         movement = GetComponent<Movement>();
@@ -47,15 +50,19 @@ public class Player : MonoBehaviour
             
         }
 
-
         if (Input.GetKey(KeyCode.Space))
         {
-            SlowMotion();
+            StartCoroutine(SlowMotionnSequence());
         }
-        else
-        {
-            NormalMotion();
-        }
+
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    SlowMotion();
+        //}
+        //else
+        //{
+        //    NormalMotion();
+        //}
     }
 
     
@@ -70,16 +77,23 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SlowMotion()
-    {
-        Time.timeScale = Mathf.Lerp(1, 0.15f, 5f);
-        //ScreenShake.instance.TriggerShake(0f, 0f);
-    }
+    //private void SlowMotion()
+    //{
+    //    Time.timeScale = Mathf.Lerp(1, 0.15f, 5f);
+    //    //ScreenShake.instance.TriggerShake(0f, 0f);
+    //}
 
-    private void NormalMotion()
-    {
-        Time.timeScale = Mathf.Lerp(0.15f, 1f, 5f);
+    //private void NormalMotion()
+    //{
+    //    Time.timeScale = Mathf.Lerp(0.15f, 1f, 5f);
         
+    //}
+
+    public IEnumerator SlowMotionnSequence()
+    {
+        Time.timeScale = slowMotionRate;
+        yield return new WaitForSecondsRealtime(1);
+        Time.timeScale = 1f;
     }
 
 }

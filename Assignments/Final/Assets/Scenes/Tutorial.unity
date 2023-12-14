@@ -17117,6 +17117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalTrail: {fileID: 476999774}
   horizontalTrail: {fileID: 1210612382}
+  slowMotionRate: 0
 --- !u!4 &1321382555
 Transform:
   m_ObjectHideFlags: 0
