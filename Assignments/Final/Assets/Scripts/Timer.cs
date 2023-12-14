@@ -78,6 +78,7 @@ public class Timer : MonoBehaviour
         fill_2.enabled = false;
 
         ScreenShake.instance.TriggerShake(0, 0);
+        Movement.instance.enabled = false;
 
         if (Input.GetKeyDown(KeyCode.Return))
         {

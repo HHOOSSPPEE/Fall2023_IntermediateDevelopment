@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public static Movement instance;
     public float speed = 8.0f;
     public float speedMultiplier = 1.0f;
     public Vector2 initialDirection;
@@ -16,8 +17,11 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    [SerializeField] private AudioSource WallHitSFX;
+
     private void Awake()
     {
+        instance = this;
         rb = GetComponent<Rigidbody2D>();
         startingPosition = transform.position;
     }
@@ -67,14 +71,15 @@ public class Movement : MonoBehaviour
             this.direction = direction;
             nextDirection = Vector2.zero;
             Timer.instance.isRunning = true;
+            
         }
         else
         {
+           
             nextDirection = direction;
-            //nextDirection = Vector2.zero;
-
         }
-        Debug.Log(direction);
+        //Debug.Log(direction);
+
        
     }
     public bool cannotMove(Vector2 direction)
@@ -87,8 +92,11 @@ public class Movement : MonoBehaviour
             0.0f,
             WallLayer
         );
+        WallHitSFX.Play();
         Debug.Log(direction + " " + hit.collider != null);
         return hit.collider != null; 
+        
+        
     }
 }
 
