@@ -65,9 +65,7 @@ public class Timer : MonoBehaviour
 
         }
 
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            ResetTime();
-        }
+       
     }
    public void GameOver()
     {
@@ -81,10 +79,11 @@ public class Timer : MonoBehaviour
 
         ScreenShake.instance.TriggerShake(0, 0);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene(0);
             Time.timeScale = 1;
+            SceneManager.LoadScene(0);
+            
         }
     }
 

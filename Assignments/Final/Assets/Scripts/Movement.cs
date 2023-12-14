@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 position = rb.position;
-        Vector2 translation = direction * speed * speedMultiplier * Time.fixedDeltaTime;
+        Vector2 translation = direction * Mathf.Round(speed) * speedMultiplier * Time.fixedDeltaTime;
 
         rb.MovePosition(position + translation);
         //Debug.Log("Rb Position " + position);

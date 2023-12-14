@@ -2,13 +2,30 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public GameObject player;
     private Timer timerr;
                     
     public float timer;
 
+    [Range(0f, 2f)]
+    public float speed = 1.0f;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        if(instance != null)
+        {
+            Destroy(instance);
+        }
+                               
+    }
     private void Start()
     {
+
         NewGame();
     }
 

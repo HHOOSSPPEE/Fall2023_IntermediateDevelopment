@@ -46,16 +46,19 @@ public class Player : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             
         }
+
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            SlowMotion();
+        }
+        else
+        {
+            NormalMotion();
+        }
     }
 
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.gameObject.tag == "Wall") {
-    //        ScreenShake.instance.TriggerShake(0.2f, 0.5f);
-    //        Debug.Log("WallTouched");
-
-    //    }
-    //}
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -67,6 +70,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void SlowMotion()
+    {
+        Time.timeScale = Mathf.Lerp(1, 0.15f, 5f);
+        //ScreenShake.instance.TriggerShake(0f, 0f);
+    }
 
+    private void NormalMotion()
+    {
+        Time.timeScale = Mathf.Lerp(0.15f, 1f, 5f);
+        
+    }
 
 }
