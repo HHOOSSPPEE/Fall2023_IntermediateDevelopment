@@ -329,6 +329,8 @@ GameObject:
   - component: {fileID: 22624176}
   - component: {fileID: 22624219}
   - component: {fileID: 22624218}
+  - component: {fileID: 22624221}
+  - component: {fileID: 22624220}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -350,8 +352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: Hey! I'm Steven, your alarm, I believe you know me, I am loyal, diligent,
-    cheerful, energetic...
+  storyText: Hey! I'm Steven, your alarm, I believe you know me well, I am loyal,
+    diligent, cheerful, energetic...
   description: 
   character: {fileID: 527114072}
   portrait: {fileID: 21300000, guid: 74d9fa3ad4fee403f9b4116362f37803, type: 3}
@@ -440,7 +442,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 79.91571
     y: 40.933754
-    width: 110.83329
+    width: 112.442566
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -473,11 +475,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 529.21625, y: 15.372424}
+  scrollPos: {x: 730.3131, y: 204.44913}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.60000044
+  zoom: 0.5445004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -485,9 +487,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 22624190}
+  - {fileID: 22624185}
   selectedCommands:
-  - {fileID: 22624218}
+  - {fileID: 22624178}
   variables: []
   description: 
   stepPause: 0
@@ -558,8 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  storyText: 'Wait, wait, wait, please stop. Why are you appearing in my dreams?
-    Am I dreaming?? '
+  storyText: 'Wait,  please stop. Why are you appearing in my dreams? Am I dreaming?? '
   description: 
   character: {fileID: 537333780}
   portrait: {fileID: 21300000, guid: 78e9338b0435140c9859a98bd1c2df77, type: 3}
@@ -611,8 +612,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 6
   indentLevel: 0
-  storyText: 'Oh, you know, what you think about during the day is more likely to
-    influence your dreams at night! '
+  storyText: Oh, you know, what you think about during the day is more likely to
+    influence your dreams at night! Your stress from your school works might causes
+    that.
   description: 
   character: {fileID: 527114072}
   portrait: {fileID: 21300000, guid: f5698908752eb448f8157536ec15b5a6, type: 3}
@@ -641,7 +643,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 153.75325
     y: 157.64075
-    width: 90.8333
+    width: 93.15883
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -697,7 +699,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 2
     y: 160.52115
-    width: 89.99997
+    width: 92.240555
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -711,6 +713,7 @@ MonoBehaviour:
   - {fileID: 22624173}
   - {fileID: 22624158}
   - {fileID: 22624175}
+  - {fileID: 22624221}
   - {fileID: 22624172}
   - {fileID: 22624171}
   - {fileID: 22624217}
@@ -878,8 +881,8 @@ MonoBehaviour:
   storyText: "Please stop!!! I don't want to know about this and don\u2019t lecturing
     me. "
   description: 
-  character: {fileID: 537333780}
-  portrait: {fileID: 21300000, guid: 3fc32c778c6dd43f1bad3d4483ceae0a, type: 3}
+  character: {fileID: 2009193732}
+  portrait: {fileID: 21300000, guid: 78e9338b0435140c9859a98bd1c2df77, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -979,7 +982,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: i'm just gonna say, take a small break might help you a lot...
   description: 
-  character: {fileID: 0}
+  character: {fileID: 527114072}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -1199,7 +1202,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 205.78317
     y: 392.96045
-    width: 101.666626
+    width: 103.25983
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1330,8 +1333,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 274.1166
-    y: 527.9609
-    width: 111.666626
+    y: 529.7974
+    width: 113.36083
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1655,7 +1658,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 372.0394
     y: 271.3545
-    width: 109.999954
+    width: 112.442566
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1824,7 +1827,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -46.929497
     y: 430.92163
-    width: 109.166626
+    width: 111.52429
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1834,6 +1837,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 22624203}
+  - {fileID: 22624220}
   - {fileID: 22624200}
   - {fileID: 22624197}
   - {fileID: 22624202}
@@ -1908,7 +1912,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 75.167015
     y: 271.88715
-    width: 99.99996
+    width: 102.34155
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1935,9 +1939,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -81.43467
+    x: -79.59812
     y: 271.88168
-    width: 99.166626
+    width: 101.42329
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2066,7 +2070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 75
   indentLevel: 0
-  text: qdgqkdggdYwgebxu
+  text: I want to stay in my dream forever....
   description: 
   targetBlock: {fileID: 22624190}
   hideIfVisited: 0
@@ -2077,6 +2081,66 @@ MonoBehaviour:
   hideThisOption:
     booleanRef: {fileID: 0}
     booleanVal: 0
+--- !u!114 &22624220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22624140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 78
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 2009193732}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 78e9338b0435140c9859a98bd1c2df77, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 1149882352}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
+--- !u!114 &22624221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22624140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 77
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 1413669158}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 2eeb1812bd8b04c7eac262327329b887, type: 3}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 1149882352}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
 --- !u!1 &47462829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,6 +2774,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290842310}
   m_CullTransparentMesh: 1
+--- !u!1 &451252968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451252971}
+  - component: {fileID: 451252970}
+  - component: {fileID: 451252969}
+  m_Layer: 0
+  m_Name: Character1-Alarm_happy2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &451252969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451252968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbd5f24a0bee40f3abfe8e29d83267b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1512762885}
+--- !u!114 &451252970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451252968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Steven
+  nameColor: {r: 1, g: 0.58280706, b: 0, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: f5698908752eb448f8157536ec15b5a6, type: 3}
+  - {fileID: 21300000, guid: 5efa51ce2f5e746a1b7b9862dea8dda9, type: 3}
+  - {fileID: 21300000, guid: 74d9fa3ad4fee403f9b4116362f37803, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
+--- !u!4 &451252971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451252968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &527114071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3862,6 +3994,74 @@ RectTransform:
   m_AnchoredPosition: {x: -750.0001, y: 30}
   m_SizeDelta: {x: 1500, y: 335}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1010046962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010046965}
+  - component: {fileID: 1010046964}
+  - component: {fileID: 1010046963}
+  m_Layer: 0
+  m_Name: Character1-Alarm_happy1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1010046963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010046962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbd5f24a0bee40f3abfe8e29d83267b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1512762885}
+--- !u!114 &1010046964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010046962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Steven
+  nameColor: {r: 1, g: 0.58280706, b: 0, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: f5698908752eb448f8157536ec15b5a6, type: 3}
+  - {fileID: 21300000, guid: 5efa51ce2f5e746a1b7b9862dea8dda9, type: 3}
+  - {fileID: 21300000, guid: 74d9fa3ad4fee403f9b4116362f37803, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
+--- !u!4 &1010046965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010046962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1111069280
 GameObject:
   m_ObjectHideFlags: 0
@@ -4496,6 +4696,72 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1413669156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1413669159}
+  - component: {fileID: 1413669158}
+  - component: {fileID: 1413669157}
+  m_Layer: 0
+  m_Name: Character2-Eva_unhappy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1413669157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413669156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbd5f24a0bee40f3abfe8e29d83267b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1327576688}
+--- !u!114 &1413669158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413669156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Eva
+  nameColor: {r: 0.9056604, g: 0.31787547, b: 0.26059094, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 2eeb1812bd8b04c7eac262327329b887, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
+--- !u!4 &1413669159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413669156}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1487285427
 GameObject:
   m_ObjectHideFlags: 0
@@ -5015,6 +5281,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2009193730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009193733}
+  - component: {fileID: 2009193732}
+  - component: {fileID: 2009193731}
+  m_Layer: 0
+  m_Name: Character2-Eva_weird
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2009193731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009193730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fbd5f24a0bee40f3abfe8e29d83267b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1327576688}
+--- !u!114 &2009193732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009193730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Eva
+  nameColor: {r: 0.9056604, g: 0.31787547, b: 0.26059094, a: 1}
+  soundEffect: {fileID: 0}
+  portraits:
+  - {fileID: 21300000, guid: 78e9338b0435140c9859a98bd1c2df77, type: 3}
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
+--- !u!4 &2009193733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009193730}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2041821060
 GameObject:
   m_ObjectHideFlags: 0
@@ -5347,7 +5679,11 @@ SceneRoots:
   - {fileID: 22624147}
   - {fileID: 2141929327}
   - {fileID: 527114073}
+  - {fileID: 1010046965}
+  - {fileID: 451252971}
   - {fileID: 537333781}
+  - {fileID: 1413669159}
+  - {fileID: 2009193733}
   - {fileID: 156454217}
   - {fileID: 685453707}
   - {fileID: 906481542}
