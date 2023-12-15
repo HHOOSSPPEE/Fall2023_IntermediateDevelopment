@@ -83,7 +83,7 @@ public class Timer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Time.timeScale = 1;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
             
         }
     }
