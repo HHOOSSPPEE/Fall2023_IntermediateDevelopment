@@ -21,5 +21,6 @@ public class GameManager : MonoBehaviour
     void UpdateHealthBar()
     {
         BossHealthBar.fillAmount = FindObjectOfType<NightmareController>().hp / FindObjectOfType<NightmareController>().i_hp;
+        PlayerHealthBar.fillAmount = FindObjectOfType<PlayerController>().hp / FindObjectOfType<PlayerController>().i_hp;
     }
 }

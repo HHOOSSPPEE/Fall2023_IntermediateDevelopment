@@ -50,8 +50,6 @@ AnimationClip:
       value: {fileID: 21300000, guid: 0308874f7969c9a4ca162e3aff1d8ace, type: 3}
     - time: 0.23333333
       value: {fileID: 21300000, guid: 0308874f7969c9a4ca162e3aff1d8ace, type: 3}
-    - time: 0.25
-      value: {fileID: 21300000, guid: 27cfef14e86529b4c956fba5e055d47f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -89,13 +87,12 @@ AnimationClip:
     - {fileID: 21300000, guid: 964ab866f036c33449937329006b20b0, type: 3}
     - {fileID: 21300000, guid: 0308874f7969c9a4ca162e3aff1d8ace, type: 3}
     - {fileID: 21300000, guid: 0308874f7969c9a4ca162e3aff1d8ace, type: 3}
-    - {fileID: 21300000, guid: 27cfef14e86529b4c956fba5e055d47f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.26666668
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -114,4 +111,32 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.11666667
+    functionName: SetIsMovingToPlayer
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.16666667
+    functionName: SetIsMovingToPlayer
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.18333334
+    functionName: Attack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 1
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.23333333
+    functionName: FinishBite
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public enum PlayerState
 {
@@ -10,17 +12,17 @@ public enum PlayerState
 
 public class PlayerController : MonoBehaviour
 {
+    [HideInInspector] public float i_hp = 10f;
+    [HideInInspector] public float hp;
+
     public Transform attackPos;
     public LayerMask enemyLayer;
     public float attackRange;
-
-    /*
-    float timeBtwAttack;
-    float startTimeBtwAttack = 0.3f;
-    */
+    public GameObject HitEffectScreen;
 
     bool canAttack = true;
     float damage = 1f;
+
 
     float moveSpeed = 12f;
     Vector3 targetPosition;
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        hp = i_hp;
     }
 
     void Update()
@@ -86,8 +89,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = (targetPosition - transform.position).normalized * moveSpeed;
         }
         else rb.velocity = Vector2.zero;
-            
-        //transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
     }
 
     void GetMousePosition()
@@ -96,6 +97,7 @@ public class PlayerController : MonoBehaviour
         mousePosition.z = 0f;
         targetPosition = mousePosition;
     }
+
     public Vector2 GetPlayerDirection() //left, right, up, down
     {
         Vector2 direction = Vector2.zero;
@@ -145,9 +147,22 @@ public class PlayerController : MonoBehaviour
     void SetDirection()
     {
         NightmareController nightmareController = FindObjectOfType<NightmareController>();
-        float direction = Mathf.Sign(nightmareController.transform.position.x - transform.position.x);
-        transform.localScale = new Vector3(direction, 1, 1);
+        if (Mathf.Abs(nightmareController.transform.position.x - transform.position.x) >= 2f)
+        {
+            float direction = Mathf.Sign(nightmareController.transform.position.x - transform.position.x);
+            transform.localScale = new Vector3(direction, 1, 1);
+        }
 
+    }
+
+    public void TakeDamage(float damage)
+    {
+        hp -= damage;
+        Instantiate(HitEffectScreen, Camera.main.transform.position, Quaternion.identity);
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void UpdateAnimation()
