@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
         //Player returns to normal color;
         rend.color = Color.white;
         //Timer is deduced
-        Timer.instance.time -= Time.deltaTime * 3;
+        Timer.instance.time -= Time.deltaTime * 5;
     }
 
 }

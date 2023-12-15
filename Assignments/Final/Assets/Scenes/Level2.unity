@@ -18542,15 +18542,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAME OVER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cbeb45d53d8c7824db5d9b3c5fe07dfa, type: 2}
-  m_sharedMaterial: {fileID: -2371072149372506719, guid: cbeb45d53d8c7824db5d9b3c5fe07dfa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c66a22d029264440a40b342d0f874a0, type: 2}
+  m_sharedMaterial: {fileID: 3523173123367288123, guid: 3c66a22d029264440a40b342d0f874a0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283390783
-  m_fontColor: {r: 0.24857603, g: 0.3584906, b: 0.30824393, a: 1}
+    rgba: 4284708684
+  m_fontColor: {r: 0.29803923, g: 0.46666667, b: 0.3882353, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -18567,8 +18567,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
