@@ -3,30 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class Item : MonoBehaviour
 {
-    public static Item Instance;
     public int SceneNumber;
-    [SerializeField] private AudioSource itemSFX;
+    private SoundManager soundManager;
 
     private void Awake()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();  
     }
-
 
     private void Pickup()
     {
-        itemSFX.Play();
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        gameObject.GetComponent <Animator>().enabled = false;
+        soundManager.PlaySFX(soundManager.item);
         SceneManager.LoadScene(SceneNumber);
-        Destroy(gameObject, 1f);
-        
+        Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Player")) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
             Pickup();
         }
     }

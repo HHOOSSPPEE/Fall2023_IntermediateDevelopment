@@ -17,6 +17,9 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private SoundManager soundManager;
+
+
     [SerializeField] private AudioSource WallHitSFX;
 
     private void Awake()
@@ -24,6 +27,7 @@ public class Movement : MonoBehaviour
         instance = this;
         rb = GetComponent<Rigidbody2D>();
         startingPosition = transform.position;
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
     }
 
     private void Start()
@@ -92,7 +96,7 @@ public class Movement : MonoBehaviour
             0.0f,
             WallLayer
         );
-        WallHitSFX.Play();
+        soundManager.PlaySFX(soundManager.wallHit);
         Debug.Log(direction + " " + hit.collider != null);
         return hit.collider != null; 
         

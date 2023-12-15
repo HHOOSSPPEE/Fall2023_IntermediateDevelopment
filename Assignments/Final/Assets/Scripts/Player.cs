@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -18,8 +19,12 @@ public class Player : MonoBehaviour
     public Color newColor;
     public SpriteRenderer rend;
 
+    private SoundManager soundManager;
+
+
     private void Awake()
     {
+        soundManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<SoundManager>();
         movement = GetComponent<Movement>();
         rend = GetComponent<SpriteRenderer>();   
     }
@@ -69,7 +74,10 @@ public class Player : MonoBehaviour
         //}
     }
 
-    
+  
+
+   
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -106,7 +114,7 @@ public class Player : MonoBehaviour
         //Player returns to normal color;
         rend.color = Color.white;
         //Timer is deduced
-        Timer.instance.time -= Time.deltaTime * 10;
+        Timer.instance.time -= Time.deltaTime * 3;
     }
 
 }
