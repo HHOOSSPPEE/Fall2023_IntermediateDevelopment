@@ -19,6 +19,8 @@ public class AnimationTestBehavior : MonoBehaviour
     public GameObject playVideo;
     public VideoClip video;
 
+    public CutSceneBehavior cut;
+    public bool killChar = false;
 
     void Start()
     {
@@ -26,11 +28,16 @@ public class AnimationTestBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //currently, you're trying to have each animation seperate, based on int, but maybe it would be easier to make each one by hand so you don't waste time here, okay?
-        //i know its manual but it will work regardless!
-        //works now :)
+        if (GameManager.windowVideoDone && animationDone)
+        {
+            if (killChar)
+            {
+                //cut.killPlayer = true;
+            }
+            //change event
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,13 +46,16 @@ public class AnimationTestBehavior : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && !animationDone)
         {
+            if (killChar)
+            {
+                cut.killPlayer = true;
+            }
             VideoPlayer vid = screen.GetComponent<VideoPlayer>();
             vid.clip = video;
             screen.SetActive(true);
             playVideo.SetActive(true);
             animationDone = true;
         }
-
 
     }
 
@@ -55,6 +65,10 @@ public class AnimationTestBehavior : MonoBehaviour
         {
             if (GameManager.windowVideoDone)
             {
+                if (killChar)
+                {
+                    //GameManager.kill = true;
+                }
                 //change event
             }
         }
@@ -66,6 +80,7 @@ public class AnimationTestBehavior : MonoBehaviour
         vidp.clip = vid;
         screen.SetActive(true);
         playVideo.SetActive(true);
+       
         //animationDone = true;
     }
 

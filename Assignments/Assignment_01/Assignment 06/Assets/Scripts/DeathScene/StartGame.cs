@@ -15,6 +15,7 @@ public class StartGame : MonoBehaviour
     public GameObject canvas;
     public GameObject settingsCanvas;
     public GameObject aboutCanvas;
+    
 
     //public UnityEngine.UI.Image img;
     //public float timeDelay = 0.2f;
@@ -59,12 +60,15 @@ public class StartGame : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             if (button == 1)
             {
+                
                 SceneManager.LoadScene("Loading Scene");
             }
             if (button == 2)
             {
+                
                 gameObject.SetActive(false);
                 canvas.SetActive(false);
                 settingsCanvas.SetActive(true);
@@ -72,12 +76,12 @@ public class StartGame : MonoBehaviour
             }
             if (button == 3)
             {
+                
                 gameObject.SetActive(false);
                 canvas.SetActive(false);
                 aboutCanvas.SetActive(true);
             }
         }
-
 
     }
 

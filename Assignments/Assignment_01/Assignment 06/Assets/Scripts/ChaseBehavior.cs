@@ -75,7 +75,8 @@ public class ChaseBehavior : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            GameManager.kill = true;
+            
+            //GameManager.kill = true;
             //if (!audioData.isPlaying)
             //{
             //    audioData.Play(0);

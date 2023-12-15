@@ -8,6 +8,7 @@ public class StatueBehavior : MonoBehaviour
 
     public bool playerSaw = false;
     public int speed = 10;
+    public AudioSource source;
     void Start()
     {
         
@@ -18,7 +19,11 @@ public class StatueBehavior : MonoBehaviour
     {
         if (playerSaw)
         {
-
+            
+            if (!source.isPlaying)
+            {
+                source.Play(0);
+            }
             transform.position = new Vector2(transform.position.x, transform.position.y + speed * Time.deltaTime);
 
         }

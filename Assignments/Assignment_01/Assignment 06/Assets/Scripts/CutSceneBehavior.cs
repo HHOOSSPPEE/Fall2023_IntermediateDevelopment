@@ -12,6 +12,8 @@ public class CutSceneBehavior : MonoBehaviour
     public VideoPlayer video;
     public GameObject screen;
     public bool videoDone = false;
+
+    public bool killPlayer = false;
     //public GameObject statueEvil;
     //private FireBehavior fire;
     
@@ -37,12 +39,22 @@ public class CutSceneBehavior : MonoBehaviour
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp)
     {
-        Debug.Log("done");
-        videoDone = true;
-        GameManager.windowVideoDone = true; //SceneManager.LoadScene(1);//the scene that you want to load after the video has ended.
+        if (killPlayer)
+        {
+            GameManager.kill = true;
+        }
+        else
+        {
+            videoDone = true;
+            GameManager.windowVideoDone = true; //SceneManager.LoadScene(1);//the scene that you want to load after the video has ended.
 
-        screen.SetActive(false);
-        
+            screen.SetActive(false);
+        }
+
+        Debug.Log("done");
+       
+
+       
         //statueEvil.SetActive(true);
 
     }

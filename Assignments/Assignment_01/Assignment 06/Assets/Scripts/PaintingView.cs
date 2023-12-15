@@ -6,7 +6,7 @@ public class PaintingView : MonoBehaviour
 {
     AudioSource audioData;
     private Animator animator;
-    public static int changeAni = 1;
+    public static int changeAni;
     
     void Start()
     {

@@ -9,6 +9,7 @@ public class PaintingBehavior : MonoBehaviour
     public Sprite picture;
     public Animator _animator;
     public int bigNum = 0;
+    public SpriteRenderer _sprite;
     //public Animator animation;
     // Start is called before the first frame update
     void Start()
@@ -31,20 +32,24 @@ public class PaintingBehavior : MonoBehaviour
             //PaintingView.changeAni = bigNum;
             painting.SetActive(true);
             _animator = painting.GetComponent<Animator>();
+            _sprite = painting.GetComponent<SpriteRenderer>();
             if (painting.activeSelf)
             {
                 if (bigNum == 1)
                 {
                     _animator.SetInteger("Object", 1);
+                    _sprite.enabled = true;
                 }
-                if (bigNum == 2)
+                else if (bigNum == 2)
                 {
 
                     _animator.SetInteger("Object", 2);
+                    _sprite.enabled = true;
                 }
-                if (bigNum == 3)
+                else if (bigNum == 3)
                 {
                     _animator.SetInteger("Object", 3);
+                    _sprite.enabled = true;
                 }
             }
             
@@ -59,7 +64,8 @@ public class PaintingBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             painting.SetActive(false);
-            
+            _sprite.enabled = false;
+
         }
 
         if (collision.gameObject.tag == "MainCamera")

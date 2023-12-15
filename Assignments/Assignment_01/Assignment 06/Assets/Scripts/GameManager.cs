@@ -16,11 +16,13 @@ public class GameManager : MonoBehaviour
     //public VideoPlayer vid;
     //public static AudioListener aud;
 
-    [Header("Stages of Apocalypse")]
+    
     public static int currentStage = 1;
-
+    [Header("Stages of Apocalypse")]
     public GameObject stageOne;
     public GameObject stageTwo;
+    public GameObject stageThree;
+    public GameObject stageFour;
     void Start()
     {
 
@@ -32,10 +34,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log(windowVideoDone);
         //Debug.Log(VolumeBehavior.vol);
         //AudioListener.volume = VolumeBehavior.vol;
-        if (kill)
-        {
-            SceneManager.LoadScene("Death Scene");
-        }
+       
 
         if (screen.activeSelf)
         {
@@ -48,20 +47,26 @@ public class GameManager : MonoBehaviour
             AudioListener.volume = VolumeBehavior.vol;
         }
 
+        if (kill)
+        {
+            AudioListener.volume = VolumeBehavior.vol;
+            SceneManager.LoadScene("Death Scene");
+        }
+
 
         switch (currentStage)
         {
-            case 7:
-
-                break;
-            case 6:
-                
-                break;
-            case 5:
-                break;
             case 4:
+                stageFour.SetActive(true);
+                Debug.Log("case 4");
                 break;
             case 3:
+                //if (stageTwo.activeSelf)
+                //{
+                //    currentStage = 4;
+                //}
+                stageThree.SetActive(true);
+                Debug.Log("case 3");
                 break;
             case 2:
                 //if (stageTwo.activeSelf)
