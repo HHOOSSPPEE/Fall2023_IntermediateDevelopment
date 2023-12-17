@@ -11,6 +11,7 @@ using Unity.Networking.Transport.Relay;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Bennet;
 
 public class ConnectionManagera : MonoBehaviour
 {
@@ -23,17 +24,23 @@ public class ConnectionManagera : MonoBehaviour
 
 	public bool localTest;
 
-	public TMP_InputField input;
+	public TMP_InputField joinCodeInputField;
+
+    [SerializeField] private GameObject joinCodeTextBox;
+    [SerializeField] private TextMeshProUGUI joinCodeText;
+    [SerializeField] private GameObject joinCodeInputFieldObj;
 
 	public bool hosting;
 	public string joinCode;
 
+
 	// Start is called before the first frame update
 	private async void Start()
 	{
-		await UnityServices.InitializeAsync();
+        await UnityServices.InitializeAsync();
 		await AuthenticationService.Instance.SignInAnonymouslyAsync();
-	}
+        joinCodeTextBox.SetActive(false);
+    }
 
 	public void JoinGame()
 	{
@@ -42,7 +49,7 @@ public class ConnectionManagera : MonoBehaviour
 			NetworkManager.Singleton.StartClient();
 			return;
 		}
-		string code = input.text;
+		string code = joinCodeInputField.text;
 		JoinRelay(code);
 	}
 	public void StartGame()
@@ -55,6 +62,15 @@ public class ConnectionManagera : MonoBehaviour
 		}
 		CreateRelay();
 	}
+
+    public void EndGame()
+	{
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#else
+			Application.Quit();
+#endif
+	}
 	private async void CreateRelay()
 	{
 		try
@@ -63,6 +79,11 @@ public class ConnectionManagera : MonoBehaviour
 
 			joinCode = await RelayService.Instance.GetJoinCodeAsync(alloc.AllocationId);
 			//LocalGame.joinCode = joinCode;
+
+			joinCodeInputFieldObj.SetActive(false);
+			joinCodeTextBox.SetActive(true);
+			joinCodeText.text = "Join Code: <color=#FF0000>" + joinCode + "</color>";
+			
 
 			RelayServerData relayServerData = new RelayServerData(alloc, "dtls");
 			NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
@@ -90,7 +111,8 @@ public class ConnectionManagera : MonoBehaviour
 		}
 		catch (RelayServiceException e)
 		{
-			Debug.Log(e);
+			Debug.Log(e); 
 		}
 	}
+
 }

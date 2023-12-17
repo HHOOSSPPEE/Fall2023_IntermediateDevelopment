@@ -11,10 +11,13 @@ public class StrokeManager : MonoBehaviour
     public float width;
     private ComputeShader clearCanvas;
     private ComputeShader stroke;
+    private ComputeShader eraser;
     public RenderTexture renderTexture;
     public bool isDrawing = false;
+    public bool isErasing = false;
     private RawImage rawImage;
     public Texture2D result;
+    private Vector2 previousMousePosition;
     private void Awake()
     {
         clearCanvas = Resources.Load<ComputeShader>("ComputeShaders/Clear");
@@ -40,12 +43,18 @@ public class StrokeManager : MonoBehaviour
             //EndStroke();
         if (isDrawing && Input.GetMouseButton(0))
             ApplyStroke();
+        if (Input.GetMouseButtonDown(1))
+            StartNewErasing();
+        if (Input.GetMouseButtonUp(1))
+            isErasing = false;
+        if (isErasing && Input.GetMouseButton(1))
+            ApplyEraser();
         
         if (Input.GetKey(KeyCode.Space))
         {
             //var mousePosition = Tools.ScreenToTexturePointInRawImage(Camera.main, rawImage, Input.mousePosition);
             //Debug.Log(result.GetPixel((int)mousePosition.x, (int)mousePosition.y));
-            result = CropTransparentPixels(renderTexture);
+            //result = CropTransparentPixels(renderTexture);
         }
     }
     private void UpdateRenderTexutre()
@@ -64,34 +73,83 @@ public class StrokeManager : MonoBehaviour
     {
         stroke.SetFloat("radius", width);
         isDrawing = true;
+        previousMousePosition = Input.mousePosition;
     }
     private void EndStroke()
     {
-        Texture2D newStepTexture = CropTransparentPixels(renderTexture);
+        isDrawing = false;
+
+        var newPivot = CropTransparentPixelsAndGetNewPivot(renderTexture, out var newStepTexture);
         var drawManager = DrawManager.Instance;
         GameObject newStep = Instantiate(Resources.Load<GameObject>("Prefabs/DefaultRawImage"));
+        //temporarily
+        newStep.transform.SetParent(transform);
+
         RawImage newStepRawImage = newStep.GetComponent<RawImage>();
         newStepRawImage.texture = newStepTexture;
+        //pivot
+        newStepRawImage.rectTransform.pivot = newPivot;
         //scale
-        var xScale = newStepTexture.width / drawManager.CanvasSize.x;
-        var yScale = newStepTexture.height / drawManager.CanvasSize.y;
+        var xScale = (float)newStepTexture.width / drawManager.CanvasSize.x;
+        var yScale = (float)newStepTexture.height / drawManager.CanvasSize.y;
         newStepRawImage.rectTransform.localScale = new Vector3(xScale, yScale, 1);
         //anchor
         newStepRawImage.rectTransform.anchorMin = Vector2.zero;
         newStepRawImage.rectTransform.anchorMax = Vector2.one;
+        newStepRawImage.rectTransform.offsetMin = Vector2.zero;
+        newStepRawImage.rectTransform.offsetMax = Vector2.one;
         newStepRawImage.rectTransform.anchoredPosition3D = Vector3.zero;
-        //pivot
-        var xPivot = .5f;
-        var yPivot = .5f;
 
-        newStepRawImage.rectTransform.pivot = new Vector2(xPivot, yPivot);
 
-        drawManager.AssignNewStepToCurrentLayer(newStep);
+        //drawManager.AssignNewStepToCurrentLayer(newStep);
         clearCanvas.SimpleDispatch(renderTexture);
     }
     private void ApplyStroke()
     {
+
         color = ColorPicker.Instance.color;
+        RenderTexture.active = renderTexture;
+        stroke.SetTexture(0, "Result", renderTexture);
+        stroke.SetVector("brushColor", new Vector4(color.r, color.g, color.b, color.a));
+        var mousePos = Tools.ScreenToTexturePointInRawImage(Camera.main, rawImage, Input.mousePosition);
+        var previousMousePos = Tools.ScreenToTexturePointInRawImage(Camera.main, rawImage, previousMousePosition);
+        var distance = Vector2.Distance(mousePos, previousMousePos);
+
+        /*
+        Debug.Log($"current mosue pos is {mousePos}. previous mouse pos is {previousMousePos}. The distance should be {distance}");
+        if (distance > width /2 )
+        {
+            var lerpTime = distance / width * 2;
+            var increaseAmount = (mousePos - previousMousePos) / lerpTime;
+            var currentPosition = mousePos;
+            for ( int i = 0; i < lerpTime; i++ )
+            {
+                stroke.SetVector("position", currentPosition);
+                stroke.SimpleDispatch(renderTexture);
+                currentPosition += increaseAmount;
+            }
+        }
+        else
+        {
+            stroke.SetVector("position", mousePos);
+            stroke.SimpleDispatch(renderTexture);
+        }
+        */
+
+        stroke.SetVector("position", mousePos);
+        stroke.SimpleDispatch(renderTexture);
+        RenderTexture.active = null;
+
+        previousMousePosition = Input.mousePosition;
+    }
+    private void StartNewErasing()
+    {
+        isErasing = true;
+        stroke.SetFloat("radius", width);
+    }
+    private void ApplyEraser()
+    {
+        color = Color.clear;
         RenderTexture.active = renderTexture;
         stroke.SetTexture(0, "Result", renderTexture);
         stroke.SetVector("brushColor", new Vector4(color.r, color.g, color.b, color.a));
@@ -99,11 +157,13 @@ public class StrokeManager : MonoBehaviour
         stroke.SetVector("position", mousePos);
         stroke.SimpleDispatch(renderTexture);
         RenderTexture.active = null;
-        Debug.Log(mousePos);
-    }
 
-    private Texture2D CropTransparentPixels(RenderTexture renderTexture)
+        previousMousePosition = Input.mousePosition;
+    }
+    /// <summary>Returns the new pivot, out the texture. I'm too lazy to make a struct</summary>
+    private Vector2 CropTransparentPixelsAndGetNewPivot(RenderTexture renderTexture, out Texture2D croppedTexture)
     {
+        croppedTexture = default(Texture2D);
         var texture = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.ARGB32, false);
         //Graphics.CopyTexture(renderTexture, texture);
         RenderTexture.active = renderTexture;
@@ -131,7 +191,7 @@ public class StrokeManager : MonoBehaviour
             throw new UnexpectedInputException();
 
         int2 newSize = new int2(max.x - min.x + 1, max.y - min.y + 1);
-        Texture2D croppedTexture = new Texture2D(newSize.x, newSize.y, TextureFormat.ARGB32, false);
+        croppedTexture = new Texture2D(newSize.x, newSize.y, TextureFormat.ARGB32, false);
         for (int y = min.y; y <= max.y;y++)
         {
             for (int x = min.x; x <= max.x;x++)
@@ -146,6 +206,11 @@ public class StrokeManager : MonoBehaviour
 
         croppedTexture.name = "Drawn Stroke";
 
-        return croppedTexture;
+        var pivotX = (float)(max.x - min.x) / 2  * (renderTexture.width / newSize.x);
+        var pivotY = (float)(max.y - min.y) / 2  * (renderTexture.width / newSize.y);
+
+
+        Vector2 newPivot = new Vector2(pivotX, pivotY);
+        return newPivot;
     }
 }

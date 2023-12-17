@@ -6,6 +6,7 @@ using Bennet;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using UnityEngine.EventSystems;
+using static System.Net.Mime.MediaTypeNames;
 
 public class DrawManager : MonoBehaviour
 {

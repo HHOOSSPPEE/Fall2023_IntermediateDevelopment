@@ -38,7 +38,7 @@ namespace Bennet
         }
         public static Vector2 ScreenToTexturePointInRawImage(Camera camera, UnityEngine.UI.RawImage rawImage, Vector2 screenPoint)
         {
-            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(rawImage.rectTransform, Input.mousePosition, camera, out var localPos))
+            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(rawImage.rectTransform, screenPoint, camera, out var localPos))
                 throw new UnexpectedInputException("Screen to local point conversion failed.");
 
             var rectWidth = rawImage.rectTransform.rect.width;
@@ -108,9 +108,43 @@ namespace Bennet
 
             return croppedTexture;
         }
+
+        public static bool LoadTextureFromBytes(byte[] bytes, out Texture2D texture2D)
+        {
+            texture2D = new Texture2D(1, 1, TextureFormat.RGBA32, false);
+            texture2D.name = "Image Load Failed";
+            if (!texture2D.LoadImage(bytes))
+                return false;
+            else
+            {
+                texture2D.name = "Image Load Succeful";
+                texture2D.Apply();
+                return true;
+            }
+        }
     }
     public static class ExtensionMethods
     {
+        #region Data Related
+
+        public static List<T> Shuffle<T>(this List<T> list)
+        {
+            System.Random rng = new System.Random();
+
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+            return list;
+        }
+
+        #endregion
+
         #region Texture2D
 
         /// <summary>erhaps will cause a little precision lost?</summary>
@@ -225,7 +259,6 @@ namespace Bennet
             return renderTextrue;
         }
         #endregion
-        
 
         #region UI related
         public static void SetTextureAndResizeRect(this RawImage self, Texture texture)
