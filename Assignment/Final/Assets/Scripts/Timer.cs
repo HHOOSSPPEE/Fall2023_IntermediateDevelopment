@@ -33,7 +33,8 @@ public class Timer : MonoBehaviour
                     hasPlayedWhistle = true;
                 }
 
-                StateController.currentState = FishingState.Exit;
+                StateController.currentState = FishingState.Start;
+                Debug.Log("Exit in Timer.");
                 DM.CanFish = false;
             }
 

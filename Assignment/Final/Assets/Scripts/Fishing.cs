@@ -117,6 +117,10 @@ public class Fishing : MonoBehaviour
                     StateController.currentState = FishingState.Start;
                     Debug.Log("Exit State");
                 }
+                else 
+                {
+                    StateController.currentState = FishingState.Start;
+                }
                 pause = false;
 
 
@@ -158,12 +162,13 @@ public class Fishing : MonoBehaviour
     private void Win()
     {
         pause = true;
-
-        hookProgress = 0.0f;
+        failTimer = 7f;
+        hookProgress = 0.2f;
         PC.score += 1;
         PC.scoreText.text = " " + PC.score;
         StateController.currentState = FishingState.Win;
         Debug.Log("WIN");
+        
     }
 
     private void Lose()

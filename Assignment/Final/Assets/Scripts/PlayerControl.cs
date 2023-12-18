@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.VersionControl;
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -54,6 +54,7 @@ void Update()
         if (DialogueManager.isActive == true || ET.exittabOpened == true)
         {
             _movement = Vector2.zero; // 如果对话或退出标签打开，停止玩家移动
+            _animator.SetBool("isMoving", false);
         }
         else
         {

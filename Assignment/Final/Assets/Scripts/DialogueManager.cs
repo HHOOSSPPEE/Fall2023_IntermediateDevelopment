@@ -11,13 +11,16 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI messageText;
     public Image backgoundBox;
     public Image Avatar;
-    
+
+    private ExitTab ET;
+
     Message[] currentMessages;
     Actor[] currentActors;
     int activeMessage = 0;
 
     public static bool isActive = false;
-    public bool CanFish= false;
+    public bool CanFish = false;
+    
 
     public void OpenDialogue(Message[] messages, Actor[] actors)
     {
@@ -41,18 +44,19 @@ public class DialogueManager : MonoBehaviour
         Actor actorToDisplay = currentActors[messageToDisplay.actorId];
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
-
     }
 
     public void NextMessage()
     {
         activeMessage++;
-        if(activeMessage< currentMessages.Length)
+        if (ET != null && activeMessage < currentMessages.Length && !ET.exittabOpened)
         {
             DisplayMessage();
         }
         else
+       
         {
+            
             Debug.Log("Conversation end");
             CanFish = true;
             StateController.currentState = FishingState.Start;
@@ -63,19 +67,25 @@ public class DialogueManager : MonoBehaviour
             isActive = false;
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        backgoundBox.color = new Color(1f, 1f, 1f, 0f);
-        Avatar.color = new Color(1f, 1f, 1f, 0f);
-        actorName.color = new Color(1f, 1f, 1f, 0f);
-        messageText.color = new Color(1f, 1f, 1f, 0f);
+        ET = FindObjectOfType<ExitTab>();
+        if (ET != null)
+        {
+            
+            backgoundBox.color = new Color(1f, 1f, 1f, 0f);
+            Avatar.color = new Color(1f, 1f, 1f, 0f);
+            actorName.color = new Color(1f, 1f, 1f, 0f);
+            messageText.color = new Color(1f, 1f, 1f, 0f);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && isActive==true)
+        if (Input.GetKeyDown(KeyCode.Space) && isActive == true && !ET.exittabOpened&&ET != null)
         {
             NextMessage();
         }
