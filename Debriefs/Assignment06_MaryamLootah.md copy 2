@@ -1,0 +1,35 @@
+### **2023 Spring** - Maryam L
+### *Assignment 06* - Assignment 06
+Link to game: https://mrymlt.itch.io/liturgy
+
+
+## **Debrief**
+In at least 400 words, write a debrief. You must write a reflection on your assignment. In addition to specific requirements stated for the assignment, you must answer the following:
+
+- What did you end up making?
+- Which of the game’s aspects did you like about this project?
+- What resources and/or comments were most helpful to you?
+- What will you repeat or do differently next time?
+
+I ended up making a horror exploratory pixel game, with rotoscope animations and multiple endings, based on the game ‘FAITH’. This included a player (a nun) exploring a haunted church, while trying to bless the different objects and avoid demons before the apocalypse happens. The player can die through not blessing the correct objects (such as the dead pope) or not blessing them fast enough (such as the statue-demons). Furthermore, this game focused on using biblical texts in order to create a sense of unease, as the texts do not protect the player, but are threats and warnings. I liked the animation and sound design aspects of the game a lot – as these allowed me to create a sense of depth within the game through layering footsteps with creaking noises as well as whispers and ambience, which usually is limited in my games. Additionally, I was able to figure out how to create cutscenes within the game in order to create a narrative sense to the otherwise abstract pixel exploratory nature of the game. This was through using the video player object in unity, which was a good skill to pick up and use later on within the game as I had multiple cut scenes. However, I will note that I still haven't found a robust manner to transfer these animations to WebGL – as it requires URLs. In terms of resources, I did utilize Freesounds and Aseprite throughout this project significantly, as I was creating ambiance through layering as well as pixel art throughout. This strengthened my skills in pixel art, however, I do wish I had more consistency in the complexity of each of the sprites, as some were far more complex than others. I also found the resource of tilemaps and tiles quite useful, as this was a far larger map than I had previously created. Usually, I would create the entirety of the map in one image, but through using tilemaps, the game did not lag by attempting to render such a large image (when compared to the fish game I had created earlier this semester). Looking back, I do wish I had focused more on creating a consistency in the pixel size and complexity – however, as I do use complex rotoscope animations, this lack of consistency is not too disconcerting. Also, I do wish I could have found a more accessible form of the game for WebGL, which I may do in my own time later on. Furthermore, the heavy use of text was distracting from the gameplay, to where players would often skim the text even if it did provide helpful information, and it may have been advantageous to lessen and simplify the amount of text, as well as make it more direct, even if it is supposed to be biblically-formatted. On that note, I would have preferred to have created a more direct narrative to the game, so that the player understood that each of the trumpets signaled a different stage of the game, rather than hoping they would move from stage to stage randomly (such as staging them from top to bottom). As such, I could have had each of the stages open for variety in gameplay, so that the player can encounter any stage at any given moment, depending on what they are exploring. On that note, I did go back and adjust how many statue demons the player will encounter so that at every stage of the game, there are multiple monsters to create more engagement and interaction with the game rather than simply exploring. I have gone back and fixed all the bugs noticed in the playtest, including the reset bug where the game would not reset the stages after dying, as well as some missing wall collisions. I have also added more engagement in terms of the exorcism action sometimes leading to more violent reactions from the creatures, which may deter the player from using it, as well as the cross starting one of the cut scenes which has a statue react aggressively. The mirror now also removes the player’s ability to hold the cross, and create a trail of blood that follows the player. I believe that this game was very well scoped and I am very satisfied with the product, both in terms of the coding, design, and animations!
+
+
+
+## **Self Evaluation**
+In addition to the debrief, the Self Evaluation is an opportunity for you to talk about your work. You must rate each aspect of your project as a 1 - 5 or Pass/Fail (where appropriate), as well as write a short 1-2 sentence elaboration to justify your score, in the following areas:
+
+
+**Execution** (Did your project meet the theme you gave it?) - 5/5
+
+*My theme was ‘Baroque’, and I wanted to focus on the biblical and more haunting aspects of the genre – specifically in relation to creating a sense of dread and tension in a horror game. This contrasts the game I was replicating (FAITH), as I wanted a more visually coherent and appealing product when compared to the fully abstracted gameplay of the original. On this end, I also had referential artwork in the game, such as ‘Saturn Devouring His Son’ and a biblical painting which was ‘haunted’. The use of shadows and darkness also referenced baroque works, which also further emphasized the horror aspects.*
+
+
+**Scope** (How well do you feel you scoped your game?) - 5/5
+
+*Within the scope, I was able to effectively complete all the aspects of the game I wanted to include, such as the animations and the multiple endings. I was able to do so through creating the artwork alongside creating the code for the game, as this allowed me to make sure that none of the artwork would appear unharmonious. Furthermore, I also utilized resources and tutorials more loosely, to make sure I was still able to adjust the code to my preference and knowledge, rather than having an over reliance on other tutorials. Overall, by making sure that I completed the main aspects of the game half way through the allocated time, I had a week to complete the animations, which gave me the comfortable time in order to address any major bugs.*
+
+**Overall** - Pass
+
+*Overall, I am very satisfied with the product and had an enjoyable time creating the game. At the start of the semester, I had hoped to create a horror game at some point, and am pleased that I was able to do so, especially at the end of the semester, as this has been the most refined product so far. The goal of emulating another game was useful in that it provided a structured guideline on what mechanics I should focus on, rather than attempting to overscope and overwork the game’s limits. I am also satisfied with the artwork and animations, as I feel they are balanced with the rest of the gameplay, in order to create a more narrative-based game. Thank you for a lovely semester! :) *
+
+
