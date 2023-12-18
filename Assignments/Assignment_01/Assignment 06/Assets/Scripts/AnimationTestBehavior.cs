@@ -18,7 +18,7 @@ public class AnimationTestBehavior : MonoBehaviour
     public GameObject screen;
     public GameObject playVideo;
     public VideoClip video;
-
+    //public string url; 
     public CutSceneBehavior cut;
     public bool killChar = false;
 
@@ -51,6 +51,7 @@ public class AnimationTestBehavior : MonoBehaviour
                 cut.killPlayer = true;
             }
             VideoPlayer vid = screen.GetComponent<VideoPlayer>();
+            //vid.url = urllink;
             vid.clip = video;
             screen.SetActive(true);
             playVideo.SetActive(true);

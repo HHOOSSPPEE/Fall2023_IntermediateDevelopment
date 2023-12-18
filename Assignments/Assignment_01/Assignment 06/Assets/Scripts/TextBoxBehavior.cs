@@ -35,21 +35,17 @@ public class TextBoxBehavior : MonoBehaviour
             if (collision.gameObject.GetComponent<PromptText>().selfNum == 2)
             {
                 tmp.text = "The first angel sounded his trumpet, " +
-                    "and there came hail and fire mixed with blood, and " +
-                    "it was hurled down on the earth. ";
+                    "and there came hail and fire mixed with blood. ";
             }
             if (collision.gameObject.GetComponent<PromptText>().selfNum == 3)
             {
                 tmp.text = "The second angel sounded his trumpet, " +
-                    "and something like a huge mountain, all ablaze, " +
-                    "was thrown into the sea. A third of the sea turned into blood ";
+                    "A third of the sea turned into blood ";
             }
             if (collision.gameObject.GetComponent<PromptText>().selfNum == 4)
             {
                 tmp.text = "The third angel blew his trumpet, " +
-                    "and a great star fell from heaven, " +
-                    "and it fell on a " +
-                    "third of the rivers and on the springs of water.";
+                    "and a great star fell from heaven on third of the rivers.";
             }
             if (collision.gameObject.GetComponent<PromptText>().selfNum == 5)
             {
@@ -64,7 +60,7 @@ public class TextBoxBehavior : MonoBehaviour
             if (collision.gameObject.GetComponent<PromptText>().selfNum == 7)
             {
                 tmp.text = "If your hand or your foot causes you to sin, " +
-                    "cut it off and throw it away. " +
+                    "<b>cut it off</b> and throw it away. " +
                     "It is better for you to enter life maimed" +
                 " than to have two hands or two feet and be thrown into eternal fire.";
             }
@@ -76,20 +72,15 @@ public class TextBoxBehavior : MonoBehaviour
             if (collision.gameObject.GetComponent<PromptText>().selfNum == 9)
             {
                 tmp.text = "The fourth angel blew his trumpet, " +
-                    "and a third of the sun was struck, and a third of the moon, " +
-                    "and a third of the stars, so that a third of their light might be darkened";
+                    "and a third of the <b>sun was struck</b>, so that a third of their light might be darkened";
             }
             if (collision.gameObject.GetComponent<PromptText>().selfNum == 10)
             {
                 tmp.text = "The fifth angel sounded his trumpet, " +
                     "When he opened the Abyss, smoke rose." +
-                    " And out of the smoke locusts came down on the earth and were given power like that " +
-                    "of scorpions of the earth.";
+                    " And out of the smoke <b>locusts</b> came down on the earth.";
             }
             
-
-
-
 
 
         }

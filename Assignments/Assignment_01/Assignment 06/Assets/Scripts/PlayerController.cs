@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
     public AudioSource auds;
     public GameObject animator;
+    public bool useRosary = true;
 
     void Start()
     {
@@ -32,15 +33,18 @@ public class PlayerController : MonoBehaviour
         
        
 
-
-        if (Input.GetKey(KeyCode.Space))
+        if (useRosary)
         {
-            rosary = true;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                rosary = true;
+            }
+            else
+            {
+                rosary = false;
+            }
         }
-        else
-        {
-            rosary = false;
-        }
+       
 
         if (rosary)
         {

@@ -11,7 +11,10 @@ public class ResetBehavior : MonoBehaviour
     {
         aud = GetComponent<AudioSource>();
         GameManager.kill = false;
+
         GameManager.windowVideoDone = false;
+        GameManager.currentStage = 1;
+
     }
 
     public void Update()

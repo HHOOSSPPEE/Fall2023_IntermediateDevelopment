@@ -13,14 +13,23 @@ using System.Collections;
 public class NotMineChangeFont : MonoBehaviour
 {
     
-    public TMP_FontAsset[] fontOptions; 
+    public TMP_FontAsset[] fontOptions;
+  
+
+    //public UnityEngine.UI.Button btn;
 
     void Start()
     {
         DontDestroyOnLoad(gameObject);
         StartCoroutine(ChangeFontsAgain());
     }
+     void Update()
+    {
+       
+    }
 
+    
+    
     IEnumerator ChangeFontsAgain()
     {
         while (true)

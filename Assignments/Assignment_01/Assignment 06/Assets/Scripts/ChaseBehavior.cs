@@ -51,7 +51,7 @@ public class ChaseBehavior : MonoBehaviour
         }
 
 
-        if (controller.rosary && Vector2.Distance(transform.position, controller.gameObject.transform.position) >= 5)
+        if (controller.rosary && Vector2.Distance(transform.position, controller.gameObject.transform.position) <= 5)
         {
             runAway = true;
         }
