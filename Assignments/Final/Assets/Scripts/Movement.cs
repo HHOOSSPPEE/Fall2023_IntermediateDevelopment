@@ -81,6 +81,7 @@ public class Movement : MonoBehaviour
         {
            
             nextDirection = direction;
+            
         }
         //Debug.Log(direction);
 
